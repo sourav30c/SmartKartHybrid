@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button style="color: #FFCC23"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      My Account
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-list lines="full" class="ion-no-margin ion-no-padding">
+    <ion-item>
+      <ion-label position="stacked" style="color: #979797;">Name <ion-text color="danger">*</ion-text>
+      </ion-label>
+      <ion-input type="text" [(ngModel)]="firstname" style="color: #194AA1;"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked" style="color: #979797;">Phone <ion-text color="danger">*</ion-text>
+      </ion-label>
+      <ion-input type="text" [(ngModel)]="phone" style="color: #194AA1;"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked" style="color: #979797;">Email <ion-text color="danger">*</ion-text>
+      </ion-label>
+      <ion-input type="text" [(ngModel)]="email" disabled style="color: #194AA1;"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-col size="4">
+        <ion-label style="color: #979797;">State</ion-label>
+      </ion-col>
+      <ion-select [(ngModel)]="user_state" ng-init="user_state" name="user_state" (ionChange)="selectState($event)"
+        [selectedText]="stateName">
+        <ion-select-option *ngFor="let allState of allStates" [value]="allState.id"
+          [selected]="stateName == allState.name">{{allState.name}}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked" style="color: #979797;">City <ion-text color="danger">*</ion-text>
+      </ion-label>
+      <ion-input type="text" [(ngModel)]="city" style="color: #194AA1;"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked" style="color: #979797;">Pin <ion-text color="danger">*</ion-text>
+      </ion-label>
+      <ion-input type="text" [(ngModel)]="pin" style="color: #194AA1;"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked" style="color: #979797;">Alternate No. <ion-text color="danger">*</ion-text>
+      </ion-label>
+      <ion-input type="text" [(ngModel)]="alternateNo" style="color: #194AA1;"></ion-input>
+    </ion-item>
+    <ion-button shape="round" expand="full" color="primary" (click)="submitAccountInfo()">Submit</ion-button>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button style="color: #FFCC23"></ion-back-button>
+    </ion-buttons>
+    <ion-title>OTP</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-grid class="bg">
+    <ion-row>
+      <ion-col>
+        <div class="loginPg">
+          <div class="loginBx">
+            <div class="logologin">
+              <ion-img src="/assets/images/logo.png"></ion-img>
+            </div>
+            <div class="logologinInstruction">
+              <h4>Please Enter The OTP to Verify Your Mobile Number</h4>
+            </div>
+            
+              <div class="form-group">
+                <ion-input type="email" class="form-control" [(ngModel)]="otp"></ion-input>
+              </div>
+              <div class="frmaxon">
+                <ion-button (click)="submitOtp()" color="primary" shape="round" expand="block">Submit</ion-button>
+              </div>
+
+              <div class="logologinInstruction">
+                <label>Did not recieve otp yet?</label>
+              </div>
+              <div class="frmaxon">
+                <ion-button (click)="resendOtp()" color="primary" shape="round" expand="block">Resend OTP</ion-button>
+              </div>
+
+          </div>
+        </div>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,141 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button style="color: #FFCC23"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      My Cart
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid *ngIf="isCartList===true">
+
+    <ion-col size="12" *ngIf="isCartList===true" style="top: -10px;">
+      <div>
+        <ion-label position="stacked">Delivery Charge: <span style="color: #0000A0;"> ₹ {{deliveryPrice}}
+        </span></ion-label>
+      </div>
+      <div>
+        <ion-label position="stacked">Subtotal ( {{totalCart}} Items ) : <span style="color: #0000A0;"> ₹ {{totalCost}}
+        </span></ion-label>
+      </div>
+      
+      <ion-button shape="round" expand="full" *ngIf="isCartList===true" (click)="toBuy()">
+        Proceed To Buy
+      </ion-button>
+    </ion-col>
+
+    <!-- <ion-card *ngIf="isCartList===true"> -->
+
+    <!-- </ion-card> -->
+
+
+    <ion-row class="cartItem" *ngFor="let cartList of cartList; let i = index">
+      <ion-col size="4">
+        <div class="imgwrp">
+          <ion-img [src]="cartList.Products.photo"></ion-img>
+        </div>
+      </ion-col>
+      <ion-col size="8">
+        <h2 class="cName" (click)="details(cartList)">{{cartList.Products.name | slice:0:20}}</h2>
+        <div class="Pprice" (click)="details(cartList)">
+          <span class="crPrice">₹ {{cartList.CartItems.item_net_amount}}
+          </span>
+          <span class="oldPrice">₹ {{cartList.UserProducts.actual_price}}</span>
+        </div>
+      </ion-col>
+
+      <!-- <ion-col size="8"> -->
+      <!-- <div class="number-field"> -->
+
+      <!-- <ion-col size="4">
+        <ion-icon class="remove" name="remove" (click)="decrement(i,cartList)"
+          style="background-color: red;height: 19px;margin-top: 6px;width: 19px;">
+        </ion-icon>
+        <input type="number" style="width: 30%; text-align: center; height: 20px;margin-top: 6px;"
+          [(ngModel)]="arrQuantity[i]">
+        <ion-icon class="add" style="background-color: green;height: 19px;margin-top: 6px;width: 19px;" name="add"
+          (click)="inrement(i,cartList)">
+        </ion-icon>
+      </ion-col> -->
+
+      <ion-col size="4">
+        <ion-icon class="remove" name="remove" (click)="decrement(i,cartList)"
+          style="background-color: red;height: 16px;width: 16px;color: white;">
+        </ion-icon>
+        <input type="number" style="width: 30%; text-align: center; height: 21px"
+          [(ngModel)]="arrQuantity[i]">
+        <ion-icon class="add" style="background-color: green;height: 16px;width: 16px;color: white;" name="add"
+          (click)="inrement(i,cartList)">
+        </ion-icon>
+      </ion-col>
+
+      <!-- <ion-col size="4">
+        <button ion-button icon-only clear (click)="decrement(i,cartList)">
+          <ion-icon name="remove-circle" color="danger" style="height: 14px;font-size: 14px;"></ion-icon>
+        </button>
+
+        <input type="number" style="width: 30%; text-align: center; height: 18px;margin-top: 6px;"
+          [(ngModel)]="arrQuantity[i]">
+        <button ion-button icon-only clear (click)="inrement(i,cartList)">
+          <ion-icon name="add-circle" color="success" style="height: 14px;font-size: 14px;border-radius: 5px;">
+          </ion-icon>
+        </button>
+      </ion-col> -->
+
+      <!-- </div> -->
+      <!-- </ion-col> -->
+
+      <ion-col size="4">
+        <div>
+          <ion-button class="rmvBtn" color="medium" fill="outline" expand="block"
+            (click)="presentAlertConfirm(cartList)" style="margin-top: -8px;">
+            Delete</ion-button>
+        </div>
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
+
+  <ion-card style="text-align:center;margin-top:50% " *ngIf="isCartList===false">
+    <ion-card-content>
+      Your Cart Is Empty
+      <button style="margin-top:10px" ion-button color="dark" icon-start full (click)="continueShopping()">
+        Continue Shopping
+      </button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+<!-- 
+<ion-footer>
+  <ion-toolbar text-center color="dark">
+      <ion-buttons>
+          <ion-button (click)="tabBarHome()">
+              <div class="fotricn">
+                  <ion-icon name="home"></ion-icon>
+                  <ion-label>Home</ion-label>
+              </div>
+          </ion-button>
+          <ion-button (click)="tabBarList()">
+              <div class="fotricn">
+                  <ion-icon name="basket"></ion-icon>
+                  <ion-label>Shop</ion-label>
+              </div>
+          </ion-button>
+          <ion-button (click)="tabBarPolicy()">
+              <div class="fotricn">
+                  <ion-icon name="open"></ion-icon>
+                  <ion-label>Policy</ion-label>
+              </div>
+          </ion-button>
+          <ion-button (click)="tabBarContacts()">
+              <div class="fotricnlst">
+                  <ion-icon name="contacts"></ion-icon>
+                  <ion-label>Contact</ion-label>
+              </div>
+          </ion-button>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-footer> -->

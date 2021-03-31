@@ -1,0 +1,36 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "com.app.KKCarts"
+    },
+    "cordova-plugin-ionic-keyboard": {
+      "PACKAGE_NAME": "com.app.KKCarts"
+    },
+    "cordova-plugin-ionic-webview": {
+      "PACKAGE_NAME": "com.app.KKCarts"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "com.app.KKCarts"
+    },
+    "cordova-plugin-statusbar": {
+      "PACKAGE_NAME": "com.app.KKCarts"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.app.KKCarts"
+    },
+    "cordova-plugin-inappbrowser": {
+      "PACKAGE_NAME": "com.app.KKCarts"
+    },
+    "cordova-plugin-speechrecognition": {
+      "PACKAGE_NAME": "com.app.KKCarts"
+    }
+  },
+  "dependent_plugins": {}
+}

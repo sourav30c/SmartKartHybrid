@@ -1,0 +1,94 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button style="color: #FFCC23"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Billing Address</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <!-- <ion-col size="12">
+    <label>Total - Rs. {{totalCost}}</label>
+  </ion-col> -->
+  <ion-grid *ngIf="isAddressAdded">
+    <ion-row>
+      <ion-col size="12" *ngFor="let addressList of addressList; let i = index" [class.selectedFullSection]="arrAddressSelectCheck[i]">
+        <div class="customer-details">
+          <ul>
+            <li>
+              <div class="left">
+                Name
+              </div>
+              <div class="right">
+                {{addressList.name}}
+              </div>
+            </li>
+            <li>
+              <div class="left">
+                Phone
+              </div>
+              <div class="right">
+                {{addressList.mobile}}
+              </div>
+            </li>
+            <li>
+              <div class="left">
+                Address
+              </div>
+              <div class="right">
+                {{addressList.home_address}} {{addressList.city}} {{addressList.state}}
+                {{addressList.country}} {{addressList.pin}}
+              </div>
+            </li>
+            <li>
+              <div class="left">
+                Email
+              </div>
+              <div class="right">
+                {{addressList.email}}
+              </div>
+            </li>
+
+            <li>
+              <div class="left">
+                Edit
+              </div>
+              <div class="right">
+                <a (click)="editAddress(addressList, i)">
+                  <img src="assets/images/edit-icon.svg" alt="">
+                </a>
+              </div>
+            </li>
+          </ul>
+
+          <ul class="shortcut-icons">
+            <li>
+              <a (click)="onItemClicked(addressList, i)" *ngIf="arrAddressSelectCheck[i]">
+                <img src="assets/images/check_icon_blue.svg" alt="" width="20">
+              </a>
+              <a (click)="onItemClicked(addressList, i)" *ngIf="!arrAddressSelectCheck[i]">
+                <img src="assets/images/uncheck_icon_blue.svg" alt="" width="20">
+              </a>
+            </li>
+          </ul>
+
+        </div>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!-- <ion-card> -->
+    <ion-button shape="round" fill="outline" expand="full" (click)="addAddress()">
+      Add Address
+    </ion-button>
+  <!-- </ion-card> -->
+
+  <!-- <ion-card> -->
+    <ion-button shape="round" fill="outline" expand="full" (click)="toPayment()">
+      Proceed To Payment
+    </ion-button>
+  <!-- </ion-card> -->
+
+</ion-content>

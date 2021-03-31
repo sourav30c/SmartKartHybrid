@@ -1,0 +1,89 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button style="color: #FFCC23"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Reviews</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-row>
+    <ion-col size="12">
+      <ion-button class="addtoCrt" expand="full" (click)="addReview()" >
+        Add A Review
+      </ion-button>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <!-- <ion-col *ngFor="let singleData of listData; let i = index" size="12"
+        [class.selectedFullSection]="singleData.ischecked"> -->
+    <ion-col *ngFor="let singleReviewList of reviewList; let i = index" size="12">
+      <div class="customer-details">
+        <ul>
+          <li>
+            <ion-row>
+              <ion-col class="left" size="12">
+                <h6> {{singleReviewList.user.first_name}} {{singleReviewList.user.last_name}}</h6>
+              </ion-col>
+              
+              <ion-col class="left" size="12">
+                <ion-item class="star" *ngIf="singleReviewList.rating==='5'">
+                  <ion-icon name="star" color="success"></ion-icon>
+                  <ion-icon name="star" color="success"></ion-icon>
+                  <ion-icon name="star" color="success"></ion-icon>
+                  <ion-icon name="star" color="success"></ion-icon>
+                  <ion-icon name="star" color="success"></ion-icon>
+                </ion-item>
+                <ion-item class="star" *ngIf="singleReviewList.rating==='4'">
+                  <ion-icon name="star" color="success"></ion-icon>
+                  <ion-icon name="star" color="success"></ion-icon>
+                  <ion-icon name="star" color="success"></ion-icon>
+                  <ion-icon name="star" color="success"></ion-icon>
+                  <ion-icon name="star-outline"></ion-icon>
+                </ion-item>
+                <ion-item class="star" *ngIf="singleReviewList.rating==='3'">
+                  <ion-icon name="star" color="success"></ion-icon>
+                  <ion-icon name="star" color="success"></ion-icon>
+                  <ion-icon name="star" color="success"></ion-icon>
+                  <ion-icon name="star-outline"></ion-icon>
+                  <ion-icon name="star-outline"></ion-icon>
+                </ion-item>
+                <ion-item class="star" *ngIf="singleReviewList.rating==='2'">
+                  <ion-icon name="star" color="success"></ion-icon>
+                  <ion-icon name="star" color="success"></ion-icon>
+                  <ion-icon name="star-outline"></ion-icon>
+                  <ion-icon name="star-outline"></ion-icon>
+                  <ion-icon name="star-outline"></ion-icon>
+                </ion-item>
+                <ion-item class="star" *ngIf="singleReviewList.rating==='1'">
+                  <ion-icon name="star" color="success"></ion-icon>
+                  <ion-icon name="star-outline"></ion-icon>
+                  <ion-icon name="star-outline"></ion-icon>
+                  <ion-icon name="star-outline"></ion-icon>
+                  <ion-icon name="star-outline"></ion-icon>
+                </ion-item>
+                <ion-item class="star" *ngIf="singleReviewList.rating==='0'">
+                  <ion-icon name="star-outline"></ion-icon>
+                  <ion-icon name="star-outline"></ion-icon>
+                  <ion-icon name="star-outline"></ion-icon>
+                  <ion-icon name="star-outline"></ion-icon>
+                  <ion-icon name="star-outline"></ion-icon>
+                </ion-item>
+                Reviewed on {{singleReviewList.dt.toString().split('T')[0]}}
+              </ion-col>
+        
+            </ion-row>
+          </li>
+          <li>
+            <div>
+              <h6>Reviews -</h6>
+              {{singleReviewList.comment}}
+            </div>
+          </li>
+        </ul>
+      </div>
+    </ion-col>
+  </ion-row>
+</ion-content>

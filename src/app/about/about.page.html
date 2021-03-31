@@ -1,0 +1,28 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button style="color: #FFCC23"></ion-menu-button>
+      </ion-buttons>
+      <ion-title>
+        About Us
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row class="loginBx" *ngIf="isTerms == true">
+      <ion-col>
+      <ion-text>  
+        <div [innerHTML]="description"></div>
+      </ion-text>  
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!-- <ion-card style="text-align:center;margin-top:50% " *ngIf="isTerms == false">
+    <ion-card-content>
+        No Data Found
+    </ion-card-content>
+  </ion-card> -->
+</ion-content>

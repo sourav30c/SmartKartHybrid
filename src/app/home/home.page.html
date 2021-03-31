@@ -1,0 +1,157 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button style="color: #FFCC23"></ion-menu-button>
+        </ion-buttons>
+        <!-- <ion-img style="max-width: 100px;" src="/assets/images/logo.png"></ion-img> -->
+        <ion-buttons slot="secondary">
+            <!-- <ion-searchbar search-icon=“search”  placeholder="Search"></ion-searchbar> -->
+            <ion-input placeholder="Search" (click)="toAutoSearch()" disabled="true"
+                style="border-width: 5px;border-color: green;"></ion-input>
+            <ion-button (click)="toAutoSearch()">
+                <ion-icon slot="icon-only" style="color: #FFCC23" name="search"></ion-icon>
+            </ion-button>
+            <!-- <ion-button>
+                <ion-icon slot="icon-only" name="notifications-outline"></ion-icon>
+            </ion-button> -->
+            <ion-button (click)="toRecord()">
+                <ion-icon slot="icon-only" style="color: #FFCC23" name="mic"></ion-icon>
+            </ion-button>
+            <ion-button (click)="toCartPage()">
+                <ion-icon slot="icon-only" name="cart" style="color: #FFCC23"></ion-icon>
+                <span class="badge badge-assertive" style="color: black;">{{util.cartCount}}</span>
+            </ion-button>
+        </ion-buttons>
+
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <!-- <ion-searchbar [placeholder]="serachByPlaceholder" class="ion-no-padding" [(ngModel)]="searchText"
+        showCancelButton="always" cancelButtonText="Show All" (ionInput)="getItems($event)"
+        (ionCancel)="onCancel($event)" (search)="submitSearch($event)">
+      </ion-searchbar> -->
+
+    <ion-slides *ngIf="sliderData.length > 0" pager="true">
+        <ion-slide *ngFor="let singleSliderData of sliderData; let i = index">
+            <ion-card class="welcome-card" (click)="sliderToProductList(singleSliderData)">
+
+                <img (load)="loadImageSlider(i)" [src]="singleSliderData.image_link || '/assets/images/ad1.jpg'">
+                <img *ngIf="!singleSliderData.isLoad" src="/assets/images/ad1.jpg">
+                <ion-card-header>
+                    <!-- <ion-card-subtitle>{{singleSliderData.name}}</ion-card-subtitle> -->
+                </ion-card-header>
+            </ion-card>
+        </ion-slide>
+
+    </ion-slides>
+
+    <ion-toolbar class="forSecHed mb-0">
+        <ion-title>Top <span class="instk">Sell</span></ion-title>
+        <ion-buttons slot="secondary">
+            <ion-button color="medium" (click)="viewAll()">
+                view all
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+
+    <ion-grid>
+        <ion-row>
+            <ion-col size="6" *ngFor="let singleTopsellData of topsellData; let i = index">
+                <ion-card style="margin: 0;">
+                    <img (load)="loadImageTopsell(i)" [src]="singleTopsellData.photo || '/assets/images/p1.jpg'"
+                        (click)="details(singleTopsellData)" style="height: 128px;width: 100%;">
+                    <img *ngIf="!singleTopsellData.isLoad" src="/assets/images/p1.jpg"
+                        (click)="details(singleTopsellData)">
+                    <ion-card-header (click)="details(singleTopsellData)">
+                        <ion-card-subtitle class="myWrap">{{singleTopsellData.name}}</ion-card-subtitle>
+                        <div class="nrmlwrp">
+                            <div class="w-50 flt py-10"><span
+                                    class="stk instk">{{(singleTopsellData.in_stock) ? 'In Stock' : 'Out Stock'}}</span>
+                            </div>
+                            <div class="w-50 flt py-10" style="text-align: right;"><span class="stkPrc">Rs.
+                                    {{singleTopsellData.offer_price}}</span></div>
+                        </div>
+                    </ion-card-header>
+                </ion-card>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+    <ion-toolbar class="forSecHed mb-0">
+        <ion-title>Recently <span class="instk">Uploaded</span></ion-title>
+        <ion-buttons slot="secondary">
+            <ion-button color="medium" (click)="viewAll()">
+                view all
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+
+    <ion-grid>
+        <ion-row>
+            <ion-col size="6" *ngFor="let singleRecentProductData of recentProductData; let i = index">
+                <ion-card style="margin: 0;">
+                    <img (load)="loadImageRecentProduct(i)"
+                        [src]="singleRecentProductData.photo || '/assets/images/p1.jpg'"
+                        (click)="details(singleRecentProductData)" style="height: 128px;width: 100%;">
+                    <img *ngIf="!singleRecentProductData.isLoad" src="/assets/images/p1.jpg"
+                        (click)="details(singleRecentProductData)">
+
+                    <ion-card-header (click)="details(singleRecentProductData)">
+                        <ion-card-subtitle class="myWrap">{{singleRecentProductData.name}}</ion-card-subtitle>
+                        <div class="nrmlwrp">
+                            <div class="w-50 flt py-10"><span
+                                    class="stk instk">{{(singleRecentProductData.in_stock) ? 'In Stock' : 'Out Stock'}}</span>
+                            </div>
+                            <div class="w-50 flt py-10" style="text-align: right;"><span class="stkPrc">Rs.
+                                    {{singleRecentProductData.offer_price}}</span></div>
+                        </div>
+                    </ion-card-header>
+                </ion-card>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+
+    <div *ngFor="let advSliderData of advData; let i = index">
+        <ion-toolbar class="forSecHed mb-0">
+            <ion-title>{{advSliderData.name}}</ion-title>
+        </ion-toolbar>
+        <div class="spech" (click)="addToProductList(advSliderData)">
+            <ion-img [src]="advSliderData.photo" (click)="details(advSliderData)" style="background: white;"></ion-img>
+        </div>
+    </div>
+
+
+</ion-content>
+
+<!-- <ion-footer>
+    <ion-toolbar text-center color="dark">
+        <ion-buttons>
+            <ion-button (click)="tabBarHome()">
+                <div class="fotricn">
+                    <ion-icon name="home"></ion-icon>
+                    <ion-label>Home</ion-label>
+                </div>
+            </ion-button>
+            <ion-button (click)="tabBarList()">
+                <div class="fotricn">
+                    <ion-icon name="basket"></ion-icon>
+                    <ion-label>Shop</ion-label>
+                </div>
+            </ion-button>
+            <ion-button (click)="tabBarPolicy()">
+                <div class="fotricn">
+                    <ion-icon name="open"></ion-icon>
+                    <ion-label>Policy</ion-label>
+                </div>
+            </ion-button>
+            <ion-button (click)="tabBarContacts()">
+                <div class="fotricnlst">
+                    <ion-icon name="contacts"></ion-icon>
+                    <ion-label>Contact</ion-label>
+                </div>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-footer> -->

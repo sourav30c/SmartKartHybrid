@@ -1,0 +1,190 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button style="color: #FFCC23"></ion-menu-button>
+        </ion-buttons>
+        <ion-title>
+            Today's Deal
+        </ion-title>
+        <ion-buttons slot="secondary">
+            <!-- <ion-button>
+              <ion-icon slot="icon-only" name="search"></ion-icon>
+          </ion-button>
+          <ion-button>
+              <ion-icon slot="icon-only" name="notifications-outline"></ion-icon>
+          </ion-button> -->
+            <ion-button (click)="toCart()">
+                <ion-icon slot="icon-only" name="cart" style="color: #FFCC23"></ion-icon>
+                <span class="badge badge-assertive" style="color: red;">{{util.cartCount}}</span>
+            </ion-button>
+        </ion-buttons>
+
+    </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+    <ion-grid>
+        <!-- <ion-searchbar [placeholder]="serachByPlaceholder" class="ion-no-padding" [(ngModel)]="searchText"
+    showCancelButton="always" cancelButtonText="Show All" (ionInput)="getItems($event)"
+    (ionCancel)="onCancel($event)" (search)="submitSearch($event)">
+  </ion-searchbar> -->
+        <ion-row *ngIf="isProductList">
+            <ion-col size="6" *ngFor="let productlist of productlist; let i = index">
+                <ion-card style="margin: 0;">
+                    <div class="lstBtnGrp">
+                        <label style="background-color: #FFCC23;color: white;border-radius: 2px;padding: 1px;">{{productlist.product.discount_percentage}}%</label>
+                        <button color="light" (click)="addToWishlist(productlist,i)"
+                            style="right: -30px;background: transparent;">
+                            <!-- <ion-icon slot="icon-only" name="heart-empty" *ngIf="wishListCheck[i] !== productlist.id"></ion-icon>
+                            <ion-icon slot="icon-only" name="heart" *ngIf="wishListCheck[i] === productlist.id"style="color: #0000A0"></ion-icon> -->
+                            <ion-icon slot="icon-only" name="heart-empty" *ngIf="wishListCheck[i] !== productlist.product.id"></ion-icon>
+                            <ion-icon slot="icon-only" name="heart" *ngIf="wishListCheck[i] === productlist.product.id" style="color: #0000A0"></ion-icon>
+                        </button>
+                    </div>
+
+                    <img (click)="details(productlist.product)" [src]="productlist.product.photo" style="height: 128px;width: 100%;">
+                    <!-- <img *ngIf="!productlist.product.isLoad" src="/assets/images/p1.jpg" (click)="details(productlist.product)"> -->
+
+                    <!-- <div class="rating">
+                        <span>
+                            <ion-item class="star" *ngIf="ratingStar=='5'" lines="none">
+                                <ion-icon name="star" style="color: #FFCC23"></ion-icon>
+                                <ion-icon name="star" style="color: #FFCC23"></ion-icon>
+                                <ion-icon name="star" style="color: #FFCC23"></ion-icon>
+                                <ion-icon name="star" style="color: #FFCC23"></ion-icon>
+                                <ion-icon name="star" style="color: #FFCC23"></ion-icon>
+                            </ion-item>
+                            <ion-item class="star" *ngIf="ratingStar=='4'" lines="none">
+                                <ion-icon name="star" style="color: #FFCC23"></ion-icon>
+                                <ion-icon name="star" style="color: #FFCC23"></ion-icon>
+                                <ion-icon name="star" style="color: #FFCC23"></ion-icon>
+                                <ion-icon name="star" style="color: #FFCC23"></ion-icon>
+                                <ion-icon name="star-outline"></ion-icon>
+                            </ion-item>
+                            <ion-item class="star" *ngIf="ratingStar=='3'" lines="none">
+                                <ion-icon name="star" style="color: #FFCC23"></ion-icon>
+                                <ion-icon name="star" style="color: #FFCC23"></ion-icon>
+                                <ion-icon name="star" style="color: #FFCC23"></ion-icon>
+                                <ion-icon name="star-outline"></ion-icon>
+                                <ion-icon name="star-outline"></ion-icon>
+                            </ion-item>
+                            <ion-item class="star" *ngIf="ratingStar=='2'" lines="none">
+                                <ion-icon name="star" style="color: #FFCC23"></ion-icon>
+                                <ion-icon name="star" style="color: #FFCC23"></ion-icon>
+                                <ion-icon name="star-outline"></ion-icon>
+                                <ion-icon name="star-outline"></ion-icon>
+                                <ion-icon name="star-outline"></ion-icon>
+                            </ion-item>
+                            <ion-item class="star" *ngIf="ratingStar=='1'" lines="none">
+                                <ion-icon name="star" style="color: #FFCC23"></ion-icon>
+                                <ion-icon name="star-outline"></ion-icon>
+                                <ion-icon name="star-outline"></ion-icon>
+                                <ion-icon name="star-outline"></ion-icon>
+                                <ion-icon name="star-outline"></ion-icon>
+                            </ion-item>
+                            <ion-item class="star" *ngIf="ratingStar=='0'" lines="none">
+                                <ion-icon name="star-outline"></ion-icon>
+                                <ion-icon name="star-outline"></ion-icon>
+                                <ion-icon name="star-outline"></ion-icon>
+                                <ion-icon name="star-outline"></ion-icon>
+                                <ion-icon name="star-outline"></ion-icon>
+                            </ion-item>
+                            <ion-item class="star" lines="none">
+                                <ion-icon name="star-outline"></ion-icon>
+                                <ion-icon name="star-outline"></ion-icon>
+                                <ion-icon name="star-outline"></ion-icon>
+                                <ion-icon name="star-outline"></ion-icon>
+                                <ion-icon name="star-outline"></ion-icon>
+                            </ion-item>
+                        </span>
+                    </div> -->
+
+                    <ion-card-header (click)="details(productlist.product)">
+                        <ion-card-subtitle>{{productlist.product.name | slice:0:20}} ...</ion-card-subtitle>
+                        <ion-row>
+                            <ion-col style="text-align: left;"
+                                *ngIf="productlist.product.in_stock == true || productlist.product.total_quantity != '0'"
+                                size="6">
+                                <span class="stk instk">In Stock</span>
+                            </ion-col>
+                            <ion-col style="text-align: left;"
+                                *ngIf="productlist.product.in_stock == false || productlist.product.total_quantity == '0'"
+                                size="6">
+                                <span class="stk outstk">Out of Stock</span>
+                            </ion-col>
+                            <ion-col style="text-align: right;" size="6">
+                                <span class="stkPrc">Rs. {{productlist.product.actual_price}}</span>
+                            </ion-col>
+                        </ion-row>
+                        <!-- <div clas="nrmlwrp">
+                          <div class="w-50 flt py-10"><span class="stk instk" *ngIf="productlist.in_stock == true">In Stock</span></div>
+                          <div class="w-50 flt py-10"><span class="stk outstk" *ngIf="productlist.in_stock == false">Out of Stock</span></div>
+                          <div class="w-50 flt py-10" style="text-align: right;"><span class="stkPrc">Rs. {{productlist.actual_price}}</span></div>
+                      </div> -->
+                    </ion-card-header>
+                    <div>
+                        <!-- <ion-button color="light" (click)="addToWishlist(productlist,i)">
+                        <ion-icon slot="icon-only" name="heart-empty" *ngIf="wishListCheck[i] !== productlist.product_id"></ion-icon>
+                        <ion-icon slot="icon-only" name="heart" *ngIf="wishListCheck[i] === productlist.product_id" style="color: #0000A0"></ion-icon>
+                      </ion-button>
+                      <ion-button color="light" *ngIf="productlist.product.in_stock == true" (click)="addToCart(productlist)">
+                          <ion-icon slot="icon-only" name="cart"></ion-icon>
+                      </ion-button>
+                      <ion-button color="light" *ngIf="productlist.product.in_stock == false">
+                        <ion-icon slot="icon-only" style="color:gainsboro;" name="cart"></ion-icon>
+                    </ion-button> -->
+
+                        <ion-button class="addtoCrt" *ngIf="productlist.product.total_quantity != '0'" expand="full"
+                            (click)="addToCart(productlist)">
+                            Buy Now
+                        </ion-button>
+                    </div>
+
+                </ion-card>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+    <ion-card style="text-align:center;margin-top:50% " *ngIf="isProductList===false">
+        <ion-card-content>
+            No Product List Found
+            <button style="margin-top:10px" ion-button color="dark" icon-start full (click)="continueShopping()">
+                Continue Shopping
+            </button>
+        </ion-card-content>
+    </ion-card>
+
+
+</ion-content>
+
+<!-- <ion-footer>
+    <ion-toolbar text-center color="dark">
+        <ion-buttons>
+            <ion-button (click)="tabBarHome()">
+                <div class="fotricn">
+                    <ion-icon name="home"></ion-icon>
+                    <ion-label>Home</ion-label>
+                </div>
+            </ion-button>
+            <ion-button (click)="tabBarList()">
+                <div class="fotricn">
+                    <ion-icon name="basket"></ion-icon>
+                    <ion-label>Shop</ion-label>
+                </div>
+            </ion-button>
+            <ion-button (click)="tabBarPolicy()">
+                <div class="fotricn">
+                    <ion-icon name="open"></ion-icon>
+                    <ion-label>Policy</ion-label>
+                </div>
+            </ion-button>
+            <ion-button (click)="tabBarContacts()">
+                <div class="fotricnlst">
+                    <ion-icon name="contacts"></ion-icon>
+                    <ion-label>Contact</ion-label>
+                </div>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-footer> -->

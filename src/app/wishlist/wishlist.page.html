@@ -1,0 +1,126 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button style="color: #FFCC23"></ion-menu-button>
+        </ion-buttons>
+        <ion-title>
+            Wish List
+        </ion-title>
+
+
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-grid>
+        <ion-row *ngIf="isWishlist===true">
+            <ion-col size="6" *ngFor="let wishlistList of wishlistLists; let i = index">
+                <ion-card style="margin: 0;">
+                    <div class="lstBtnGrp">
+                        <label style="background-color: #FFCC23;color: white;border-radius: 2px;padding: 1px;">{{wishlistList.discount_percentage}} %</label>
+                        <button color="light" (click)="presentAlertConfirm(wishlistList)" style="right: -70px;background: transparent;">
+                            <ion-icon slot="icon-only" name="trash" style="color: #0000A0"></ion-icon>
+                        </button>
+                    </div>
+
+                    <ion-img (click)="details(wishlistList)" src="{{wishlistList.product.photo}}"></ion-img>
+                    <div class="rating">
+                        <span>
+                          <!-- <ion-col class="left" size="6"> -->
+                            <ion-item class="star" *ngIf="ratingStar=='5'" lines="none">
+                              <ion-icon name="star" style="color: #FFCC23"></ion-icon>
+                              <ion-icon name="star" style="color: #FFCC23"></ion-icon>
+                              <ion-icon name="star" style="color: #FFCC23"></ion-icon>
+                              <ion-icon name="star" style="color: #FFCC23"></ion-icon>
+                              <ion-icon name="star" style="color: #FFCC23"></ion-icon>
+                            </ion-item>
+                            <ion-item class="star" *ngIf="ratingStar=='4'" lines="none">
+                              <ion-icon name="star" style="color: #FFCC23"></ion-icon>
+                              <ion-icon name="star" style="color: #FFCC23"></ion-icon>
+                              <ion-icon name="star" style="color: #FFCC23"></ion-icon>
+                              <ion-icon name="star" style="color: #FFCC23"></ion-icon>
+                              <ion-icon name="star-outline"></ion-icon>
+                            </ion-item>
+                            <ion-item class="star" *ngIf="ratingStar=='3'" lines="none">
+                              <ion-icon name="star" style="color: #FFCC23"></ion-icon>
+                              <ion-icon name="star" style="color: #FFCC23"></ion-icon>
+                              <ion-icon name="star" style="color: #FFCC23"></ion-icon>
+                              <ion-icon name="star-outline"></ion-icon>
+                              <ion-icon name="star-outline"></ion-icon>
+                            </ion-item>
+                            <ion-item class="star" *ngIf="ratingStar=='2'" lines="none">
+                              <ion-icon name="star" style="color: #FFCC23"></ion-icon>
+                              <ion-icon name="star" style="color: #FFCC23"></ion-icon>
+                              <ion-icon name="star-outline"></ion-icon>
+                              <ion-icon name="star-outline"></ion-icon>
+                              <ion-icon name="star-outline"></ion-icon>
+                            </ion-item>
+                            <ion-item class="star" *ngIf="ratingStar=='1'" lines="none">
+                              <ion-icon name="star" style="color: #FFCC23"></ion-icon>
+                              <ion-icon name="star-outline"></ion-icon>
+                              <ion-icon name="star-outline"></ion-icon>
+                              <ion-icon name="star-outline"></ion-icon>
+                              <ion-icon name="star-outline"></ion-icon>
+                            </ion-item>
+                            <ion-item class="star" *ngIf="ratingStar=='0'" lines="none">
+                              <ion-icon name="star-outline"></ion-icon>
+                              <ion-icon name="star-outline"></ion-icon>
+                              <ion-icon name="star-outline"></ion-icon>
+                              <ion-icon name="star-outline"></ion-icon>
+                              <ion-icon name="star-outline"></ion-icon>
+                            </ion-item>
+                            <ion-item class="star" lines="none">
+                                <ion-icon name="star-outline"></ion-icon>
+                                <ion-icon name="star-outline"></ion-icon>
+                                <ion-icon name="star-outline"></ion-icon>
+                                <ion-icon name="star-outline"></ion-icon>
+                                <ion-icon name="star-outline"></ion-icon>
+                              </ion-item>
+                          <!-- </ion-col> -->
+                        </span>
+                      </div>
+                    <ion-card-header (click)="details(wishlistList)">
+                        <ion-card-subtitle>{{wishlistList.product.name | slice:0:20}}...</ion-card-subtitle>
+                        <ion-row>
+                            <ion-col style="text-align: left;" *ngIf="wishlistList.product.in_stock == true" size="6">
+                                <span class="stk instk">In Stock</span>
+                            </ion-col>
+                            <ion-col style="text-align: left;" *ngIf="wishlistList.product.in_stock == false" size="6">
+                                <span class="stk outstk">Out of Stock</span>
+                            </ion-col>
+                            <ion-col style="text-align: right;" size="6">
+                                <span class="stkPrc">Rs. {{wishlistList.product.actual_price}}</span>
+                            </ion-col>
+                        </ion-row>
+                        <!-- <div clas="nrmlwrp">
+                            <div class="w-50 flt py-10"><span class="stk instk" *ngIf="wishlistList.product.in_stock == true">In Stock</span></div>
+                            <div class="w-50 flt py-10"><span class="stk outstk" *ngIf="wishlistList.product.in_stock == false">Out of Stock</span></div>
+                            <div class="w-50 flt py-10" style="text-align: right;"><span class="stkPrc">Rs. {{wishlistList.product.actual_price}}</span>
+                            </div>
+                        </div> -->
+                    </ion-card-header>
+                    <div>
+                        <!-- <ion-button color="light" (click)="presentAlertConfirm(wishlistList)">
+                            <ion-icon slot="icon-only" name="trash"></ion-icon>
+                        </ion-button> -->
+                        <ion-button class="addtoCrt" expand="full"  (click)="postDataAddtoCart(wishlistList)">
+                            Buy Now
+                          </ion-button>
+                        <!-- <ion-button color="light" (click)="postDataAddtoCart(wishlistList)">
+                            <ion-icon slot="icon-only" name="cart"></ion-icon>
+                        </ion-button> -->
+                    </div>
+
+                </ion-card>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+    <ion-card style="text-align:center;margin-top:50% " *ngIf="isWishlist===false">
+        <ion-card-content>
+            No Wishlist Created
+            <button style="margin-top:10px" ion-button color="dark" icon-start full (click)="continueShopping()">
+                Continue Shopping
+            </button>
+        </ion-card-content>
+    </ion-card>
+</ion-content>

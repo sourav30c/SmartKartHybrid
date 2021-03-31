@@ -1,0 +1,68 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button style="color: #FFCC23"></ion-menu-button>
+        </ion-buttons>
+        <ion-title>
+            Contact Us
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-grid>
+        <ion-row>
+          <ion-col size="12" class="thankyou">
+            <div>
+              <h4>
+                Contact Number -
+              </h4>
+              <h4>
+                7595955400
+              </h4>
+            </div>
+            <div>
+                <h4>
+                  Email Us at - 
+                </h4>
+                <h4>
+                    support@smartkart.online
+                </h4>
+              </div>
+          </ion-col>
+        </ion-row>
+    </ion-grid>
+
+
+    <ion-list lines="full" class="ion-no-margin ion-no-padding" style="margin-top: 5px;">
+        <ion-item>
+            <ion-label position="stacked" style="color: #979797;">Name <ion-text color="danger">*</ion-text>
+            </ion-label>
+            <ion-input [(ngModel)]="yourName" type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label position="stacked" style="color: #979797;">Mobile <ion-text color="danger">*</ion-text>
+            </ion-label>
+            <ion-input [(ngModel)]="phoneNo" type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label position="stacked" style="color: #979797;">Email <ion-text color="danger">*</ion-text>
+            </ion-label>
+            <ion-input [(ngModel)]="email" type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label position="stacked" style="color: #979797;">What's in your mind<ion-text color="danger">*</ion-text>
+            </ion-label>
+            <ion-textarea placeholder="Enter more information here..." style="border-width: 5px;height: 90px;" [(ngModel)]="message">
+            </ion-textarea>
+        </ion-item>
+    </ion-list>
+
+
+    <div>
+        <ion-button shape="round" expand="full" (click)="submitAddress()">
+            Submit
+        </ion-button>
+    </div>
+
+</ion-content>

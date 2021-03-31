@@ -1,0 +1,98 @@
+.bg{
+    background-image: url('/assets/images/bg.jpg');
+    height: auto;
+    background-size: cover;
+    filter: blur(0px);
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.loginBx{
+    margin: auto;
+    max-width: 374px;
+    padding: 25px;
+    background:rgba(252, 250, 250, 0.5);
+    border-radius: 10px;
+    text-align: center;
+}
+.logologin{
+    max-width: 135px;
+    padding: 15px;
+    margin: auto;
+}
+.loginBx > h1{
+    margin:40px 0 40px;
+    font-size: 1.3rem;
+}
+
+.loginBx form{
+    text-align: left;
+}
+form label{
+    font-weight: 700;
+    font-size:.9rem;
+}
+.form-control{
+    border-radius: 5px;
+    font-size: 1em;
+    padding: 8px 15px;
+    font-weight: 700;
+    width: 100%;
+    margin-bottom: 15px;
+    background: #fff0;
+    border: 1px solid #FFCC23
+}
+.loginBx form input{
+    border-radius: 5px;
+    font-size: 1em;
+    padding: 8px 15px;
+    font-weight: 700;
+    width: 100%;
+    margin-bottom: 15px;
+    background: #fff0;
+    border: 1px solid rgba(0,0,0,.35);
+}
+.frmaxon{margin-top: 20px; overflow: hidden;}
+.frmaxon .col{float: left; width: 50%;}
+.secondary-link{
+    font-weight: 700;
+    color: #000;
+    opacity: .4;
+    display: inline-block;
+    margin-top:13px;
+    font-size:.9em;
+}
+.secondary-link:hover{
+    color: #000;
+    opacity:1;
+}
+.loginBtn {
+    padding: 8px 20px;
+    width: 100%;
+    text-align: center;
+    border-radius: 30px;
+    font-size: 18px;
+    color: #fff;
+    background-color:#200ae2;
+}
+
+.backIcon{
+    font-size: 28px;
+    color: blue($color: #200ae2);
+}
+
+.ion-item {
+    --border-top-width: 2px;
+    --border-end-width: 3px;
+    --border-bottom-width: 2px;
+    --border-start-width: 6px;
+    
+    --inner-border-width: 0;
+    
+    --border-width: var(--border-top-width) var(--border-end-width) var(--border-bottom-width) var(--border-start-width);
+    --border-color: red;
+  }
+
+//   .ion-button{
+//     --background: #0869AE;
+//     --border-radius: 20px;
+//   }

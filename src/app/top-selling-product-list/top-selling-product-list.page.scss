@@ -1,0 +1,43 @@
+.stk{
+    font-size: 10px;
+    font-weight: bold;
+}
+.instk{
+    color: green;
+}
+.outstk{
+    color: red;
+}
+.stkPrc{
+    font-size: 11px;
+    font-weight: bold;
+    display: inline-block;
+}
+.nrmlwrp{
+    overflow: hidden;
+}
+.flt{
+    float: left;
+}
+.w-50{
+    width: 50%;
+}
+.py-10{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.lstBtnGrp *{
+    font-size: 16px;
+    position: relative;
+}
+.lstBtnGrp .button{
+    //width: 50%;
+    //margin: 0;
+    //box-shadow: none !important;
+    //background: transparent;
+    //border-radius: 0;
+    //border-top: 1px solid rgba(0, 0, 0, 0.10980392156862745);
+
+    position: absolute;
+    top: 5px;
+}

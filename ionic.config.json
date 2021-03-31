@@ -1,0 +1,7 @@
+{
+  "name": "sasta-bazar",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

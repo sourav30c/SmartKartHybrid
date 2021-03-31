@@ -1,0 +1,76 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button style="color: #FFCC23"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Return Order</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-grid *ngIf="returnStatus != 2">
+    <ion-row class="cartItem">
+      <ion-col size="4">
+        <div class="imgwrp">
+          <ion-img [src]="orderProductDetails.product.photo"></ion-img>
+        </div>
+      </ion-col>
+      <ion-col size="8">
+        <h2 class="cName">{{orderProductDetails.product.name | slice:0:20}} </h2>
+        <div class="Pprice">
+          <span class="crPrice">Quantity - {{orderProductDetails.quantity}}</span>
+          <span class="crPrice">Price - {{orderProductDetails.item_gross_amount}}</span>
+        </div>
+      </ion-col>
+
+      <ion-card>
+        <ion-textarea placeholder="Write reason for return..." style="border-width: 2px;" [(ngModel)]="returnReason"></ion-textarea>
+        <ion-button shape="round" fill="outline" expand="full" (click)="submitReturn()">
+          Return
+        </ion-button>
+      </ion-card>
+      <ion-col size="12" *ngIf="isReturnPlace">
+        <span class="crPrice">Return Status - {{returnStatus}}</span>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+  <ion-grid *ngIf="returnStatus == '2'">
+  <ion-list lines="full" class="ion-no-margin ion-no-padding" style="margin-top: 5px;">
+    <ion-item>
+      <ion-label position="stacked">Account Name <ion-text color="danger">*</ion-text>
+      </ion-label>
+      <ion-input type="text" [(ngModel)]="accName"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Bank Name <ion-text color="danger">*</ion-text>
+      </ion-label>
+      <ion-input type="text" [(ngModel)]="bankName"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Account No <ion-text color="danger">*</ion-text>
+      </ion-label>
+      <ion-input type="text" [(ngModel)]="accNo"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">IFSC Code <ion-text color="danger">*</ion-text>
+      </ion-label>
+      <ion-input type="text" [(ngModel)]="ifscCode"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Branch Name <ion-text color="danger">*</ion-text>
+      </ion-label>
+      <ion-input type="text" [(ngModel)]="branchName"></ion-input>
+    </ion-item>
+  </ion-list>
+</ion-grid>
+
+
+  <ion-card *ngIf="returnStatus == '2'">
+    <ion-button shape="round" fill="outline" expand="full" (click)="submitBankDetails()">
+      Submit
+    </ion-button>
+  </ion-card>
+
+</ion-content>

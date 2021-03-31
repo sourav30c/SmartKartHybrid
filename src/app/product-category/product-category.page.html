@@ -1,0 +1,96 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button style="color: #FFCC23"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Category</ion-title>
+    <ion-buttons slot="secondary">
+      <ion-button (click)="toCart()">
+        <ion-icon slot="icon-only" name="cart" style="color: #FFCC23"></ion-icon>
+        <span class="badge badge-assertive" style="color: black;">{{util.cartCount}}</span>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list class="product-types">
+    <ion-list-header>
+      <ion-label>Choose Product Category</ion-label>
+    </ion-list-header>
+
+    <ion-list *ngFor="let singleCategoryData of categoryData|slice:0:12; let i = index"
+      style="border-bottom: .5px solid grey" lines="none">
+      <ion-item class="fields" (click)="expandCategory(singleCategoryData,i)" no-padding style="max-height: 80%">
+        <ion-icon slot="start" style="font-size: 1.3em" name="arrow-forward"
+          *ngIf="!isCategoryTappedArr[i] && singleCategoryData.slug === categoryName"></ion-icon>
+        <ion-icon slot="start" style="font-size: 1.3em" name="arrow-forward"
+          *ngIf="isCategoryTappedArr[i] && singleCategoryData.slug !== categoryName"></ion-icon>
+        <ion-icon slot="start" style="font-size: 1.3em" name="arrow-forward"
+          *ngIf="!isCategoryTappedArr[i] && singleCategoryData.slug !== categoryName"></ion-icon>
+        <ion-icon slot="start" style="font-size: 1.3em" name="arrow-down"
+          *ngIf="isCategoryTappedArr[i] && singleCategoryData.slug === categoryName">
+        </ion-icon>
+        <ion-label>{{singleCategoryData.name}}</ion-label>
+      </ion-item>
+      <div *ngIf="isCategoryTappedArr[i] && singleCategoryData.slug === categoryName">
+
+        <ion-list *ngFor="let singlesubCategory of subCategory|slice:0:12; let i = index"
+          style="border-bottom: .5px solid grey">
+          <ion-item (click)="expandSubCategory(singlesubCategory,i)" no-padding style="max-height: 80%">
+            <ion-icon slot="start" style="font-size: 1.3em" name="add"
+              *ngIf="!isSubCategoryTappedArr[i] && singlesubCategory.slug !== subCategoryName"></ion-icon>
+            <ion-icon slot="start" style="font-size: 1.3em" name="add"
+              *ngIf="!isSubCategoryTappedArr[i] && singlesubCategory.slug === subCategoryName"></ion-icon>
+            <ion-icon slot="start" style="font-size: 1.3em" name="add"
+              *ngIf="isSubCategoryTappedArr[i] && singlesubCategory.slug !== subCategoryName"></ion-icon>
+            <ion-icon slot="start" style="font-size: 1.3em" name="close"
+              *ngIf="isSubCategoryTappedArr[i] && singlesubCategory.slug === subCategoryName"></ion-icon>
+            <ion-label>{{singlesubCategory.name}}</ion-label>
+          </ion-item>
+          <div *ngIf="isSubCategoryTappedArr[i] && singlesubCategory.slug === subCategoryName">
+            <ion-list *ngFor="let singlesubCatType of subCatType|slice:0:12; let i = index"
+              style="border-bottom: .5px solid grey">
+              <ion-item (click)="productsList(singlesubCatType)" style="padding-left: 8px">
+                <ion-label>{{singlesubCatType.name}}</ion-label>
+              </ion-item>
+            </ion-list>
+          </div>
+        </ion-list>
+      </div>
+    </ion-list>
+
+  </ion-list>
+
+</ion-content>
+
+<!-- <ion-footer>
+  <ion-toolbar text-center color="dark">
+      <ion-buttons>
+          <ion-button (click)="tabBarHome()">
+              <div class="fotricn">
+                  <ion-icon name="home"></ion-icon>
+                  <ion-label>Home</ion-label>
+              </div>
+          </ion-button>
+          <ion-button (click)="tabBarList()">
+              <div class="fotricn">
+                  <ion-icon name="basket"></ion-icon>
+                  <ion-label>Shop</ion-label>
+              </div>
+          </ion-button>
+          <ion-button (click)="tabBarPolicy()">
+              <div class="fotricn">
+                  <ion-icon name="open"></ion-icon>
+                  <ion-label>Policy</ion-label>
+              </div>
+          </ion-button>
+          <ion-button (click)="tabBarContacts()">
+              <div class="fotricnlst">
+                  <ion-icon name="contacts"></ion-icon>
+                  <ion-label>Contact</ion-label>
+              </div>
+          </ion-button>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-footer> -->

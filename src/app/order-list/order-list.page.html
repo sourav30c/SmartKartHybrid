@@ -1,0 +1,76 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button style="color: #FFCC23"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      My Orders
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid *ngIf="isOrderList===true">
+    <ion-row class="cartItem" *ngFor="let orderList of orderList; let i = index">
+      <!-- <ion-col size="12" (click)="details(orderList)">
+        <h6>Order Id - {{orderList.order_id}}</h6>
+        <h6>Order Date - {{orderList.creation_date.toString().split('T')[0]}}</h6>
+        <h6 *ngIf="orderList.invoice_items[0].order_status == 0">Order Status - <span
+            style="color:dodgerblue;font-weight: bold;">Processing</span> </h6>
+        <h6 *ngIf="orderList.invoice_items[0].order_status == 1">Order Status - <span
+            style="color:dodgerblue;font-weight: bold;">On Hold</span></h6>
+        <h6 *ngIf="orderList.invoice_items[0].order_status == 2 && orderList.invoice_items[0].return_status == 0">Order
+          Status - <span style="color:green;font-weight: bold;">Delivered</span></h6>
+        <h6 *ngIf="orderList.invoice_items[0].order_status == 2 && orderList.invoice_items[0].return_status == 1">Order
+          Status - <span style="color:green;font-weight: bold;">Delivered</span> | <span
+            style="color:dodgerblue;font-weight: bold;">Return Processing</span> </h6>
+        <h6 *ngIf="orderList.invoice_items[0].order_status == 2 && orderList.invoice_items[0].return_status == 2">Order
+          Status - <span style="color:green;font-weight: bold;">Delivered</span> | <span
+            style="color:dodgerblue;font-weight: bold;">Return Processing</span> </h6>
+        <h6 *ngIf="orderList.invoice_items[0].order_status == 3">Order Status - <span
+            style="color: red;font-weight: bold;">Cancelled</span></h6>
+        <h6 *ngIf="orderList.invoice_items[0].order_status == 4">Order Status - <span
+            style="color:green;font-weight: bold;">Confirmed</span></h6>
+        <h6 *ngIf="orderList.invoice_items[0].order_status == 4">Delivered within - <span
+            style="color:green;">{{orderList.invoice_items[0].product.day_of_delivary}} days </span></h6>
+      </ion-col> -->
+      <ion-col size="4" (click)="details(orderList)">
+        <div class="imgwrp">
+          <ion-img [src]="orderList.invoice_items[0].product.photo"></ion-img>
+        </div>
+      </ion-col>
+      <ion-col size="8" (click)="details(orderList)">
+        <h4 class="cName">{{orderList.invoice_items[0].product.name | slice:0:20}}</h4>
+        <div class="Pprice">
+          <!-- <span class="crPrice">Price- {{orderList.net_amt}}</span> -->
+          <span class="crPrice">
+            <h6 *ngIf="orderList.invoice_items[0].order_status == 0">Order Status - <span
+                style="color:dodgerblue;font-weight: bold;">Processing</span> </h6>
+            <h6 *ngIf="orderList.invoice_items[0].order_status == 1">Order Status - <span
+                style="color:dodgerblue;font-weight: bold;">On Hold</span></h6>
+            <h6 *ngIf="orderList.invoice_items[0].order_status == 2 && orderList.invoice_items[0].return_status == 0">
+              Order Status - <span style="color:green;font-weight: bold;">Delivered</span></h6>
+            <h6 *ngIf="orderList.invoice_items[0].order_status == 2 && orderList.invoice_items[0].return_status == 1">
+              Order Status - <span style="color:green;font-weight: bold;">Delivered</span> | <span
+                style="color:dodgerblue;font-weight: bold;">Return Processing</span> </h6>
+            <h6 *ngIf="orderList.invoice_items[0].order_status == 2 && orderList.invoice_items[0].return_status == 2">
+              Order Status - <span style="color:green;font-weight: bold;">Delivered</span> | <span
+                style="color:dodgerblue;font-weight: bold;">Return Processing</span> </h6>
+            <h6 *ngIf="orderList.invoice_items[0].order_status == 3">Order Status - <span
+                style="color: red;font-weight: bold;">Cancelled</span></h6>
+            <h6 *ngIf="orderList.invoice_items[0].order_status == 4">Order Status - <span
+                style="color:green;font-weight: bold;">Confirmed</span></h6>
+            <h6 *ngIf="orderList.invoice_items[0].order_status == 4">Delivered within - <span
+                style="color:green;">{{orderList.invoice_items[0].product.day_of_delivary}} days </span></h6>
+          </span>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-card style="text-align:center;margin-top:50% " *ngIf="isOrderList===false">
+    <ion-card-content>
+      You have not ordered anything yet
+    </ion-card-content>
+  </ion-card>
+</ion-content>

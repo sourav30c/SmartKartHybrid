@@ -1,0 +1,90 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" *ngIf="pushedFrom != null" (click)="goBack()">
+      <ion-icon name="arrow-back" class="backIcon"></ion-icon>
+    </ion-buttons>
+    <ion-buttons slot="start" *ngIf="pushedFrom == null">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Login
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <!-- <ion-grid class="bg"> -->
+  <!-- <ion-grid>
+    <ion-row>
+      <ion-col>
+        <div class="loginPg"> -->
+          <!-- <div class="loginBx"> -->
+            <div class="logologin">
+              <ion-img src="/assets/images/logo1.png"></ion-img>
+              <!-- <h6>Login</h6> -->
+            </div>
+            <h6>Login With</h6>
+            <!-- <form> -->
+            <ion-list class="ion-margin-top">
+              <!-- <ion-item>
+                <ion-label>
+                  <ion-icon name="contact" style="color: #FFCC23;"></ion-icon>
+                </ion-label>
+                <ion-input placeholder="Email" type="text" [(ngModel)]="username" style="border-color: brown;"></ion-input>
+              </ion-item> -->
+              <ion-item>
+                <ion-label>
+                  <ion-icon name="contact" style="color: #FFCC23;"></ion-icon>
+                </ion-label>
+                <ion-input placeholder="Email" type="text" [(ngModel)]="username"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label>
+                  <ion-icon name="lock" style="color: #FFCC23"></ion-icon>
+                </ion-label>
+                <ion-input placeholder="Password" type="password" [(ngModel)]="password"></ion-input>
+
+                <label (click)="showPassword()">
+                  <ion-icon *ngIf="showPasswordId=='password'" name="eye-off" style="color: #FFCC23;font-size: 20px;"></ion-icon>
+                </label>
+        
+                <label (click)="hidePassword()">
+                  <ion-icon *ngIf="showPasswordId=='text'" name="eye" style="color: #FFCC23;font-size: 20px;"></ion-icon>
+                </label>
+              </ion-item>
+            </ion-list>
+            <!-- <div class="form-group">
+              <ion-input type="email" class="form-control" placeholder="User Name" [(ngModel)]="username"></ion-input>
+            </div>
+            <div class="form-group">
+              <ion-input type="password" [(ngModel)]="password" placeholder="Password" class="form-control"></ion-input>
+            </div> -->
+            <div class="frmaxon">
+              <div class="col">
+                <div routerLink="/forgotpassword" class="secondary-link transition">Forgot Password?</div>
+              </div>
+              <div class="col text-right">
+                <!-- [ngStyle]="{'background-color':'pink'}" style="background-color;: #FFCC23" -->
+                <!-- <ion-button (click)="login()" color="primary" shape="round" expand="block">Login</ion-button> -->
+                
+                <ion-button (click)="login()" color="primary" shape="round" expand="block" style="--background:red">Login</ion-button>
+                <!-- <button (click)="login()" color="primary" shape="round" expand="block">Login</button> -->
+              </div>
+            </div>
+
+              <div class="frmaxon" *ngIf="pushedFromHtmlCheck!=='productDetails'">
+                <div class="col">
+                  <label style="color: #FFCC23" >Don't have an account?</label>
+                </div>
+                <div class="col text-right">
+                  <ion-button color="primary" shape="round" expand="block" (click)="toSingUp()">Register</ion-button>
+                  <!-- <button ion-button color="primary" round full (click)="toSingUp()" style="background: #0000A0">Register</button> -->
+                </div>
+              </div>
+          <!-- </div> -->
+        <!-- </div>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid> -->
+</ion-content>

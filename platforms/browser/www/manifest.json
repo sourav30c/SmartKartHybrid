@@ -1,0 +1,11 @@
+{
+  "background_color": "#FFF",
+  "display": "standalone",
+  "name": "KKCarts",
+  "short_name": "KKCarts",
+  "version": "com.app.KKCarts",
+  "description": "Online Shopping India - Mobile, Computers, Home Appliances, Lifestyle, Books and More",
+  "author": "KKCarts Team",
+  "icons": [],
+  "start_url": "index.html"
+}

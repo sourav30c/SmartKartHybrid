@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button style="color: #FFCC23"></ion-back-button>
+    </ion-buttons>
+    <ion-title>OTP</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <div class="logologin">
+    <ion-img src="/assets/images/logo1.png"></ion-img>
+  </div>
+  <div class="logologinInstruction">
+    <h6>Verification</h6>
+    <label>Enter the OTP you received on your Email</label>
+  </div>
+
+  <ion-list class="ion-margin-top">
+    <ion-item lines="none">
+      <ion-label>
+        <ion-icon name="mail" style="color: #FFCC23"></ion-icon>
+      </ion-label>
+      <ion-col size="3">
+        <ion-item>
+          <ion-input placeholder="*" type="text" [(ngModel)]="otp1"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col size="3">
+        <ion-item>
+          <ion-input placeholder="*" type="text" [(ngModel)]="otp2"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col size="3">
+        <ion-item>
+          <ion-input placeholder="*" type="text" [(ngModel)]="otp3"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col size="3">
+        <ion-item>
+          <ion-input placeholder="*" type="text" [(ngModel)]="otp4"></ion-input>
+        </ion-item>
+      </ion-col>
+
+    </ion-item>
+  </ion-list>
+
+  <label>Time Left : 00:40</label>
+  <div class="frmaxon">
+    <ion-button (click)="submit()" color="primary" shape="round" expand="block">Verify</ion-button>
+  </div>
+
+</ion-content>

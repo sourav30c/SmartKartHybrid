@@ -1,0 +1,88 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button style="color: #FFCC23"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Add Address</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list lines="full" class="ion-no-margin ion-no-padding" style="margin-top: 5px;">
+    <ion-item>
+      <ion-label position="stacked">Name <ion-text color="danger">*</ion-text>
+      </ion-label>
+      <ion-input type="text" [(ngModel)]="user_name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Mobile <ion-text color="danger">*</ion-text>
+      </ion-label>
+      <ion-input type="text" [(ngModel)]="user_mobile"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Email <ion-text color="danger">*</ion-text>
+      </ion-label>
+      <ion-input type="text" [(ngModel)]="user_email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Address <ion-text color="danger">*</ion-text>
+      </ion-label>
+      <ion-input type="text" [(ngModel)]="user_address"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Country <ion-text color="danger">*</ion-text>
+      </ion-label>
+      <ion-input type="text" [(ngModel)]="user_country"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">State <ion-text color="danger">*</ion-text>
+      </ion-label>
+
+        <ion-select [(ngModel)]="user_state" ng-init="user_state" name="user_state" (ionChange)="selectState($event)" [selectedText]="stateName">
+          <ion-select-option *ngFor="let allState of allStates" [value]="allState.id" [selected]="stateName == allState.name">{{allState.name}}
+          </ion-select-option>
+        </ion-select>
+
+        <!-- <ion-select [(ngModel)]="store_id" ng-init="store_id" name="store_id" (ionChange)="selectStore($event)" [selectedText]="storeName">
+          <ion-select-option *ngFor="let singleStore of store_list" [value]="singleStore.storeid" [selected]="storeName == singleStore.title">{{singleStore.title}}
+          </ion-select-option>
+        </ion-select> -->
+
+
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">City <ion-text color="danger">*</ion-text>
+      </ion-label>
+      <ion-input type="text" [(ngModel)]="user_city"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Zip <ion-text color="danger">*</ion-text>
+      </ion-label>
+      <ion-input type="text" [(ngModel)]="user_zip"></ion-input>
+    </ion-item>
+
+      <ion-radio-group value="{{isHomeAddress}}" (ionChange)="addressTypeRadio($event)">
+        <ion-list-header>
+          <ion-label>Billing Address Type</ion-label>
+        </ion-list-header>
+        <ion-item>
+          <ion-label>Home</ion-label>
+          <ion-radio slot="start" value="1" style="border: 1px grey;"></ion-radio>
+        </ion-item>
+    
+        <ion-item>
+          <ion-label>Office</ion-label>
+          <ion-radio slot="start" value="2" style="border: 1px grey;"></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+
+  </ion-list>
+
+  <ion-card>
+    <ion-button shape="round" fill="outline" expand="full" (click)="submitAddress()">
+      Add Address
+    </ion-button>
+  </ion-card>
+
+</ion-content>
+

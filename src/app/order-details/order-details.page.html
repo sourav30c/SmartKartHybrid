@@ -1,0 +1,99 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button style="color: #FFCC23"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      Order Details
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row class="cartItem">
+      <ion-col size="12">
+        <h4 class="cName">Order Details</h4>
+        <div class="Pprice">
+          <span class="crPrice">Order Id- {{orderDetails.order_id}}</span>
+        </div>
+        <div class="Pprice">
+          <span class="crPrice">Invoice No - {{orderDetails.invoice_no}}</span>
+        </div>
+        <ion-grid>
+          <div class="Pprice">
+            <span class="crPrice">Order Amount - ₹ {{orderDetails.gross_amt}}</span>
+          </div>
+          <div class="Pprice" *ngIf="codAmount != 0">
+            <span class="crPrice">COD Charge - ₹ {{codAmount}}</span>
+          </div>
+          <div class="Pprice" *ngIf="deliveryCharge != 0">
+            <span class="crPrice">Delivery Charge - ₹ {{deliveryCharge}}</span>
+          </div>
+          <div class="Pprice">
+            <span class="crPrice">Total Amount - ₹ {{totalAmount}}</span>
+          </div>
+        </ion-grid>
+        
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid>
+    <ion-row class="cartItem" *ngFor="let orderProductDetails of orderProductDetails; let i = index">
+
+      <ion-col size="4">
+        <div class="imgwrp">
+          <ion-img [src]="orderProductDetails.product.photo"></ion-img>
+        </div>
+      </ion-col>
+      <ion-col size="8">
+        <h2 class="cName">{{orderProductDetails.product.name}} </h2>
+        <div class="Pprice">
+          <span class="crPrice">Quantity - {{orderProductDetails.quantity}}</span>
+        </div>
+      </ion-col>
+      <ion-col size="12">
+        <div class="Pprice">
+          <span class="crPrice" *ngIf="orderProductDetails.order_status == 4">Delivered By - {{orderProductDetails.carrierName}}</span>
+          <span class="crPrice" *ngIf="orderProductDetails.order_status == 0">Order Status - <span style="color:dodgerblue;font-weight: bold;"> Processing </span> </span>
+          <span class="crPrice" *ngIf="orderProductDetails.order_status == 1">Order Status - <span style="color:dodgerblue;font-weight: bold;"> On Hold </span> </span>
+          <span class="crPrice" *ngIf="orderProductDetails.order_status == 2">Order Status - <span style="color:green;font-weight: bold;"> Delivered </span> </span>
+          <span class="crPrice" *ngIf="orderProductDetails.order_status == 3">Order Status - <span style="color: red;font-weight: bold;"> Cancelled </span> </span>
+          <span class="crPrice" *ngIf="orderProductDetails.order_status == 4">Order Status - <span style="color:green;font-weight: bold;"> Confirmed </span> </span>
+          <span class="crPrice" *ngIf="orderProductDetails.order_status == 4">Delivered within {{orderProductDetails.product.day_of_delivary}} days</span>
+          <span class="crPrice" *ngIf="orderProductDetails.order_status == 2">Delivered On -{{orderProductDetails.order_completed_date.toString().split('T')[0]}}</span>
+          <span class="crPrice" *ngIf="orderProductDetails.order_status == 3">Cancelled On - {{orderProductDetails.order_cancell_date.toString().split('T')[0]}} </span>
+        </div>
+      </ion-col>
+      <ion-col size="12" *ngIf="orderProductDetails.return_status != '2' && orderProductDetails.order_status != 3">
+        <ion-button shape="round" fill="outline" expand="full" (click)="trackOrder(orderProductDetails,i)">
+          Track Order
+        </ion-button>
+      </ion-col>
+      <ion-col size="12" *ngIf="orderProductDetails.return_status == '2'">
+        <ion-button shape="round" fill="outline" expand="full" (click)="trackReturnOrder(orderProductDetails,i)">
+          Track Order Return
+        </ion-button>
+      </ion-col>
+      <ion-col size="12" *ngIf="arrIsCancel[i]">
+        <ion-button shape="round" fill="outline" expand="full" (click)="cancelOrder(orderProductDetails,i)">
+          Cancel Order
+        </ion-button>
+      </ion-col>
+      <ion-col size="12" *ngIf="arrIsReturn[i] && orderProductDetails.return_status == '0' ">
+        <ion-button shape="round" fill="outline" expand="full" (click)="returnOrder(i)">
+          Return Order
+        </ion-button>
+      </ion-col>
+      <ion-col size="12" *ngIf="arrIsReturn[i] && orderProductDetails.return_status == '1' ">
+        <span style="color:red">Return process is waiting for approval</span>
+      </ion-col>
+      <ion-col size="12" *ngIf="arrIsBanksubmit[i]">
+        <ion-button shape="round" fill="outline" expand="full" (click)="returnOrder(i)">
+          Submit Bank Details For Return
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

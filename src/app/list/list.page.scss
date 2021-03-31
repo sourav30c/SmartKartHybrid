@@ -1,0 +1,77 @@
+.stk{
+    font-size: 10px;
+    font-weight: bold;
+}
+.instk{
+    color: green;
+}
+.outstk{
+    color: red;
+}
+.stkPrc{
+    font-size: 11px;
+    font-weight: bold;
+    display: inline-block;
+}
+.nrmlwrp{
+    overflow: hidden;
+}
+.flt{
+    float: left;
+}
+.w-50{
+    width: 50%;
+}
+.py-10{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.lstBtnGrp *{
+    font-size: 16px;
+    position: relative;
+}
+.lstBtnGrp .icon{
+    font-size: 16px;
+    color: gainsboro;
+}
+
+.lstBtnGrp .button{
+    //width: 40%;
+    //margin: 0;
+    //right: -30px;
+    //box-shadow: none !important;
+    //background: transparent;
+    //border-radius: 0;
+    //border-top: 1px solid rgba(0, 0, 0, 0.10980392156862745);
+
+
+    position: absolute;
+    top: 5px;
+}
+
+.instk[_ngcontent-c2] {
+    color: green;
+    font-size: 12px;
+}
+
+.outstk[_ngcontent-c1] {
+    color: red;
+    font-size: 12px;
+}
+.oldPrice{
+    text-decoration: line-through;
+    color: rgba(0, 0, 0, 0.6);
+    display: inline-block;
+    margin-right: 15px;
+}
+
+.backIcon{
+    font-size: 28px;
+    color: blue($color: #200ae2);
+}
+
+.addtoCrt{
+    background: transparent;
+    position: relative;
+    border-radius: 5px;
+}

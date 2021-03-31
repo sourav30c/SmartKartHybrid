@@ -1,0 +1,192 @@
+.bg-primary{
+    background: #1B98D5;
+}
+.card-box{
+    background: #A7CF46;
+    padding: 10px 5px;
+    text-align: center;
+    position: relative;
+    img{
+        width: 44px;
+        margin: 0 auto;
+    }
+    h3{
+        font-size: 16px;
+        color: #000000;
+        margin: 5px 0;
+    }
+    h4{
+        font-size: 18px;
+        color: #ffffff;
+        margin: 5px 0; 
+    }
+}
+.customer-details{
+    border: 1px solid #D2D2D2;
+    position: relative;
+    &>ul{
+        padding: 0;
+        margin: 0;
+        &>li{
+            display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+            display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+            display: -ms-flexbox;      /* TWEENER - IE 10 */
+            display: -webkit-flex;     /* NEW - Chrome */
+            display: flex;
+            list-style: none;
+            width: 100%;
+            padding: 5px;
+            .left{
+                font-size: 14px;
+                color: #979797;
+                width: 100%;
+            }
+            .right{
+                font-size: 14px;
+                color: #000000;
+                width: 40%;
+            }
+            .rating{
+                font-size: 14px;
+                color: green;
+                width: 100%;
+            }
+        }
+    }
+}
+.text-grey{
+    color: #A7A7A7;
+}
+.text-danger{
+    color: #F83956;
+}
+.action-dd{
+    background: #A7CF46;
+    border: 1px solid #A7CF46;
+    color: #fff;
+    border-radius: 5px;
+}
+.action-btn{
+    margin-right: 10px;
+    margin-top: 5px;
+    display: inline-block;
+}
+.shortcut-icons{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    &>li{
+        padding: 3px 4px !important;
+        &>a{
+            border: 1px solid #D2D2D2;
+            padding: 5px 5px;
+            display: block;
+            min-width: 40px;
+            text-align: center;
+            background: #fff;
+            min-height: 28px;
+        }
+    }
+}
+
+.all-task-catagory{
+    white-space: nowrap;
+    overflow-x: scroll;
+    ul{
+        padding: 0;
+        margin: 0;
+        display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+        display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+        display: -ms-flexbox;      /* TWEENER - IE 10 */
+        display: -webkit-flex;     /* NEW - Chrome */
+        display: flex;  
+        li{
+            list-style: none;
+            margin: 0 2px;
+            a{
+                font-size: 12px;
+                background: #E5E5E5;
+                color: #000;
+                padding: 6px 5px;
+                display: block;
+                text-decoration: none;
+            }
+            &.active{
+                a{
+                    background: #A7CF46;
+                    color: #fff;
+                }
+            }
+        }
+    }
+}
+
+.selectedFullSection{
+    position: relative;
+    .customer-details{
+        border: 1px solid rgba(175, 229, 238, 0.75);
+        background-color: rgba(175, 229, 238, 0.30);
+    }
+    // &:after{
+    //     content: "";
+    //     background-image: url('src/assets/images/check_icon_blue.svg');
+    //     background-repeat: no-repeat;
+    //     width: 28px;
+    //     height: 28px;
+    //     position: absolute;
+    //     top: 15px;
+    //     right: 15px;
+    // }
+}
+
+.selected{
+    position: relative;
+    .customer-details{
+        border: 1px solid rgba(175, 229, 238, 0.75);
+        background-color: rgba(175, 229, 238, 0.30);
+    }
+    &:after{
+        content: "";
+        background-image: url('src/assets/images/check_icon_blue.svg');
+        background-repeat: no-repeat;
+        width: 28px;
+        height: 28px;
+        position: absolute;
+        top: 5px;
+        right: 5px;
+    }
+}
+
+
+
+label{
+    font-family: inherit;
+    line-height: normal;
+    font-size: 14px;
+    top: 15px;
+    //background-color: #A7CF46;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        margin-top: 2px;
+        margin-bottom: 8px;
+        font-weight: 500;
+        line-height: 1.2;
+        }
+
+        .addtoCrt{
+            background: transparent;
+            position: relative;
+            border-radius: 5px;
+            background-color:green
+        }
+
+        .star {
+            --min-height: 24px;
+            --transition: background-color 200ms linear;
+            --padding-start: 0px;
+            --inner-padding-end: 8px;
+            --border-color: var(--ion-color-step-150,#c8c7cc);
+            --highlight-height: 0;
+            font-size: 14px;
+            }

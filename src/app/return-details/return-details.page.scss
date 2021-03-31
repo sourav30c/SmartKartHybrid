@@ -1,0 +1,154 @@
+.company-logo{
+    width: 78px;
+    height: 78px;
+    border-radius: 50%;
+    border: 8px solid #1B98D5;
+    background: #979797;
+    overflow: hidden;
+}
+.company-details{
+    p{
+        font-size: 12px;
+        color: #A7A7A7;
+        line-height: 18px;
+        margin: 0;
+    }
+    h4{
+        font-size: 16px;
+        color: #000;
+        font-weight: 600;
+    }
+    h6{
+        color: #A7A7A7;
+        margin:2px 0;
+        font-size: 15px;
+        strong{
+            color: #000;
+            font-weight: 600;
+        }
+    }
+}
+
+ion-content{
+    ion-label{
+        font-size: 17px;
+        color: #A7CF46;
+        font-weight: 400;
+    }
+    ion-textarea{
+        border: 1px solid #CCCCCC;
+        padding: 5px;
+        height: 160px;
+        border-radius: 6px;
+    }
+}
+
+.customer-details{
+    border: 1px solid #D2D2D2;
+    margin: 5px 0;
+    width: 100%;
+    ul{
+        padding: 0;
+        margin: 0;
+        li{
+            display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+            display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+            display: -ms-flexbox;      /* TWEENER - IE 10 */
+            display: -webkit-flex;     /* NEW - Chrome */
+            display: flex;
+            list-style: none;
+            width: 100%;
+            padding: 5px;
+            .left{
+                font-size: 14px;
+                color: #979797;
+                width: 50%;
+            }
+            .right{
+                font-size: 14px;
+                color: #000000;
+                width: 50%;
+            }
+        }
+    }
+}
+
+.cartItem{
+    border-bottom: 5px solid rgba(0, 0, 0, 0.08);
+    padding-top: 7px;
+}
+.cName{
+    margin: 0 0 5px;
+    font-size: 18px;
+}
+.Pprice{ margin: 10px 0;}
+.crPrice{
+    font-size: 18px;
+    display: inline-block;
+    margin-right: 10px;
+}
+.oldPrice{
+    text-decoration: line-through;
+    color: rgba(0, 0, 0, 0.6);
+    display: inline-block;
+    margin-right: 15px;
+}
+.offPrice{color: green;}
+.unitP{
+    font-size: 14px;
+    float: right;
+    width: 50px;
+    padding: 4px;
+}
+.qty{
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.24);
+    margin-top: 9px;
+    border-radius: 5px;
+    max-width: 70px;
+    margin: 10px auto 3px;
+}
+.imgwrp{
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.35);
+    padding: 1px;
+}
+.tAmnt{    margin-top: 13px;}
+
+.rmvBtn.button-outline {
+    --border-width: 1px;
+    --border-color: rgba(0, 0, 0, 0.35);
+    height:30px;
+    width:120px;
+}
+
+.infoC{
+    text-align: right;
+    margin: 10px 0;
+}
+.PdActins{
+    text-align: center;
+    margin-top: 30px;
+}
+.PdActins ion-button{
+    width: 48%;
+    margin: 0 2px;
+}
+
+ion-content{
+    ion-label{
+        font-size: 17px;
+        //color: #A7CF46;
+        font-weight: 400;
+    }
+    ion-textarea{
+        border: 1px solid #CCCCCC;
+        padding: 5px;
+        height: 160px;
+        border-radius: 6px;
+    }
+}
+
+// .item-input {
+//     padding: 5px;
+//     border: solid .5px grey;
+//     border-radius: 6px;
+// }

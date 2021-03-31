@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button style="color: #FFCC23"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Order Tracking</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-col size="12">
+    <label>Product: {{orderProductDetails.product.name | slice:0:20}} </label>
+    <!-- <label>Carrrier Name: {{trackList.allData.carrierName}} </label> -->
+  </ion-col>
+  <ion-grid>
+    <ion-item *ngIf="!isTrackList">
+      No Order Tracking Has Been Generated
+    </ion-item>
+    <ion-row *ngIf="isTrackList">
+      <ion-col size="12" *ngFor="let trackListEvent of trackListEvent; let i = index">
+        <div class="customer-details">
+          <ul>
+            <li>
+              <div class="left">
+                Status
+              </div>
+              <div class="right">
+                {{trackListEvent.status}}
+              </div>
+            </li>
+            <li>
+              <div class="left">
+                Location
+              </div>
+              <div class="right">
+                {{trackListEvent.Location}}
+              </div>
+            </li>
+            <li>
+              <div class="left">
+                Remarks
+              </div>
+              <div class="right">
+                {{trackListEvent.Remarks}}
+              </div>
+            </li>
+            <li>
+              <div class="left">
+                Time
+              </div>
+              <div class="right">
+                {{trackListEvent.Time.toString().split('T')[0]}}
+              </div>
+            </li>
+          </ul>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+</ion-content>

@@ -1,0 +1,35 @@
+<ion-content padding>
+  <!-- <ion-grid class="bg"> -->
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <div class="loginPg">
+          <div class="loginBx">
+            <div class="logologin">
+              <ion-img src="/assets/images/logo.png"></ion-img>
+            </div>
+            <h1>Registration to continue</h1>
+            <form>
+              <div class="form-group">
+                <label for="name">Name :</label>
+                <input type="name" class="form-control" id="name" aria-describedby="usererror">
+              </div>
+              <div class="form-group">
+                <label for="email">Email :</label>
+                <input type="email" class="form-control" id="email">
+              </div>
+              <div class="frmaxon">
+                <div class="col text-right">
+                  <ion-button routerLink="/home" routerDirection="forward" color="primary" shape="round" expand="block">Registration</ion-button>
+                </div>
+              </div>
+            </form>
+            <h1 style="margin:70px 0 20px;">Existing Customer?</h1>
+            <ion-button routerLink="/login" color="primary" shape="round" expand="block" fill="outline">Login Now</ion-button>
+          </div>
+        </div>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

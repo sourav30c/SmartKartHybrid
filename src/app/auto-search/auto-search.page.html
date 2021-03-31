@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button style="color: #FFCC23"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Search Product</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-searchbar search-icon=“undefined”  [placeholder]="serachByPlaceholder" class="ion-no-padding" [(ngModel)]="searchText"
+    showCancelButton="always" cancelButtonText="Show All" (ionInput)="getItems($event)"
+    (ionCancel)="onCancel($event)" (search)="submitSearch($event)">
+  </ion-searchbar>
+
+    <ion-row *ngIf="isProductFound == true">
+        <ion-col size="12" *ngFor="let searchlist of searchlist; let i = index">
+            <ion-card style="margin: 0;">
+                <ion-item (click)="toList(searchlist)" >
+                  <ion-avatar slot="start">
+                    <img [src]="searchlist.photo">
+                  </ion-avatar>
+                  <ion-label>
+                    <h3>{{searchlist.name | slice:0:30}}...</h3>
+                  </ion-label>
+                </ion-item>
+            </ion-card>
+        </ion-col>
+    </ion-row>
+
+    <ion-card style="text-align:center;margin-top:50% " *ngIf="isProductFound == false">
+      <ion-card-content>
+          No Product List Found
+      </ion-card-content>
+    </ion-card>
+
+</ion-grid>
+</ion-content>

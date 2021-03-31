@@ -1,0 +1,108 @@
+.bg{
+    background-image: url('/assets/images/bg1.jpg');
+    height: auto;
+    background-size: cover;
+    filter: blur(0px);
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.loginBx{
+    margin: auto;
+    max-width: 374px;
+    padding: 25px;
+    background:rgba(255, 254, 254, 0.5);
+    border-radius: 10px;
+    text-align: center;
+}
+.loginBx .logologin{
+    max-width: 150px;
+    margin: auto;
+}
+.loginBx>h1 {
+    margin: 10px 0 10px;
+    font-size: 1.3rem;
+}
+
+.loginBx form {
+    text-align: left;
+}
+form label {
+    font-weight: 700;
+    font-size: .9rem;
+}
+.loginBx form input {
+    border-radius: 5px;
+    font-size: 1em;
+    padding: 8px 15px;
+    font-weight: 700;
+    width: 100%;
+    margin-bottom: 15px;
+    background: #fff0;
+    border: 1px solid rgba(0, 0, 0, .35);
+}
+.secondary-link{
+    font-weight: 700;
+    color: #fff;
+    opacity: .4;
+    display: inline-block;
+    margin-top:13px;
+    font-size:.9em;
+}
+.secondary-link:hover{
+    color: #fff;
+    opacity:1;
+}
+.loginBtn {
+    padding: 8px 20px;
+    width: 100%;
+    text-align: center;
+    border-radius: 30px;
+    font-size: 18px;
+    color: #fff;
+    background-color:#1f61d9;
+}
+.loginBx ion-item {
+    border-radius: 30px !important;
+    padding-left: 30px !important;
+    font-size: 0.9em;
+    margin-bottom: 10px;
+    border: 1px solid #ffffff;
+    border-bottom: 0px !important;
+    box-shadow: none !important;
+}
+.loginBx ion-textarea {
+   height: 200px;
+}
+.loginBx ion-item:first-child {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+  .loginBx ion-item:last-child {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+.loginBx ion-item.item {
+    background-color: rgba(255, 255, 255, 0.4);
+    margin-bottom: 1px;
+    .label {
+      width: 10%;
+      color: rgba(0, 0, 0, 0.6);
+      font-size: 1.2em;
+    }
+  }
+
+  .thankyou{
+    text-align: center;
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+    padding: 22px 30px;
+    border: 1px solid #155724;
+    border-radius: 10px;
+    h4{
+        margin: 0;
+        padding: 0;
+        font-size: 20px;
+    }
+}

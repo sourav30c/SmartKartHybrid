@@ -1,0 +1,79 @@
+.cartItem{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    padding-top: 15px;
+}
+.cName{
+    margin: 0 0 5px;
+    font-size: 18px;
+}
+.Pprice{ margin: 10px 0;}
+.crPrice{
+    font-size: 18px;
+    display: inline-block;
+    margin-right: 10px;
+}
+.oldPrice{
+    text-decoration: line-through;
+    color: rgba(0, 0, 0, 0.6);
+    display: inline-block;
+    margin-right: 15px;
+}
+.offPrice{color: green;}
+.unitP{
+    font-size: 14px;
+    float: right;
+    width: 50px;
+    padding: 4px;
+}
+.qty{
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.24);
+    margin-top: 9px;
+    border-radius: 5px;
+    max-width: 70px;
+    margin: 10px auto 3px;
+}
+.imgwrp{
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.35);
+    padding: 1px;
+}
+.tAmnt{    margin-top: 13px;}
+
+.rmvBtn.button-outline {
+    --border-width: 1px;
+    --border-color: rgba(0, 0, 0, 0.35);
+    height:30px;
+    width:80px;
+}
+
+.infoC{
+    text-align: right;
+    margin: 10px 0;
+}
+.PdActins{
+    text-align: center;
+    margin-top: 30px;
+}
+.PdActins ion-button{
+    width: 48%;
+    margin: 0 2px;
+}
+
+ion-content{
+    ion-label{
+        font-size: 17px;
+        //color: #A7CF46;
+        font-weight: 400;
+    }
+    ion-textarea{
+        border: 1px solid #CCCCCC;
+        padding: 5px;
+        height: 160px;
+        border-radius: 6px;
+    }
+}
+
+// .item-input {
+//     padding: 5px;
+//     border: solid .5px grey;
+//     border-radius: 6px;
+// }

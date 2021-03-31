@@ -1,0 +1,85 @@
+.stk{
+    font-size: 10px;
+    font-weight: bold;
+}
+.instk{
+    color: green;
+}
+.outstk{
+    color: red;
+}
+.stkPrc{
+    font-size: 11px;
+    font-weight: bold;
+    display: inline-block;
+}
+.nrmlwrp{
+    overflow: hidden;
+}
+.flt{
+    float: left;
+}
+.w-50{
+    width: 50%;
+}
+.py-10{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.lstBtnGrp *{
+    font-size: 16px;
+    position: relative;
+}
+.lstBtnGrp .icon{
+    font-size: 16px;
+    color: gainsboro;
+}
+
+.lstBtnGrp .button{
+    //width: 40%;
+    //margin: 0;
+    //right: -30px;
+    //box-shadow: none !important;
+    //background: transparent;
+    //border-radius: 0;
+    //border-top: 1px solid rgba(0, 0, 0, 0.10980392156862745);
+
+
+    position: absolute;
+    top: 5px;
+}
+
+.grey-bg {
+    background-color: #eeeeee;
+}
+.item-inner {
+    padding-right: 0 !important;
+    ion-label.label {
+        margin-top: 0;
+    }
+}
+// ion-card-content.card-content {
+//     padding: 8px;
+//     h2 {
+//         margin-bottom: 8px;
+//     }
+// }
+.price {
+    background: #000;
+    padding: 3px 7px;
+    border-radius: 8px;
+    color: #fefefe;
+    font-size: 1.4rem;
+    display: inline-block;
+    .old-price {
+        color: #848383;
+        text-decoration: line-through;
+        padding: 0 5px;
+        font-size: 1.2rem;
+        i.fa {
+            color: #848383;
+            font-size: 1.2rem;
+        }
+    }
+}
+
