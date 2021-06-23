@@ -30,6 +30,12 @@
     },
     "cordova-plugin-speechrecognition": {
       "PACKAGE_NAME": "com.app.KKCarts"
+    },
+    "ionic-plugin-deeplinks": {
+      "URL_SCHEME": "smartcart",
+      "DEEPLINK_SCHEME": "https",
+      "DEEPLINK_HOST": "www.smartkart.online",
+      "PACKAGE_NAME": "com.app.KKCarts"
     }
   },
   "dependent_plugins": {}

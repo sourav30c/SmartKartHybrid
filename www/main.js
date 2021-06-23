@@ -894,6 +894,7 @@ var map = {
 	"./details/details.module": [
 		"./src/app/details/details.module.ts",
 		"default~about-about-module~add-address-add-address-module~add-billing-address-add-billing-address-mo~1824aeab",
+		"default~details-details-module~product-category-product-category-module",
 		"common",
 		"details-details-module"
 	],
@@ -984,6 +985,7 @@ var map = {
 	"./product-category/product-category.module": [
 		"./src/app/product-category/product-category.module.ts",
 		"default~about-about-module~add-address-add-address-module~add-billing-address-add-billing-address-mo~1824aeab",
+		"default~details-details-module~product-category-product-category-module",
 		"common",
 		"product-category-product-category-module"
 	],
@@ -1317,6 +1319,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ionic_native_in_app_browser_ngx__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @ionic-native/in-app-browser/ngx */ "./node_modules/@ionic-native/in-app-browser/ngx/index.js");
 /* harmony import */ var _ionic_native_keyboard_ngx__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @ionic-native/keyboard/ngx */ "./node_modules/@ionic-native/keyboard/ngx/index.js");
 /* harmony import */ var _ionic_native_speech_recognition_ngx__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @ionic-native/speech-recognition/ngx */ "./node_modules/@ionic-native/speech-recognition/ngx/index.js");
+/* harmony import */ var _ionic_native_deeplinks_ngx__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @ionic-native/deeplinks/ngx */ "./node_modules/@ionic-native/deeplinks/ngx/index.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1335,6 +1338,9 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
+
+//import { DeeplinksOriginal } from '@ionic-native/deeplinks';
+//import { Deeplinks } from '@ionic-native/deeplinks';
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -1357,6 +1363,8 @@ var AppModule = /** @class */ (function () {
                 _ionic_native_in_app_browser_ngx__WEBPACK_IMPORTED_MODULE_9__["InAppBrowser"],
                 _ionic_native_keyboard_ngx__WEBPACK_IMPORTED_MODULE_10__["Keyboard"],
                 _ionic_native_speech_recognition_ngx__WEBPACK_IMPORTED_MODULE_11__["SpeechRecognition"],
+                _ionic_native_deeplinks_ngx__WEBPACK_IMPORTED_MODULE_12__["Deeplinks"],
+                //DeeplinksOriginal,
                 { provide: _angular_router__WEBPACK_IMPORTED_MODULE_2__["RouteReuseStrategy"], useClass: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonicRouteStrategy"] }
             ],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_7__["AppComponent"]]

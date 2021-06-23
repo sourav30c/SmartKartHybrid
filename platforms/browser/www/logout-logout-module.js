@@ -115,6 +115,7 @@ var LogoutPage = /** @class */ (function () {
         this.util.cartCount = 0;
         console.log("Logiiiiin cheeeck", (localStorage.getItem('loginDataKKart')));
         //this.events.publish('user:logout_home')
+        this.events.publish('user:login');
         this.navCtrl.navigateRoot('/home');
     };
     LogoutPage = __decorate([

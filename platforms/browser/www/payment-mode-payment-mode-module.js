@@ -62,7 +62,7 @@ var PaymentModePageModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-header>\n  <ion-toolbar>\n    <ion-buttons slot=\"start\">\n      <ion-back-button></ion-back-button>\n    </ion-buttons>\n    <ion-title>Payment Mode</ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content padding>\n  <ion-list lines=\"full\" class=\"ion-no-margin ion-no-padding\" style=\"margin-top: 1px;\">\n    <ion-col size=\"12\">\n      <ion-card class=\"ion-no-margin\">\n        <ion-list lines=\"full\" class=\"ion-no-margin ion-no-padding\">\n          <ion-item>\n            <ion-label position=\"stacked\">Sub Total -\n            </ion-label>\n            <ion-label>Rs. {{totalCost}}</ion-label>\n          </ion-item>\n          <ion-item>\n            <ion-input  placeholder=\"Enter Coupon Code\" [(ngModel)]=\"couponCode\" ></ion-input>\n            <ion-button (click)=\"redeemCoupon()\">Redeem</ion-button>\n          </ion-item>\n          <ion-item>\n            <ion-label position=\"stacked\">Total - {{totalCost}}\n            </ion-label>\n            <ion-label></ion-label>\n          </ion-item>\n        </ion-list>\n      </ion-card>\n    </ion-col>\n\n    <ion-radio-group value=\"{{isCode}}\" (ionChange)=\"paymentMode($event)\">\n      <ion-list-header>\n        <ion-label>Payment Type</ion-label>\n      </ion-list-header>\n      <ion-item *ngIf=\"iscodLimit\">\n        <ion-label>Cash On Delivery</ion-label>\n        <ion-radio slot=\"start\" value=\"1\" style=\"border: 1px grey;\"></ion-radio>\n      </ion-item>\n\n      <ion-item>\n        <ion-label>Pay Online</ion-label>\n        <ion-radio slot=\"start\" value=\"2\" style=\"border: 1px grey;\"></ion-radio>\n      </ion-item>\n    </ion-radio-group>\n  </ion-list>\n\n  <ion-card>\n    <ion-button shape=\"round\" fill=\"outline\" expand=\"full\" (click)=\"toPayment()\">\n      Proceed\n    </ion-button>\n  </ion-card>\n\n</ion-content>"
+module.exports = "<ion-header>\n  <ion-toolbar>\n    <ion-buttons slot=\"start\">\n      <ion-back-button style=\"color: #FFCC23\"></ion-back-button>\n    </ion-buttons>\n    <ion-title>Payment Mode</ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content padding>\n  <ion-list lines=\"full\" class=\"ion-no-margin ion-no-padding\" style=\"margin-top: 1px;\">\n    <!-- <ion-col size=\"12\">\n      <ion-card class=\"ion-no-margin\">\n        <ion-list lines=\"full\" class=\"ion-no-margin ion-no-padding\">\n          <ion-item>\n            <ion-label position=\"stacked\">Sub Total -\n            </ion-label>\n            <ion-label>Rs. {{totalCost}}</ion-label>\n          </ion-item>\n          <ion-item>\n            <ion-label position=\"stacked\">Total - {{totalCost}}\n            </ion-label>\n            <ion-label></ion-label>\n          </ion-item>\n        </ion-list>\n      </ion-card>\n    </ion-col> -->\n\n    <ion-col size=\"12\">\n      <ion-card class=\"ion-no-margin\">\n        <ion-list lines=\"full\" class=\"ion-no-margin ion-no-padding\">\n          <ion-item>\n            <ion-label position=\"stacked\">Sub Total -\n            </ion-label>\n            <ion-label style=\"text-align: right;margin-right: 15px;\">₹ {{subtotalCost}}</ion-label>\n          </ion-item>\n          <ion-item *ngIf=\"isCode == '1'\">\n            <ion-label position=\"stacked\">COD Charge -\n            </ion-label>\n            <ion-label style=\"text-align: right;margin-right: 15px;\">₹ {{delivryCharge}}</ion-label>\n          </ion-item>\n          <ion-item>\n            <ion-label position=\"stacked\">Total - \n            </ion-label>\n            <ion-label style=\"text-align: right;margin-right: 15px;\">₹ {{totalCost}}</ion-label>\n          </ion-item>\n        </ion-list>\n      </ion-card>\n    </ion-col>\n\n\n\n\n    <ion-radio-group value=\"{{isCode}}\" (ionChange)=\"paymentMode($event)\">\n      <ion-list-header>\n        <ion-label>Payment Type</ion-label>\n      </ion-list-header>\n      <ion-item *ngIf=\"iscodLimit\">\n        <ion-label>Cash On Delivery</ion-label>\n        <ion-radio slot=\"start\" value=\"1\" style=\"border: 1px grey;\"></ion-radio>\n      </ion-item>\n\n      <ion-item>\n        <ion-label>Pay Online</ion-label>\n        <ion-radio slot=\"start\" value=\"2\" style=\"border: 1px grey;\"></ion-radio>\n      </ion-item>\n    </ion-radio-group>\n  </ion-list>\n\n  <!-- <ion-card> -->\n    <ion-button shape=\"round\" fill=\"outline\" expand=\"full\" (click)=\"toPayment()\">\n      Proceed\n    </ion-button>\n  <!-- </ion-card> -->\n\n</ion-content>"
 
 /***/ }),
 
@@ -73,7 +73,7 @@ module.exports = "<ion-header>\n  <ion-toolbar>\n    <ion-buttons slot=\"start\"
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".cartItem {\n  border-bottom: 1px solid rgba(0, 0, 0, 0.08);\n  padding-top: 15px; }\n\n.cName {\n  margin: 0 0 5px;\n  font-size: 18px; }\n\n.Pprice {\n  margin: 10px 0; }\n\n.crPrice {\n  font-size: 18px;\n  display: inline-block;\n  margin-right: 10px; }\n\n.oldPrice {\n  text-decoration: line-through;\n  color: rgba(0, 0, 0, 0.6);\n  display: inline-block;\n  margin-right: 15px; }\n\n.offPrice {\n  color: green; }\n\n.unitP {\n  font-size: 14px;\n  float: right;\n  width: 50px;\n  padding: 4px; }\n\n.qty {\n  box-shadow: 0 0 3px rgba(0, 0, 0, 0.24);\n  margin-top: 9px;\n  border-radius: 5px;\n  max-width: 70px;\n  margin: 10px auto 3px; }\n\n.imgwrp {\n  box-shadow: 0 0 3px rgba(0, 0, 0, 0.35);\n  padding: 1px; }\n\n.tAmnt {\n  margin-top: 13px; }\n\n.rmvBtn.button-outline {\n  --border-width: 1px;\n  --border-color: rgba(0, 0, 0, 0.35);\n  height: 30px;\n  width: 80px; }\n\n.infoC {\n  text-align: right;\n  margin: 10px 0; }\n\n.PdActins {\n  text-align: center;\n  margin-top: 30px; }\n\n.PdActins ion-button {\n  width: 48%;\n  margin: 0 2px; }\n\nion-content ion-label {\n  font-size: 17px;\n  font-weight: 400; }\n\nion-content ion-textarea {\n  border: 1px solid #CCCCCC;\n  padding: 5px;\n  height: 160px;\n  border-radius: 6px; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy92YXAvRGVza3RvcC9Jb25pY19Qcm9qZWN0L2FyY2hpdmUgaW9uaWMgZlByb2plY3Qvb2xkIGFyY2hpdmUgMi9BcmNoaXZlIDIvc3JjL2FwcC9wYXltZW50LW1vZGUvcGF5bWVudC1tb2RlLnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLDRDQUE0QztFQUM1QyxpQkFBaUIsRUFBQTs7QUFFckI7RUFDSSxlQUFlO0VBQ2YsZUFBZSxFQUFBOztBQUVuQjtFQUFTLGNBQWMsRUFBQTs7QUFDdkI7RUFDSSxlQUFlO0VBQ2YscUJBQXFCO0VBQ3JCLGtCQUFrQixFQUFBOztBQUV0QjtFQUNJLDZCQUE2QjtFQUM3Qix5QkFBeUI7RUFDekIscUJBQXFCO0VBQ3JCLGtCQUFrQixFQUFBOztBQUV0QjtFQUFVLFlBQVksRUFBQTs7QUFDdEI7RUFDSSxlQUFlO0VBQ2YsWUFBWTtFQUNaLFdBQVc7RUFDWCxZQUFZLEVBQUE7O0FBRWhCO0VBQ0ksdUNBQXVDO0VBQ3ZDLGVBQWU7RUFDZixrQkFBa0I7RUFDbEIsZUFBZTtFQUNmLHFCQUFxQixFQUFBOztBQUV6QjtFQUNJLHVDQUF1QztFQUN2QyxZQUFZLEVBQUE7O0FBRWhCO0VBQVcsZ0JBQWdCLEVBQUE7O0FBRTNCO0VBQ0ksbUJBQWU7RUFDZixtQ0FBZTtFQUNmLFlBQVc7RUFDWCxXQUFVLEVBQUE7O0FBR2Q7RUFDSSxpQkFBaUI7RUFDakIsY0FBYyxFQUFBOztBQUVsQjtFQUNJLGtCQUFrQjtFQUNsQixnQkFBZ0IsRUFBQTs7QUFFcEI7RUFDSSxVQUFVO0VBQ1YsYUFBYSxFQUFBOztBQUdqQjtFQUVRLGVBQWU7RUFFZixnQkFBZ0IsRUFBQTs7QUFKeEI7RUFPUSx5QkFBeUI7RUFDekIsWUFBWTtFQUNaLGFBQWE7RUFDYixrQkFBa0IsRUFBQSIsImZpbGUiOiJzcmMvYXBwL3BheW1lbnQtbW9kZS9wYXltZW50LW1vZGUucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmNhcnRJdGVte1xuICAgIGJvcmRlci1ib3R0b206IDFweCBzb2xpZCByZ2JhKDAsIDAsIDAsIDAuMDgpO1xuICAgIHBhZGRpbmctdG9wOiAxNXB4O1xufVxuLmNOYW1le1xuICAgIG1hcmdpbjogMCAwIDVweDtcbiAgICBmb250LXNpemU6IDE4cHg7XG59XG4uUHByaWNleyBtYXJnaW46IDEwcHggMDt9XG4uY3JQcmljZXtcbiAgICBmb250LXNpemU6IDE4cHg7XG4gICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICAgIG1hcmdpbi1yaWdodDogMTBweDtcbn1cbi5vbGRQcmljZXtcbiAgICB0ZXh0LWRlY29yYXRpb246IGxpbmUtdGhyb3VnaDtcbiAgICBjb2xvcjogcmdiYSgwLCAwLCAwLCAwLjYpO1xuICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbiAgICBtYXJnaW4tcmlnaHQ6IDE1cHg7XG59XG4ub2ZmUHJpY2V7Y29sb3I6IGdyZWVuO31cbi51bml0UHtcbiAgICBmb250LXNpemU6IDE0cHg7XG4gICAgZmxvYXQ6IHJpZ2h0O1xuICAgIHdpZHRoOiA1MHB4O1xuICAgIHBhZGRpbmc6IDRweDtcbn1cbi5xdHl7XG4gICAgYm94LXNoYWRvdzogMCAwIDNweCByZ2JhKDAsIDAsIDAsIDAuMjQpO1xuICAgIG1hcmdpbi10b3A6IDlweDtcbiAgICBib3JkZXItcmFkaXVzOiA1cHg7XG4gICAgbWF4LXdpZHRoOiA3MHB4O1xuICAgIG1hcmdpbjogMTBweCBhdXRvIDNweDtcbn1cbi5pbWd3cnB7XG4gICAgYm94LXNoYWRvdzogMCAwIDNweCByZ2JhKDAsIDAsIDAsIDAuMzUpO1xuICAgIHBhZGRpbmc6IDFweDtcbn1cbi50QW1udHsgICAgbWFyZ2luLXRvcDogMTNweDt9XG5cbi5ybXZCdG4uYnV0dG9uLW91dGxpbmUge1xuICAgIC0tYm9yZGVyLXdpZHRoOiAxcHg7XG4gICAgLS1ib3JkZXItY29sb3I6IHJnYmEoMCwgMCwgMCwgMC4zNSk7XG4gICAgaGVpZ2h0OjMwcHg7XG4gICAgd2lkdGg6ODBweDtcbn1cblxuLmluZm9De1xuICAgIHRleHQtYWxpZ246IHJpZ2h0O1xuICAgIG1hcmdpbjogMTBweCAwO1xufVxuLlBkQWN0aW5ze1xuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgICBtYXJnaW4tdG9wOiAzMHB4O1xufVxuLlBkQWN0aW5zIGlvbi1idXR0b257XG4gICAgd2lkdGg6IDQ4JTtcbiAgICBtYXJnaW46IDAgMnB4O1xufVxuXG5pb24tY29udGVudHtcbiAgICBpb24tbGFiZWx7XG4gICAgICAgIGZvbnQtc2l6ZTogMTdweDtcbiAgICAgICAgLy9jb2xvcjogI0E3Q0Y0NjtcbiAgICAgICAgZm9udC13ZWlnaHQ6IDQwMDtcbiAgICB9XG4gICAgaW9uLXRleHRhcmVhe1xuICAgICAgICBib3JkZXI6IDFweCBzb2xpZCAjQ0NDQ0NDO1xuICAgICAgICBwYWRkaW5nOiA1cHg7XG4gICAgICAgIGhlaWdodDogMTYwcHg7XG4gICAgICAgIGJvcmRlci1yYWRpdXM6IDZweDtcbiAgICB9XG59XG5cbi8vIC5pdGVtLWlucHV0IHtcbi8vICAgICBwYWRkaW5nOiA1cHg7XG4vLyAgICAgYm9yZGVyOiBzb2xpZCAuNXB4IGdyZXk7XG4vLyAgICAgYm9yZGVyLXJhZGl1czogNnB4O1xuLy8gfSJdfQ== */"
+module.exports = ".cartItem {\n  border-bottom: 1px solid rgba(0, 0, 0, 0.08);\n  padding-top: 15px; }\n\n.cName {\n  margin: 0 0 5px;\n  font-size: 18px; }\n\n.Pprice {\n  margin: 10px 0; }\n\n.crPrice {\n  font-size: 18px;\n  display: inline-block;\n  margin-right: 10px; }\n\n.oldPrice {\n  text-decoration: line-through;\n  color: rgba(0, 0, 0, 0.6);\n  display: inline-block;\n  margin-right: 15px; }\n\n.offPrice {\n  color: green; }\n\n.unitP {\n  font-size: 14px;\n  float: right;\n  width: 50px;\n  padding: 4px; }\n\n.qty {\n  box-shadow: 0 0 3px rgba(0, 0, 0, 0.24);\n  margin-top: 9px;\n  border-radius: 5px;\n  max-width: 70px;\n  margin: 10px auto 3px; }\n\n.imgwrp {\n  box-shadow: 0 0 3px rgba(0, 0, 0, 0.35);\n  padding: 1px; }\n\n.tAmnt {\n  margin-top: 13px; }\n\n.rmvBtn.button-outline {\n  --border-width: 1px;\n  --border-color: rgba(0, 0, 0, 0.35);\n  height: 30px;\n  width: 80px; }\n\n.infoC {\n  text-align: right;\n  margin: 10px 0; }\n\n.PdActins {\n  text-align: center;\n  margin-top: 30px; }\n\n.PdActins ion-button {\n  width: 48%;\n  margin: 0 2px; }\n\nion-content ion-label {\n  font-size: 17px;\n  font-weight: 400; }\n\nion-content ion-textarea {\n  border: 1px solid #CCCCCC;\n  padding: 5px;\n  height: 160px;\n  border-radius: 6px; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy92YXAvRGVza3RvcC9pb25pYyBQcm9qZWN0L3BwL1NtYXJ0LUNhcnQgMi9zcmMvYXBwL3BheW1lbnQtbW9kZS9wYXltZW50LW1vZGUucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksNENBQTRDO0VBQzVDLGlCQUFpQixFQUFBOztBQUVyQjtFQUNJLGVBQWU7RUFDZixlQUFlLEVBQUE7O0FBRW5CO0VBQVMsY0FBYyxFQUFBOztBQUN2QjtFQUNJLGVBQWU7RUFDZixxQkFBcUI7RUFDckIsa0JBQWtCLEVBQUE7O0FBRXRCO0VBQ0ksNkJBQTZCO0VBQzdCLHlCQUF5QjtFQUN6QixxQkFBcUI7RUFDckIsa0JBQWtCLEVBQUE7O0FBRXRCO0VBQVUsWUFBWSxFQUFBOztBQUN0QjtFQUNJLGVBQWU7RUFDZixZQUFZO0VBQ1osV0FBVztFQUNYLFlBQVksRUFBQTs7QUFFaEI7RUFDSSx1Q0FBdUM7RUFDdkMsZUFBZTtFQUNmLGtCQUFrQjtFQUNsQixlQUFlO0VBQ2YscUJBQXFCLEVBQUE7O0FBRXpCO0VBQ0ksdUNBQXVDO0VBQ3ZDLFlBQVksRUFBQTs7QUFFaEI7RUFBVyxnQkFBZ0IsRUFBQTs7QUFFM0I7RUFDSSxtQkFBZTtFQUNmLG1DQUFlO0VBQ2YsWUFBVztFQUNYLFdBQVUsRUFBQTs7QUFHZDtFQUNJLGlCQUFpQjtFQUNqQixjQUFjLEVBQUE7O0FBRWxCO0VBQ0ksa0JBQWtCO0VBQ2xCLGdCQUFnQixFQUFBOztBQUVwQjtFQUNJLFVBQVU7RUFDVixhQUFhLEVBQUE7O0FBR2pCO0VBRVEsZUFBZTtFQUVmLGdCQUFnQixFQUFBOztBQUp4QjtFQU9RLHlCQUF5QjtFQUN6QixZQUFZO0VBQ1osYUFBYTtFQUNiLGtCQUFrQixFQUFBIiwiZmlsZSI6InNyYy9hcHAvcGF5bWVudC1tb2RlL3BheW1lbnQtbW9kZS5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuY2FydEl0ZW17XG4gICAgYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkIHJnYmEoMCwgMCwgMCwgMC4wOCk7XG4gICAgcGFkZGluZy10b3A6IDE1cHg7XG59XG4uY05hbWV7XG4gICAgbWFyZ2luOiAwIDAgNXB4O1xuICAgIGZvbnQtc2l6ZTogMThweDtcbn1cbi5QcHJpY2V7IG1hcmdpbjogMTBweCAwO31cbi5jclByaWNle1xuICAgIGZvbnQtc2l6ZTogMThweDtcbiAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG4gICAgbWFyZ2luLXJpZ2h0OiAxMHB4O1xufVxuLm9sZFByaWNle1xuICAgIHRleHQtZGVjb3JhdGlvbjogbGluZS10aHJvdWdoO1xuICAgIGNvbG9yOiByZ2JhKDAsIDAsIDAsIDAuNik7XG4gICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICAgIG1hcmdpbi1yaWdodDogMTVweDtcbn1cbi5vZmZQcmljZXtjb2xvcjogZ3JlZW47fVxuLnVuaXRQe1xuICAgIGZvbnQtc2l6ZTogMTRweDtcbiAgICBmbG9hdDogcmlnaHQ7XG4gICAgd2lkdGg6IDUwcHg7XG4gICAgcGFkZGluZzogNHB4O1xufVxuLnF0eXtcbiAgICBib3gtc2hhZG93OiAwIDAgM3B4IHJnYmEoMCwgMCwgMCwgMC4yNCk7XG4gICAgbWFyZ2luLXRvcDogOXB4O1xuICAgIGJvcmRlci1yYWRpdXM6IDVweDtcbiAgICBtYXgtd2lkdGg6IDcwcHg7XG4gICAgbWFyZ2luOiAxMHB4IGF1dG8gM3B4O1xufVxuLmltZ3dycHtcbiAgICBib3gtc2hhZG93OiAwIDAgM3B4IHJnYmEoMCwgMCwgMCwgMC4zNSk7XG4gICAgcGFkZGluZzogMXB4O1xufVxuLnRBbW50eyAgICBtYXJnaW4tdG9wOiAxM3B4O31cblxuLnJtdkJ0bi5idXR0b24tb3V0bGluZSB7XG4gICAgLS1ib3JkZXItd2lkdGg6IDFweDtcbiAgICAtLWJvcmRlci1jb2xvcjogcmdiYSgwLCAwLCAwLCAwLjM1KTtcbiAgICBoZWlnaHQ6MzBweDtcbiAgICB3aWR0aDo4MHB4O1xufVxuXG4uaW5mb0N7XG4gICAgdGV4dC1hbGlnbjogcmlnaHQ7XG4gICAgbWFyZ2luOiAxMHB4IDA7XG59XG4uUGRBY3RpbnN7XG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xuICAgIG1hcmdpbi10b3A6IDMwcHg7XG59XG4uUGRBY3RpbnMgaW9uLWJ1dHRvbntcbiAgICB3aWR0aDogNDglO1xuICAgIG1hcmdpbjogMCAycHg7XG59XG5cbmlvbi1jb250ZW50e1xuICAgIGlvbi1sYWJlbHtcbiAgICAgICAgZm9udC1zaXplOiAxN3B4O1xuICAgICAgICAvL2NvbG9yOiAjQTdDRjQ2O1xuICAgICAgICBmb250LXdlaWdodDogNDAwO1xuICAgIH1cbiAgICBpb24tdGV4dGFyZWF7XG4gICAgICAgIGJvcmRlcjogMXB4IHNvbGlkICNDQ0NDQ0M7XG4gICAgICAgIHBhZGRpbmc6IDVweDtcbiAgICAgICAgaGVpZ2h0OiAxNjBweDtcbiAgICAgICAgYm9yZGVyLXJhZGl1czogNnB4O1xuICAgIH1cbn1cblxuLy8gLml0ZW0taW5wdXQge1xuLy8gICAgIHBhZGRpbmc6IDVweDtcbi8vICAgICBib3JkZXI6IHNvbGlkIC41cHggZ3JleTtcbi8vICAgICBib3JkZXItcmFkaXVzOiA2cHg7XG4vLyB9Il19 */"
 
 /***/ }),
 
@@ -118,13 +118,21 @@ var PaymentModePage = /** @class */ (function () {
         this.menuCtrl = menuCtrl;
         this.iab = iab;
         this.totalCost = "";
+        this.subtotalCost = "";
         this.cartInfoId = "";
         this.isCode = "2";
         this.codLimitValue = 0;
+        this.delivryCharge = 0;
+        this.datares = 0;
+        this.countYes = 0;
         this.totalCost = this.route.getCurrentNavigation().extras.state.parms;
+        this.subtotalCost = this.route.getCurrentNavigation().extras.state.parms;
         this.cartInfoId = this.route.getCurrentNavigation().extras.state.parms1;
         this.codLimitValue = Number(localStorage.getItem('codLimit'));
-        console.log("cod limit comparison", this.totalCost, this.util.codLimit, this.codLimitValue);
+        this.delivryCharge = Number(localStorage.getItem('delivryCharge'));
+        console.log("cod limit comparison", this.totalCost, this.codLimitValue);
+        localStorage.setItem('this.datares', "0");
+        localStorage.setItem('countYes', String(this.countYes));
         if (Number(this.totalCost) <= Number(this.codLimitValue)) {
             this.iscodLimit = true;
         }
@@ -144,9 +152,11 @@ var PaymentModePage = /** @class */ (function () {
     PaymentModePage.prototype.paymentMode = function (ev) {
         if (ev.detail.value == "1") {
             this.isCode = "1";
+            this.totalCost = String(Number(this.subtotalCost) + this.delivryCharge);
         }
         else {
             this.isCode = "2";
+            this.totalCost = this.subtotalCost;
         }
         console.log("radio ev", ev.detail.value, this.isCode);
     };
@@ -155,20 +165,43 @@ var PaymentModePage = /** @class */ (function () {
             this.postDataCod();
         }
         else if (this.isCode == "2") {
-            this.showFILE('https://www.kkcarts.com/api/carts/ccavenuePayment/' + this.userToken);
+            this.postDataOnline();
+            //this.showFILE('https://www.smartkart.online/api/carts/ccavenuePayment/'+this.userToken)
         }
     };
     PaymentModePage.prototype.showFILE = function (url) {
         var _this = this;
-        //alert(url)
         var browser = this.iab.create(url, '_blank', 'location=yes,toolbar=yes');
-        console.log("browser", browser);
+        //console.log("browser1", browser, url)
+        // console.log('localstorage check:: ', localStorage.getItem('this.datares'));
+        //console.log('localstorage check 22:: ', localStorage.getItem('countYes'), this.countYes);
+        // browser.on('loadstop').subscribe(event => {
+        //   console.log("loadstop -->", event);
+        //   this.getStateSecondWindow(browser)
+        //   //var id = setInterval(() => this.getStateSecondWindow(browser), 5000);
+        //   //console.log("id = setInterval", id)
+        //   //clearInterval(id)
+        // }, err => {
+        //   console.log("InAppbrowser loadstop Event Error: " + err);
+        // });
         browser.on('loadstop').subscribe(function (event) {
-            console.log("loadstop -->", event);
-            setInterval(function () { return _this.getStateSecondWindow(browser); }, 5000);
-            //setInterval(this.getStateSecondWindow(browser), 5000);
-        }, function (err) {
-            console.log("InAppbrowser loadstop Event Error: " + err);
+            // this.countYes = Number(this.countYes) + 1
+            // console.log('countYes', this.countYes);
+            // localStorage.setItem('countYes', String(this.countYes));
+            browser.executeScript({ code: "localStorage.getItem('isCloseSelf')" }).then(function (cookie) {
+                //console.log("cookie", cookie, localStorage.getItem('countYes'));
+                // if (Number(localStorage.getItem('countYes')) != 1 && cookie == "yes") {
+                //   localStorage.setItem('this.datares', "1");
+                // } else {
+                //   localStorage.setItem('this.datares', "0");
+                // }
+                if (cookie == "yes") {
+                    localStorage.setItem('this.datares', "1");
+                }
+                else {
+                    localStorage.setItem('this.datares', "0");
+                }
+            });
         });
         browser.on('loaderror').subscribe(function (event) {
             console.log("loaderror -->", event);
@@ -177,33 +210,167 @@ var PaymentModePage = /** @class */ (function () {
         });
         browser.on('exit').subscribe(function (event) {
             console.log("exit -->", event);
+            console.log('browser closed on exit localstorage:: ', localStorage.getItem('this.datares'));
+            _this.datares = Number(localStorage.getItem('this.datares'));
+            console.log('browser closed on exit:: ', _this.datares);
+            if (_this.datares == 1) {
+                _this.navCtrl.navigateForward('/thank-you');
+            }
+            else {
+                //this.navCtrl.pop()
+            }
         }, function (err) {
             console.log("InAppbrowser exit Event Error: " + err);
         });
         browser.show();
     };
-    PaymentModePage.prototype.getStateSecondWindow = function (browser) {
-        console.log('call now');
-        browser.executeScript({
-            code: "localStorage.getItem('isCloseSelf')" //"localStorage.getItem('isCloseSelf')"
-        }, function (data) {
-            console.log("data test function");
-            console.log(data);
-            browser.close();
-            if (data == 'yes') {
-                this.navCtrl.navigateForward('/thank-you');
-            }
-            else if (data == 'failed') {
-                this.util.showToast('Payment is unsuccessful. Please Try again.');
-                this.navCtrl.navigateForward('/cart');
+    // getStateSecondWindow(browser) {
+    //   console.log('call now');
+    //   this.countYes = this.countYes + 1
+    //   console.log('countYes', this.countYes);
+    //   // browser.executeScript({ code: "localStorage.getItem('isCloseSelf')" }).then((data) => {
+    //   //   //this.eventCheck()
+    //   //   console.log("data ==" + data)
+    //   //   if (data == 'yes') {
+    //   //     console.log("transaction yes1", this.datares)
+    //   //     this.datares = 1
+    //   //     //console.log("transaction yes2", this.datares)
+    //   //     //browser.close()
+    //   //     // browser.on('exit').subscribe(() => {
+    //   //     //   console.log('browser closed');
+    //   //     //   this.navCtrl.navigateForward('/thank-you')
+    //   //     // }, err => {
+    //   //     //   console.error(err);
+    //   //     // });
+    //   //     // console.log('browser closed not executing');
+    //   //     browser.close();
+    //   //     this.navCtrl.navigateForward('/thank-you')
+    //   //     //browser.close();
+    //   //   } else if (data == 'failed') {
+    //   //     this.util.showToast('Payment is unsuccessful. Please Try again.');
+    //   //     console.log('transaction failed')
+    //   //    // this.datares = 0
+    //   //     browser.close();
+    //   //     this.navCtrl.navigateForward('/cart')
+    //   //   } else {
+    //   //     // this.util.showToast('Payment is unsuccessful. Please Try again.');
+    //   //     // console.log('transaction unsuccessful')
+    //   //     // this.datares = 0
+    //   //     // browser.close();
+    //   //     // this.navCtrl.navigateForward('/cart')
+    //   //   }
+    //   // })
+    //   browser.executeScript(
+    //     {
+    //       code: "localStorage.getItem('isCloseSelf')" //"localStorage.getItem('isCloseSelf')"
+    //     },
+    //     function (data) {
+    //       console.log("data ==", data, this.countYes)
+    //       if (this.countYes != 1 && data == 'yes') {
+    //         localStorage.setItem('this.datares', "1");
+    //       } else {
+    //         localStorage.setItem('this.datares', "0");
+    //       }
+    //       console.log("localStorage", localStorage.getItem('this.datares'))
+    //       // this.eventCheck()
+    //       //this.events.publish('showMenuccv');
+    //       //console.log("data.length ==", data.length)
+    //       //alert(1)
+    //       // console.log("transaction yes1")
+    //       // this.datares = 1
+    //       // //alert(2)
+    //       // console.log("transaction yes2")
+    //       //alert(this.datares)
+    //       //console.log("transaction yes2" + this.datares)
+    //       // console.log(this.datares)
+    //       if (data == 'yes') {
+    //         //console.log("transaction yes1", this.datares)
+    //         //localStorage.setItem('this.datares', "1");
+    //         //this.datares = 1
+    //         //console.log("transaction yes2", this.datares)
+    //         //browser.close()
+    //         // browser.on('exit').subscribe(() => {
+    //         //   console.log('browser closed');
+    //         //   this.navCtrl.navigateForward('/thank-you')
+    //         // }, err => {
+    //         //   console.error(err);
+    //         // });
+    //         // console.log('browser closed not executing');
+    //         //browser.close();
+    //         //this.navCtrl.navigateForward('/thank-you')
+    //         //browser.close();
+    //       } else if (data == 'failed') {
+    //         this.util.showToast('Payment is unsuccessful. Please Try again.');
+    //         console.log('transaction failed')
+    //         this.datares = 0
+    //         browser.close();
+    //         this.navCtrl.navigateForward('/cart')
+    //       } else {
+    //         this.util.showToast('Payment is unsuccessful. Please Try again.');
+    //         console.log('transaction unsuccessful')
+    //         this.datares = 0
+    //         browser.close();
+    //         this.navCtrl.navigateForward('/cart')
+    //       }
+    //     }
+    //   );
+    // }
+    PaymentModePage.prototype.eventCheck = function () {
+        console.log('user loginnnnnn');
+        this.datares = 1;
+        console.log('user loginnnnnn this.datares', this.datares);
+    };
+    PaymentModePage.prototype.postDataOnline = function () {
+        var _this = this;
+        var myData = JSON.stringify({
+            info_id: String(this.cartInfoId),
+            delivary_mode: "1"
+        });
+        console.log("Your myData: ", myData); //carts/freePayment.json
+        this.util.presentLoading();
+        this.util.getTypeDetailsWithAuth('carts/setDelivaryMode.json', myData).subscribe(function (result) {
+            _this.util.dismissLoader();
+            console.log("Your data: ", result);
+            _this.data = result;
+            if (_this.data.success) {
+                _this.showFILE('https://www.smartkart.online/api/carts/ccavenuePayment/' + _this.userToken);
+                //this.showFILE('https://www.google.co.in')
             }
             else {
-                this.util.showToast('Payment is unsuccessful. Please Try again.');
-                this.navCtrl.navigateForward('/cart');
+                _this.util.showToast(_this.data.message);
             }
+        }, function (error) {
+            _this.util.dismissLoader();
+            _this.util.showToast('Server error occured. Try again.');
         });
     };
     PaymentModePage.prototype.postDataCod = function () {
+        var _this = this;
+        var myData = JSON.stringify({
+            info_id: String(this.cartInfoId),
+            delivary_mode: "2"
+        });
+        console.log("Your myData: ", myData); //carts/freePayment.json
+        this.util.presentLoading();
+        this.util.getTypeDetailsWithAuth('carts/setDelivaryMode.json', myData).subscribe(function (result) {
+            _this.util.dismissLoader();
+            console.log("Your data: ", result);
+            _this.data = result;
+            if (_this.data.success) {
+                //this.util.showAlert("Thank You", this.data.data)
+                //this.showFILE('https://www.smartkart.online/api/carts/ccavenuePayment/'+this.userToken)
+                _this.postDataCodPost();
+                //this.navCtrl.navigateForward('/thank-you')
+            }
+            else {
+                _this.util.showToast(_this.data.message);
+            }
+        }, function (error) {
+            _this.util.dismissLoader();
+            _this.util.showToast('Server error occured. Try again.');
+        });
+    };
+    PaymentModePage.prototype.postDataCodPost = function () {
         var _this = this;
         var myData = JSON.stringify({});
         console.log("Your myData: ", myData);

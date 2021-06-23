@@ -1,11 +1,17 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { UtilityService } from '../api/utility.service';
-import { Events, AlertController, NavController, ModalController, MenuController, AngularDelegate } from '@ionic/angular';
+import { Events, AlertController, NavController, ModalController, MenuController, AngularDelegate , Platform} from '@ionic/angular';
 import { Router, ActivatedRoute, NavigationExtras } from '@angular/router';
 import { BackButtonEmitter } from '@ionic/angular/dist/providers/platform';
 import { JsonPipe } from '@angular/common';
 import { IonContent } from '@ionic/angular';
 import { timeStamp } from 'console';
+//import { Deeplinks } from '@ionic-native/deeplinks/ngx'
+//import { Deeplinks } from '@ionic-native/deeplinks'
+import { AboutPage } from '../about/about.page';
+import { ProductCategoryPage } from '../product-category/product-category.page';
+//import { DeeplinksOriginal } from '@ionic-native/deeplinks';
+import { Deeplinks } from '@ionic-native/deeplinks/ngx';
 @Component({
   selector: 'app-details',
   templateUrl: './details.page.html',
@@ -64,8 +70,12 @@ export class DetailsPage implements OnInit {
   productTag = ""
   @ViewChild(IonContent) content: IonContent;
   constructor(private util: UtilityService, public alertController: AlertController,
-    public events: Events, private navCtrl: NavController, private route: Router, public modalController: ModalController,
-    private activeroute: ActivatedRoute, private menuCtrl: MenuController,) {
+    public events: Events, private navCtrl: NavController, private route: Router, 
+    public modalController: ModalController,
+    private activeroute: ActivatedRoute, private menuCtrl: MenuController,
+    //private deeplinks: DeeplinksOriginal,
+    protected deeplinks: Deeplinks
+    ) {
     this.pushedFrom = this.activeroute.snapshot.paramMap.get("pushedFrom")
     if (this.pushedFrom == 'loginCart') {
       this.productDetails = JSON.parse(localStorage.getItem('singleProduct'))
@@ -163,6 +173,26 @@ export class DetailsPage implements OnInit {
   // onClick(){
   //  this.isClick=!this.isClick;
   // }
+
+sharePageDeeplink(){
+
+  console.log("Deeplink Route test", this.deeplinks.route)
+  this.deeplinks.route({
+    '/about-us': AboutPage,
+    '/universal-links-test': AboutPage,
+    '/products/:productId': ProductCategoryPage
+  }).subscribe(match => {
+    // match.$route - the route we matched, which is the matched entry from the arguments to route()
+    // match.$args - the args passed in the link
+    // match.$link - the full link data
+    console.log('Successfully matched route', match);
+  }, nomatch => {
+    // nomatch.$link - the full link data
+    console.error('Got a deeplink that didn\'t match', nomatch);
+  });
+
+  console.log("Deeplink Route test end end", this.deeplinks.route)
+}
 
 
   changeProduct(i) {
@@ -328,13 +358,14 @@ export class DetailsPage implements OnInit {
   }
 
   checkPincode() {
-    if (localStorage.getItem('loginDataKKart') == null) {
-      this.util.showToast('Please login first to check your pincode availability');
-    } else if (this.pincode == '') {
-      this.util.showToast('Please enter your pincode');
-    } else {
-      this.checkPincodePostData()
-    }
+    // if (localStorage.getItem('loginDataKKart') == null) {
+    //   this.util.showToast('Please login first to check your pincode availability');
+    // } else if (this.pincode == '') {
+    //   this.util.showToast('Please enter your pincode');
+    // } else {
+    //   this.checkPincodePostData()
+    // }
+    this.sharePageDeeplink()
   }
 
   checkPincodePostData() {

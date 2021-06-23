@@ -64,5 +64,18 @@
     },
     "is_top_level": true,
     "variables": {}
+  },
+  "ionic-plugin-deeplinks": {
+    "source": {
+      "type": "registry",
+      "id": "ionic-plugin-deeplinks@^1.0.22"
+    },
+    "is_top_level": true,
+    "variables": {
+      "URL_SCHEME": "smartcart",
+      "DEEPLINK_SCHEME": "https",
+      "DEEPLINK_HOST": "www.smartkart.online",
+      "ANDROID_PATH_PREFIX": "/"
+    }
   }
 }

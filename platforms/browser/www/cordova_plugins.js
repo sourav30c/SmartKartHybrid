@@ -71,6 +71,21 @@ module.exports = [
         "merges": [
             "window.plugins.speechRecognition"
         ]
+    },
+    {
+        "file": "plugins/ionic-plugin-deeplinks/www/deeplink.js",
+        "id": "ionic-plugin-deeplinks.deeplink",
+        "pluginId": "ionic-plugin-deeplinks",
+        "clobbers": [
+            "IonicDeeplink"
+        ],
+        "runs": true
+    },
+    {
+        "file": "plugins/ionic-plugin-deeplinks/src/browser/DeeplinkProxy.js",
+        "id": "ionic-plugin-deeplinks.IonicDeeplinkProxy",
+        "pluginId": "ionic-plugin-deeplinks",
+        "runs": true
     }
 ];
 module.exports.metadata = 
@@ -83,7 +98,8 @@ module.exports.metadata =
     "cordova-plugin-statusbar": "2.4.2",
     "cordova-plugin-whitelist": "1.3.4",
     "cordova-plugin-inappbrowser": "4.0.0",
-    "cordova-plugin-speechrecognition": "1.1.2"
+    "cordova-plugin-speechrecognition": "1.1.2",
+    "ionic-plugin-deeplinks": "1.0.22"
 }
 // BOTTOM OF METADATA
 });

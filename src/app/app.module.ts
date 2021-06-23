@@ -12,6 +12,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 import { Keyboard } from '@ionic-native/keyboard/ngx';
 import { SpeechRecognition } from '@ionic-native/speech-recognition/ngx';
+import { Deeplinks } from '@ionic-native/deeplinks/ngx';
+//import { DeeplinksOriginal } from '@ionic-native/deeplinks';
+//import { Deeplinks } from '@ionic-native/deeplinks';
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -33,6 +36,8 @@ import { SpeechRecognition } from '@ionic-native/speech-recognition/ngx';
     InAppBrowser,
     Keyboard,
     SpeechRecognition,
+    Deeplinks,
+    //DeeplinksOriginal,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

@@ -91,6 +91,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _api_utility_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../api/utility.service */ "./src/app/api/utility.service.ts");
 /* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/fesm5.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _about_about_page__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../about/about.page */ "./src/app/about/about.page.ts");
+/* harmony import */ var _product_category_product_category_page__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../product-category/product-category.page */ "./src/app/product-category/product-category.page.ts");
+/* harmony import */ var _ionic_native_deeplinks_ngx__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic-native/deeplinks/ngx */ "./node_modules/@ionic-native/deeplinks/ngx/index.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -105,8 +108,16 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+//import { Deeplinks } from '@ionic-native/deeplinks/ngx'
+//import { Deeplinks } from '@ionic-native/deeplinks'
+
+
+//import { DeeplinksOriginal } from '@ionic-native/deeplinks';
+
 var DetailsPage = /** @class */ (function () {
-    function DetailsPage(util, alertController, events, navCtrl, route, modalController, activeroute, menuCtrl) {
+    function DetailsPage(util, alertController, events, navCtrl, route, modalController, activeroute, menuCtrl, 
+    //private deeplinks: DeeplinksOriginal,
+    deeplinks) {
         this.util = util;
         this.alertController = alertController;
         this.events = events;
@@ -115,6 +126,7 @@ var DetailsPage = /** @class */ (function () {
         this.modalController = modalController;
         this.activeroute = activeroute;
         this.menuCtrl = menuCtrl;
+        this.deeplinks = deeplinks;
         this.ratingCount = 0;
         this.reviewCount = 0;
         this.productImage = [];
@@ -238,6 +250,23 @@ var DetailsPage = /** @class */ (function () {
     // onClick(){
     //  this.isClick=!this.isClick;
     // }
+    DetailsPage.prototype.sharePageDeeplink = function () {
+        console.log("Deeplink Route test", this.deeplinks.route);
+        this.deeplinks.route({
+            '/about-us': _about_about_page__WEBPACK_IMPORTED_MODULE_4__["AboutPage"],
+            '/universal-links-test': _about_about_page__WEBPACK_IMPORTED_MODULE_4__["AboutPage"],
+            '/products/:productId': _product_category_product_category_page__WEBPACK_IMPORTED_MODULE_5__["ProductCategoryPage"]
+        }).subscribe(function (match) {
+            // match.$route - the route we matched, which is the matched entry from the arguments to route()
+            // match.$args - the args passed in the link
+            // match.$link - the full link data
+            console.log('Successfully matched route', match);
+        }, function (nomatch) {
+            // nomatch.$link - the full link data
+            console.error('Got a deeplink that didn\'t match', nomatch);
+        });
+        console.log("Deeplink Route test end end", this.deeplinks.route);
+    };
     DetailsPage.prototype.changeProduct = function (i) {
         //console.log(i)
         this.buttonClicked1 = i;
@@ -374,15 +403,14 @@ var DetailsPage = /** @class */ (function () {
         this.productImage[i]["isLoad"] = true;
     };
     DetailsPage.prototype.checkPincode = function () {
-        if (localStorage.getItem('loginDataKKart') == null) {
-            this.util.showToast('Please login first to check your pincode availability');
-        }
-        else if (this.pincode == '') {
-            this.util.showToast('Please enter your pincode');
-        }
-        else {
-            this.checkPincodePostData();
-        }
+        // if (localStorage.getItem('loginDataKKart') == null) {
+        //   this.util.showToast('Please login first to check your pincode availability');
+        // } else if (this.pincode == '') {
+        //   this.util.showToast('Please enter your pincode');
+        // } else {
+        //   this.checkPincodePostData()
+        // }
+        this.sharePageDeeplink();
     };
     DetailsPage.prototype.checkPincodePostData = function () {
         var _this = this;
@@ -707,8 +735,10 @@ var DetailsPage = /** @class */ (function () {
             styles: [__webpack_require__(/*! ./details.page.scss */ "./src/app/details/details.page.scss")]
         }),
         __metadata("design:paramtypes", [_api_utility_service__WEBPACK_IMPORTED_MODULE_1__["UtilityService"], _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["AlertController"],
-            _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["Events"], _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["NavController"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"], _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["ModalController"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"], _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["MenuController"]])
+            _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["Events"], _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["NavController"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"],
+            _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["ModalController"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"], _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["MenuController"],
+            _ionic_native_deeplinks_ngx__WEBPACK_IMPORTED_MODULE_6__["Deeplinks"]])
     ], DetailsPage);
     return DetailsPage;
 }());

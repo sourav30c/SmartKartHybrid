@@ -62,7 +62,7 @@ var AddYourReviewPageModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-header>\n  <ion-toolbar>\n    <ion-buttons slot=\"start\">\n      <ion-back-button color=\"dark\"></ion-back-button>\n    </ion-buttons>\n    <ion-title>Write A Review</ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content padding>\n  <ion-grid>\n    <ion-row>\n      <ion-col class=\"ion-text-center\" size=\"12\">\n        <ion-label> How do you rate this product? </ion-label>\n      </ion-col>\n\n      <ion-col class=\"ion-text-center\" size=\"12\">\n        <ion-item>\n\n          <ion-icon *ngIf=\"!isStar1\" name=\"star-outline\" (click)=\"Star1Pressed()\"></ion-icon>\n          <ion-icon *ngIf=\"isStar1\" name=\"star\" (click)=\"Star1Pressed()\" color=\"success\"></ion-icon>\n\n          <ion-icon *ngIf=\"!isStar2\" name=\"star-outline\" (click)=\"Star2Pressed()\"></ion-icon>\n          <ion-icon *ngIf=\"isStar2\" name=\"star\" (click)=\"Star2Pressed()\" color=\"success\"></ion-icon>\n\n          <ion-icon *ngIf=\"!isStar3\" name=\"star-outline\" (click)=\"Star3Pressed()\"></ion-icon>\n          <ion-icon *ngIf=\"isStar3\" name=\"star\" (click)=\"Star3Pressed()\" color=\"success\"></ion-icon>\n\n          <ion-icon *ngIf=\"!isStar4\" name=\"star-outline\" (click)=\"Star4Pressed()\"></ion-icon>\n          <ion-icon *ngIf=\"isStar4\" name=\"star\" (click)=\"Star4Pressed()\" color=\"success\"></ion-icon>\n\n          <ion-icon *ngIf=\"!isStar5\" name=\"star-outline\" (click)=\"Star5Pressed()\"></ion-icon>\n          <ion-icon *ngIf=\"isStar5\" name=\"star\" (click)=\"Star5Pressed()\" color=\"success\"></ion-icon>\n\n        </ion-item>\n      </ion-col>\n\n    </ion-row>\n  </ion-grid>\n  <ion-grid>\n    <ion-row>\n      <ion-col class=\"ion-text-center\" size=\"12\">\n        <ion-label>Write Your Own Review</ion-label>\n      </ion-col>\n      <ion-col size=\"12\">\n        <ion-textarea [(ngModel)]=\"comments\"></ion-textarea>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n  <ion-button shape=\"round\" expand=\"full\" color=\"primary\" (click)=\"submitReview()\">Submit</ion-button>\n</ion-content>"
+module.exports = "<ion-header>\n  <ion-toolbar>\n    <ion-buttons slot=\"start\">\n      <ion-back-button style=\"color: #FFCC23\"></ion-back-button>\n    </ion-buttons>\n    <ion-title>Write A Review</ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content padding>\n  <ion-grid>\n    <ion-row>\n      <ion-col class=\"ion-text-center\" size=\"12\">\n        <ion-label> How do you rate this product? </ion-label>\n      </ion-col>\n\n      <ion-col class=\"ion-text-center\" size=\"12\">\n        <ion-item>\n\n          <ion-icon *ngIf=\"!isStar1\" name=\"star-outline\" (click)=\"Star1Pressed()\"></ion-icon>\n          <ion-icon *ngIf=\"isStar1\" name=\"star\" (click)=\"Star1Pressed()\" color=\"success\"></ion-icon>\n\n          <ion-icon *ngIf=\"!isStar2\" name=\"star-outline\" (click)=\"Star2Pressed()\"></ion-icon>\n          <ion-icon *ngIf=\"isStar2\" name=\"star\" (click)=\"Star2Pressed()\" color=\"success\"></ion-icon>\n\n          <ion-icon *ngIf=\"!isStar3\" name=\"star-outline\" (click)=\"Star3Pressed()\"></ion-icon>\n          <ion-icon *ngIf=\"isStar3\" name=\"star\" (click)=\"Star3Pressed()\" color=\"success\"></ion-icon>\n\n          <ion-icon *ngIf=\"!isStar4\" name=\"star-outline\" (click)=\"Star4Pressed()\"></ion-icon>\n          <ion-icon *ngIf=\"isStar4\" name=\"star\" (click)=\"Star4Pressed()\" color=\"success\"></ion-icon>\n\n          <ion-icon *ngIf=\"!isStar5\" name=\"star-outline\" (click)=\"Star5Pressed()\"></ion-icon>\n          <ion-icon *ngIf=\"isStar5\" name=\"star\" (click)=\"Star5Pressed()\" color=\"success\"></ion-icon>\n\n        </ion-item>\n      </ion-col>\n\n    </ion-row>\n  </ion-grid>\n  <ion-grid>\n    <ion-row>\n      <ion-col class=\"ion-text-center\" size=\"12\">\n        <ion-label>Write Your Own Review</ion-label>\n      </ion-col>\n      <ion-col size=\"12\">\n        <ion-textarea [(ngModel)]=\"comments\"></ion-textarea>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n  <ion-button shape=\"round\" expand=\"full\" color=\"primary\" (click)=\"submitReview()\">Submit</ion-button>\n</ion-content>"
 
 /***/ }),
 
@@ -73,7 +73,7 @@ module.exports = "<ion-header>\n  <ion-toolbar>\n    <ion-buttons slot=\"start\"
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "ion-content ion-label {\n  font-size: 17px;\n  color: #008ED8;\n  font-weight: 400; }\n\nion-content ion-textarea {\n  border: 1px solid #CCCCCC;\n  padding: 5px;\n  height: 160px;\n  border-radius: 6px; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy92YXAvRGVza3RvcC9Jb25pY19Qcm9qZWN0L2FyY2hpdmUgaW9uaWMgZlByb2plY3Qvb2xkIGFyY2hpdmUgMi9BcmNoaXZlIDIvc3JjL2FwcC9hZGQteW91ci1yZXZpZXcvYWRkLXlvdXItcmV2aWV3LnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUVRLGVBQWU7RUFDZixjQUFhO0VBQ2IsZ0JBQWdCLEVBQUE7O0FBSnhCO0VBT1EseUJBQXlCO0VBQ3pCLFlBQVk7RUFDWixhQUFhO0VBQ2Isa0JBQWtCLEVBQUEiLCJmaWxlIjoic3JjL2FwcC9hZGQteW91ci1yZXZpZXcvYWRkLXlvdXItcmV2aWV3LnBhZ2Uuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbImlvbi1jb250ZW50e1xuICAgIGlvbi1sYWJlbHtcbiAgICAgICAgZm9udC1zaXplOiAxN3B4O1xuICAgICAgICBjb2xvcjojMDA4RUQ4O1xuICAgICAgICBmb250LXdlaWdodDogNDAwO1xuICAgIH1cbiAgICBpb24tdGV4dGFyZWF7XG4gICAgICAgIGJvcmRlcjogMXB4IHNvbGlkICNDQ0NDQ0M7XG4gICAgICAgIHBhZGRpbmc6IDVweDtcbiAgICAgICAgaGVpZ2h0OiAxNjBweDtcbiAgICAgICAgYm9yZGVyLXJhZGl1czogNnB4O1xuICAgIH1cbn0iXX0= */"
+module.exports = "ion-content ion-label {\n  font-size: 17px;\n  color: #008ED8;\n  font-weight: 400; }\n\nion-content ion-textarea {\n  border: 1px solid #CCCCCC;\n  padding: 5px;\n  height: 160px;\n  border-radius: 6px; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy92YXAvRGVza3RvcC9pb25pYyBQcm9qZWN0L3BwL1NtYXJ0LUNhcnQgMi9zcmMvYXBwL2FkZC15b3VyLXJldmlldy9hZGQteW91ci1yZXZpZXcucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBRVEsZUFBZTtFQUNmLGNBQWE7RUFDYixnQkFBZ0IsRUFBQTs7QUFKeEI7RUFPUSx5QkFBeUI7RUFDekIsWUFBWTtFQUNaLGFBQWE7RUFDYixrQkFBa0IsRUFBQSIsImZpbGUiOiJzcmMvYXBwL2FkZC15b3VyLXJldmlldy9hZGQteW91ci1yZXZpZXcucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiaW9uLWNvbnRlbnR7XG4gICAgaW9uLWxhYmVse1xuICAgICAgICBmb250LXNpemU6IDE3cHg7XG4gICAgICAgIGNvbG9yOiMwMDhFRDg7XG4gICAgICAgIGZvbnQtd2VpZ2h0OiA0MDA7XG4gICAgfVxuICAgIGlvbi10ZXh0YXJlYXtcbiAgICAgICAgYm9yZGVyOiAxcHggc29saWQgI0NDQ0NDQztcbiAgICAgICAgcGFkZGluZzogNXB4O1xuICAgICAgICBoZWlnaHQ6IDE2MHB4O1xuICAgICAgICBib3JkZXItcmFkaXVzOiA2cHg7XG4gICAgfVxufSJdfQ== */"
 
 /***/ }),
 
@@ -152,10 +152,10 @@ var AddYourReviewPage = /** @class */ (function () {
             this.isStar1 = true;
             this.rating = "1";
         }
-        console.log("1 Star", this.isStar1, this.isStar2, this.isStar3, this.isStar4, this.isStar5);
+        //console.log("1 Star",this.isStar1, this.isStar2,this.isStar3, this.isStar4, this.isStar5)
     };
     AddYourReviewPage.prototype.Star2Pressed = function () {
-        console.log("2");
+        //console.log("2")
         this.isStar1 = true;
         this.isStar3 = false;
         this.isStar4 = false;
@@ -168,10 +168,10 @@ var AddYourReviewPage = /** @class */ (function () {
             this.isStar2 = true;
             this.rating = "2";
         }
-        console.log("2 Star", this.isStar1, this.isStar2, this.isStar3, this.isStar4, this.isStar5);
+        //console.log("2 Star",this.isStar1, this.isStar2,this.isStar3, this.isStar4, this.isStar5)
     };
     AddYourReviewPage.prototype.Star3Pressed = function () {
-        console.log("3");
+        //console.log("3")
         this.isStar1 = true;
         this.isStar2 = true;
         this.isStar4 = false;
@@ -184,10 +184,10 @@ var AddYourReviewPage = /** @class */ (function () {
             this.isStar3 = true;
             this.rating = "3";
         }
-        console.log("3 Star", this.isStar1, this.isStar2, this.isStar3, this.isStar4, this.isStar5);
+        //console.log("3 Star",this.isStar1, this.isStar2,this.isStar3, this.isStar4, this.isStar5)
     };
     AddYourReviewPage.prototype.Star4Pressed = function () {
-        console.log("4");
+        //console.log("4")
         this.isStar1 = true;
         this.isStar2 = true;
         this.isStar3 = true;
@@ -200,7 +200,7 @@ var AddYourReviewPage = /** @class */ (function () {
             this.isStar4 = true;
             this.rating = "4";
         }
-        console.log("4 Star", this.isStar1, this.isStar2, this.isStar3, this.isStar4, this.isStar5);
+        //console.log("4 Star",this.isStar1, this.isStar2,this.isStar3, this.isStar4, this.isStar5)
     };
     AddYourReviewPage.prototype.Star5Pressed = function () {
         this.isStar1 = true;
@@ -215,7 +215,7 @@ var AddYourReviewPage = /** @class */ (function () {
             this.isStar5 = true;
             this.rating = "5";
         }
-        console.log("5 Star", this.isStar1, this.isStar2, this.isStar3, this.isStar4, this.isStar5);
+        //console.log("5 Star",this.isStar1, this.isStar2,this.isStar3, this.isStar4, this.isStar5)
     };
     AddYourReviewPage.prototype.submitReview = function () {
         if (this.pushedFrom == "myreviewlist") {
@@ -233,10 +233,10 @@ var AddYourReviewPage = /** @class */ (function () {
             slug: this.slugPush //this.reviewListPush[0].slug
         });
         this.util.presentLoading();
-        console.log("Your reviews: ", myData);
+        //console.log("Your reviews: ", myData );
         this.util.getTypeDetailsWithAuth('products/addreview.json', myData).subscribe(function (result) {
             _this.util.dismissLoader();
-            console.log("Your data: ", result);
+            //console.log("Your data: ", result);
             _this.data = result;
             if (_this.data.success) {
                 _this.util.showToast(_this.data.data.Review_status);
@@ -268,10 +268,10 @@ var AddYourReviewPage = /** @class */ (function () {
             id: this.reviewId
         });
         this.util.presentLoading();
-        console.log("Your reviews: ", myData);
+        //console.log("Your reviews: ", myData );
         this.util.getTypeDetailsWithAuth('users/editreview.json', myData).subscribe(function (result) {
             _this.util.dismissLoader();
-            console.log("Your data: ", result);
+            //console.log("Your data: ", result);
             _this.data = result;
             if (_this.data.success) {
                 _this.util.showToast(_this.data.data.Review_status);

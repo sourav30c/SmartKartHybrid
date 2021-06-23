@@ -1,9 +1,9 @@
 {
   "background_color": "#FFF",
   "display": "standalone",
-  "name": "KKCarts",
-  "short_name": "KKCarts",
-  "version": "com.app.KKCarts",
+  "name": "Smartkart",
+  "short_name": "Smartkart",
+  "version": "com.app.SmartCarts",
   "description": "Online Shopping India - Mobile, Computers, Home Appliances, Lifestyle, Books and More",
   "author": "KKCarts Team",
   "icons": [],

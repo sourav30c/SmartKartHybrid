@@ -112,13 +112,13 @@ var ProductSubCategoryPage = /** @class */ (function () {
         this.navCtrl = navCtrl;
         this.route = route;
         this.subCategory = this.route.getCurrentNavigation().extras.state.parms;
-        console.log(this.subCategory);
+        //console.log(this.subCategory)
     }
     ProductSubCategoryPage.prototype.ngOnInit = function () {
     };
     ProductSubCategoryPage.prototype.loadImageProduct = function (i, singleCategoryData) {
         singleCategoryData["isLoad"] = true;
-        console.log('productlist:: ', singleCategoryData);
+        //console.log('productlist:: ', singleCategoryData)
     };
     ProductSubCategoryPage = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({

@@ -62,7 +62,7 @@ var CartPageModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-header>\n  <ion-toolbar>\n    <ion-buttons slot=\"start\">\n      <ion-menu-button></ion-menu-button>\n    </ion-buttons>\n    <ion-title>\n      My Cart\n    </ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n  <ion-grid *ngIf=\"isCartList===true\">\n    <ion-row class=\"cartItem\" *ngFor=\"let cartList of cartList; let i = index\">\n      <ion-col size=\"8\">\n        <h2 class=\"cName\" (click)=\"details(cartList)\">{{cartList.Products.name | slice:0:20}}</h2>\n        <div class=\"Pprice\" (click)=\"details(cartList)\">\n          <span class=\"crPrice\">Rs. {{cartList.CartItems.item_net_amount}}\n            <!-- <ion-select value=\"kg\" class=\"unitP\">\n              <ion-select-option value=\"kg\">KG</ion-select-option>\n              <ion-select-option value=\"grm\">Gm</ion-select-option>\n            </ion-select> -->\n          </span>\n          <span class=\"oldPrice\">Rs. {{cartList.UserProducts.actual_price}}</span>\n          <!-- <span class=\"offPrice\">35% off</span> -->\n        </div>\n        <div>\n          <ion-button class=\"rmvBtn\" color=\"medium\" fill=\"outline\" expand=\"block\" (click)=\"presentAlertConfirm(cartList)\">\n            Remove</ion-button>\n        </div>\n      </ion-col>\n      <ion-col size=\"4\">\n        <div class=\"imgwrp\">\n          <ion-img [src]=\"cartList.Products.photo\"></ion-img>\n        </div>\n        <div class=\"Qntty\">\n          <ion-select value=\"{{cartList.CartItems.quantity}}\" class=\"qty\" (ionChange)=\"updateCart($event,cartList)\">\n            <ion-select-option value=\"1\">1</ion-select-option>\n            <ion-select-option value=\"2\">2</ion-select-option>\n            <ion-select-option value=\"3\">3</ion-select-option>\n            <ion-select-option value=\"4\">4</ion-select-option>\n            <ion-select-option value=\"5\">5</ion-select-option>\n            <ion-select-option value=\"6\">6</ion-select-option>\n            <ion-select-option value=\"7\">7</ion-select-option>\n          </ion-select>\n        </div>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n\n  <ion-col size=\"12\" *ngIf=\"isCartList===true\">\n    <ion-card class=\"ion-no-margin\">\n      <ion-list lines=\"full\" class=\"ion-no-margin ion-no-padding\">\n        <ion-item>\n        </ion-item>\n        <ion-item>\n          <ion-input  placeholder=\"Enter Coupon Code\" [(ngModel)]=\"couponCode\" ></ion-input>\n          <ion-button (click)=\"redeemCoupon()\">Redeem</ion-button>\n        </ion-item>\n        <ion-item>\n          <ion-label position=\"stacked\">Sub Total -</ion-label>\n          <ion-label>Rs. {{totalCost}}</ion-label>\n        </ion-item>\n        <ion-item *ngIf=\"isCouponApplied\">\n          <ion-label position=\"stacked\" style=\"color: forestgreen;\">Discount - </ion-label>\n          <ion-label> Rs. {{discountAmount}}</ion-label>\n          <ion-icon name=\"trash\" color=\"danger\" (click)=\"deleteCoupon()\"></ion-icon>\n        </ion-item>\n        <ion-item>\n          <ion-label position=\"stacked\">Total -</ion-label>\n          <ion-label>Rs. {{totalCost}}</ion-label>\n        </ion-item>\n      </ion-list>\n    </ion-card>\n  </ion-col>\n\n\n\n\n  <ion-card *ngIf=\"isCartList===true\">\n    <ion-button shape=\"round\" fill=\"outline\" expand=\"full\" (click)=\"toBuy()\">\n      Proceed To Buy\n    </ion-button>\n  </ion-card>\n\n  <ion-card style=\"text-align:center;margin-top:50% \" *ngIf=\"isCartList===false\">\n    <ion-card-content>\n      Your Cart Is Empty\n      <button style=\"margin-top:10px\" ion-button color=\"dark\" icon-start full (click)=\"continueShopping()\">\n        Continue Shopping\n      </button>\n    </ion-card-content>\n  </ion-card>\n</ion-content>\n<!-- \n<ion-footer>\n  <ion-toolbar text-center color=\"dark\">\n      <ion-buttons>\n          <ion-button (click)=\"tabBarHome()\">\n              <div class=\"fotricn\">\n                  <ion-icon name=\"home\"></ion-icon>\n                  <ion-label>Home</ion-label>\n              </div>\n          </ion-button>\n          <ion-button (click)=\"tabBarList()\">\n              <div class=\"fotricn\">\n                  <ion-icon name=\"basket\"></ion-icon>\n                  <ion-label>Shop</ion-label>\n              </div>\n          </ion-button>\n          <ion-button (click)=\"tabBarPolicy()\">\n              <div class=\"fotricn\">\n                  <ion-icon name=\"open\"></ion-icon>\n                  <ion-label>Policy</ion-label>\n              </div>\n          </ion-button>\n          <ion-button (click)=\"tabBarContacts()\">\n              <div class=\"fotricnlst\">\n                  <ion-icon name=\"contacts\"></ion-icon>\n                  <ion-label>Contact</ion-label>\n              </div>\n          </ion-button>\n      </ion-buttons>\n  </ion-toolbar>\n</ion-footer> -->"
+module.exports = "<ion-header>\n  <ion-toolbar>\n    <ion-buttons slot=\"start\">\n      <ion-menu-button style=\"color: #FFCC23\"></ion-menu-button>\n    </ion-buttons>\n    <ion-title>\n      My Cart\n    </ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n  <ion-grid *ngIf=\"isCartList===true\">\n\n    <ion-col size=\"12\" *ngIf=\"isCartList===true\" style=\"top: -10px;\">\n      <div>\n        <ion-label position=\"stacked\">Delivery Charge: <span style=\"color: #0000A0;\"> ₹ {{deliveryPrice}}\n        </span></ion-label>\n      </div>\n      <div>\n        <ion-label position=\"stacked\">Subtotal ( {{totalCart}} Items ) : <span style=\"color: #0000A0;\"> ₹ {{totalCost}}\n        </span></ion-label>\n      </div>\n      \n      <ion-button shape=\"round\" expand=\"full\" *ngIf=\"isCartList===true\" (click)=\"toBuy()\">\n        Proceed To Buy\n      </ion-button>\n    </ion-col>\n\n    <!-- <ion-card *ngIf=\"isCartList===true\"> -->\n\n    <!-- </ion-card> -->\n\n\n    <ion-row class=\"cartItem\" *ngFor=\"let cartList of cartList; let i = index\">\n      <ion-col size=\"4\">\n        <div class=\"imgwrp\">\n          <ion-img [src]=\"cartList.Products.photo\"></ion-img>\n        </div>\n      </ion-col>\n      <ion-col size=\"8\">\n        <h2 class=\"cName\" (click)=\"details(cartList)\">{{cartList.Products.name | slice:0:20}}</h2>\n        <div class=\"Pprice\" (click)=\"details(cartList)\">\n          <span class=\"crPrice\">₹ {{cartList.CartItems.item_net_amount}}\n          </span>\n          <span class=\"oldPrice\">₹ {{cartList.UserProducts.actual_price}}</span>\n        </div>\n      </ion-col>\n\n      <!-- <ion-col size=\"8\"> -->\n      <!-- <div class=\"number-field\"> -->\n\n      <!-- <ion-col size=\"4\">\n        <ion-icon class=\"remove\" name=\"remove\" (click)=\"decrement(i,cartList)\"\n          style=\"background-color: red;height: 19px;margin-top: 6px;width: 19px;\">\n        </ion-icon>\n        <input type=\"number\" style=\"width: 30%; text-align: center; height: 20px;margin-top: 6px;\"\n          [(ngModel)]=\"arrQuantity[i]\">\n        <ion-icon class=\"add\" style=\"background-color: green;height: 19px;margin-top: 6px;width: 19px;\" name=\"add\"\n          (click)=\"inrement(i,cartList)\">\n        </ion-icon>\n      </ion-col> -->\n\n      <ion-col size=\"4\">\n        <ion-icon class=\"remove\" name=\"remove\" (click)=\"decrement(i,cartList)\"\n          style=\"background-color: red;height: 16px;width: 16px;color: white;\">\n        </ion-icon>\n        <input type=\"number\" style=\"width: 30%; text-align: center; height: 21px\"\n          [(ngModel)]=\"arrQuantity[i]\">\n        <ion-icon class=\"add\" style=\"background-color: green;height: 16px;width: 16px;color: white;\" name=\"add\"\n          (click)=\"inrement(i,cartList)\">\n        </ion-icon>\n      </ion-col>\n\n      <!-- <ion-col size=\"4\">\n        <button ion-button icon-only clear (click)=\"decrement(i,cartList)\">\n          <ion-icon name=\"remove-circle\" color=\"danger\" style=\"height: 14px;font-size: 14px;\"></ion-icon>\n        </button>\n\n        <input type=\"number\" style=\"width: 30%; text-align: center; height: 18px;margin-top: 6px;\"\n          [(ngModel)]=\"arrQuantity[i]\">\n        <button ion-button icon-only clear (click)=\"inrement(i,cartList)\">\n          <ion-icon name=\"add-circle\" color=\"success\" style=\"height: 14px;font-size: 14px;border-radius: 5px;\">\n          </ion-icon>\n        </button>\n      </ion-col> -->\n\n      <!-- </div> -->\n      <!-- </ion-col> -->\n\n      <ion-col size=\"4\">\n        <div>\n          <ion-button class=\"rmvBtn\" color=\"medium\" fill=\"outline\" expand=\"block\"\n            (click)=\"presentAlertConfirm(cartList)\" style=\"margin-top: -8px;\">\n            Delete</ion-button>\n        </div>\n      </ion-col>\n\n    </ion-row>\n  </ion-grid>\n\n  <ion-card style=\"text-align:center;margin-top:50% \" *ngIf=\"isCartList===false\">\n    <ion-card-content>\n      Your Cart Is Empty\n      <button style=\"margin-top:10px\" ion-button color=\"dark\" icon-start full (click)=\"continueShopping()\">\n        Continue Shopping\n      </button>\n    </ion-card-content>\n  </ion-card>\n</ion-content>\n<!-- \n<ion-footer>\n  <ion-toolbar text-center color=\"dark\">\n      <ion-buttons>\n          <ion-button (click)=\"tabBarHome()\">\n              <div class=\"fotricn\">\n                  <ion-icon name=\"home\"></ion-icon>\n                  <ion-label>Home</ion-label>\n              </div>\n          </ion-button>\n          <ion-button (click)=\"tabBarList()\">\n              <div class=\"fotricn\">\n                  <ion-icon name=\"basket\"></ion-icon>\n                  <ion-label>Shop</ion-label>\n              </div>\n          </ion-button>\n          <ion-button (click)=\"tabBarPolicy()\">\n              <div class=\"fotricn\">\n                  <ion-icon name=\"open\"></ion-icon>\n                  <ion-label>Policy</ion-label>\n              </div>\n          </ion-button>\n          <ion-button (click)=\"tabBarContacts()\">\n              <div class=\"fotricnlst\">\n                  <ion-icon name=\"contacts\"></ion-icon>\n                  <ion-label>Contact</ion-label>\n              </div>\n          </ion-button>\n      </ion-buttons>\n  </ion-toolbar>\n</ion-footer> -->"
 
 /***/ }),
 
@@ -73,7 +73,7 @@ module.exports = "<ion-header>\n  <ion-toolbar>\n    <ion-buttons slot=\"start\"
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".cartItem {\n  border-bottom: 1px solid rgba(0, 0, 0, 0.08);\n  padding-top: 15px; }\n\n.cName {\n  margin: 0 0 5px;\n  font-size: 18px; }\n\n.Pprice {\n  margin: 10px 0; }\n\n.crPrice {\n  font-size: 18px;\n  display: inline-block;\n  margin-right: 10px; }\n\n.oldPrice {\n  text-decoration: line-through;\n  color: rgba(0, 0, 0, 0.6);\n  display: inline-block;\n  margin-right: 15px; }\n\n.offPrice {\n  color: green; }\n\n.unitP {\n  font-size: 14px;\n  float: right;\n  width: 50px;\n  padding: 4px; }\n\n.qty {\n  box-shadow: 0 0 3px rgba(0, 0, 0, 0.24);\n  margin-top: 9px;\n  border-radius: 5px;\n  max-width: 70px;\n  margin: 10px auto 3px; }\n\n.imgwrp {\n  box-shadow: 0 0 3px rgba(0, 0, 0, 0.35);\n  padding: 1px; }\n\n.tAmnt {\n  margin-top: 13px; }\n\n.rmvBtn.button-outline {\n  --border-width: 1px;\n  --border-color: rgba(0, 0, 0, 0.35);\n  height: 30px;\n  width: 80px; }\n\n.infoC {\n  text-align: right;\n  margin: 10px 0; }\n\n.PdActins {\n  text-align: center;\n  margin-top: 30px; }\n\n.PdActins ion-button {\n  width: 48%;\n  margin: 0 2px; }\n\nion-content ion-label {\n  font-size: 17px;\n  font-weight: 400; }\n\nion-content ion-textarea {\n  border: 1px solid #CCCCCC;\n  padding: 5px;\n  height: 160px;\n  border-radius: 6px; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy92YXAvRGVza3RvcC9Jb25pY19Qcm9qZWN0L2FyY2hpdmUgaW9uaWMgZlByb2plY3Qvb2xkIGFyY2hpdmUgMi9BcmNoaXZlIDIvc3JjL2FwcC9jYXJ0L2NhcnQucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksNENBQTRDO0VBQzVDLGlCQUFpQixFQUFBOztBQUVyQjtFQUNJLGVBQWU7RUFDZixlQUFlLEVBQUE7O0FBRW5CO0VBQVMsY0FBYyxFQUFBOztBQUN2QjtFQUNJLGVBQWU7RUFDZixxQkFBcUI7RUFDckIsa0JBQWtCLEVBQUE7O0FBRXRCO0VBQ0ksNkJBQTZCO0VBQzdCLHlCQUF5QjtFQUN6QixxQkFBcUI7RUFDckIsa0JBQWtCLEVBQUE7O0FBRXRCO0VBQVUsWUFBWSxFQUFBOztBQUN0QjtFQUNJLGVBQWU7RUFDZixZQUFZO0VBQ1osV0FBVztFQUNYLFlBQVksRUFBQTs7QUFFaEI7RUFDSSx1Q0FBdUM7RUFDdkMsZUFBZTtFQUNmLGtCQUFrQjtFQUNsQixlQUFlO0VBQ2YscUJBQXFCLEVBQUE7O0FBRXpCO0VBQ0ksdUNBQXVDO0VBQ3ZDLFlBQVksRUFBQTs7QUFFaEI7RUFBVyxnQkFBZ0IsRUFBQTs7QUFFM0I7RUFDSSxtQkFBZTtFQUNmLG1DQUFlO0VBQ2YsWUFBVztFQUNYLFdBQVUsRUFBQTs7QUFHZDtFQUNJLGlCQUFpQjtFQUNqQixjQUFjLEVBQUE7O0FBRWxCO0VBQ0ksa0JBQWtCO0VBQ2xCLGdCQUFnQixFQUFBOztBQUVwQjtFQUNJLFVBQVU7RUFDVixhQUFhLEVBQUE7O0FBR2pCO0VBRVEsZUFBZTtFQUVmLGdCQUFnQixFQUFBOztBQUp4QjtFQU9RLHlCQUF5QjtFQUN6QixZQUFZO0VBQ1osYUFBYTtFQUNiLGtCQUFrQixFQUFBIiwiZmlsZSI6InNyYy9hcHAvY2FydC9jYXJ0LnBhZ2Uuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5jYXJ0SXRlbXtcbiAgICBib3JkZXItYm90dG9tOiAxcHggc29saWQgcmdiYSgwLCAwLCAwLCAwLjA4KTtcbiAgICBwYWRkaW5nLXRvcDogMTVweDtcbn1cbi5jTmFtZXtcbiAgICBtYXJnaW46IDAgMCA1cHg7XG4gICAgZm9udC1zaXplOiAxOHB4O1xufVxuLlBwcmljZXsgbWFyZ2luOiAxMHB4IDA7fVxuLmNyUHJpY2V7XG4gICAgZm9udC1zaXplOiAxOHB4O1xuICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbiAgICBtYXJnaW4tcmlnaHQ6IDEwcHg7XG59XG4ub2xkUHJpY2V7XG4gICAgdGV4dC1kZWNvcmF0aW9uOiBsaW5lLXRocm91Z2g7XG4gICAgY29sb3I6IHJnYmEoMCwgMCwgMCwgMC42KTtcbiAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG4gICAgbWFyZ2luLXJpZ2h0OiAxNXB4O1xufVxuLm9mZlByaWNle2NvbG9yOiBncmVlbjt9XG4udW5pdFB7XG4gICAgZm9udC1zaXplOiAxNHB4O1xuICAgIGZsb2F0OiByaWdodDtcbiAgICB3aWR0aDogNTBweDtcbiAgICBwYWRkaW5nOiA0cHg7XG59XG4ucXR5e1xuICAgIGJveC1zaGFkb3c6IDAgMCAzcHggcmdiYSgwLCAwLCAwLCAwLjI0KTtcbiAgICBtYXJnaW4tdG9wOiA5cHg7XG4gICAgYm9yZGVyLXJhZGl1czogNXB4O1xuICAgIG1heC13aWR0aDogNzBweDtcbiAgICBtYXJnaW46IDEwcHggYXV0byAzcHg7XG59XG4uaW1nd3Jwe1xuICAgIGJveC1zaGFkb3c6IDAgMCAzcHggcmdiYSgwLCAwLCAwLCAwLjM1KTtcbiAgICBwYWRkaW5nOiAxcHg7XG59XG4udEFtbnR7ICAgIG1hcmdpbi10b3A6IDEzcHg7fVxuXG4ucm12QnRuLmJ1dHRvbi1vdXRsaW5lIHtcbiAgICAtLWJvcmRlci13aWR0aDogMXB4O1xuICAgIC0tYm9yZGVyLWNvbG9yOiByZ2JhKDAsIDAsIDAsIDAuMzUpO1xuICAgIGhlaWdodDozMHB4O1xuICAgIHdpZHRoOjgwcHg7XG59XG5cbi5pbmZvQ3tcbiAgICB0ZXh0LWFsaWduOiByaWdodDtcbiAgICBtYXJnaW46IDEwcHggMDtcbn1cbi5QZEFjdGluc3tcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XG4gICAgbWFyZ2luLXRvcDogMzBweDtcbn1cbi5QZEFjdGlucyBpb24tYnV0dG9ue1xuICAgIHdpZHRoOiA0OCU7XG4gICAgbWFyZ2luOiAwIDJweDtcbn1cblxuaW9uLWNvbnRlbnR7XG4gICAgaW9uLWxhYmVse1xuICAgICAgICBmb250LXNpemU6IDE3cHg7XG4gICAgICAgIC8vY29sb3I6ICNBN0NGNDY7XG4gICAgICAgIGZvbnQtd2VpZ2h0OiA0MDA7XG4gICAgfVxuICAgIGlvbi10ZXh0YXJlYXtcbiAgICAgICAgYm9yZGVyOiAxcHggc29saWQgI0NDQ0NDQztcbiAgICAgICAgcGFkZGluZzogNXB4O1xuICAgICAgICBoZWlnaHQ6IDE2MHB4O1xuICAgICAgICBib3JkZXItcmFkaXVzOiA2cHg7XG4gICAgfVxufVxuXG4vLyAuaXRlbS1pbnB1dCB7XG4vLyAgICAgcGFkZGluZzogNXB4O1xuLy8gICAgIGJvcmRlcjogc29saWQgLjVweCBncmV5O1xuLy8gICAgIGJvcmRlci1yYWRpdXM6IDZweDtcbi8vIH0iXX0= */"
+module.exports = ".cartItem {\n  border-bottom: 1px solid rgba(0, 0, 0, 0.08);\n  padding-top: 15px; }\n\n.cName {\n  margin: 0 0 5px;\n  font-size: 18px; }\n\n.Pprice {\n  margin: 10px 0; }\n\n.crPrice {\n  font-size: 18px;\n  display: inline-block;\n  margin-right: 10px; }\n\n.oldPrice {\n  text-decoration: line-through;\n  color: rgba(0, 0, 0, 0.6);\n  display: inline-block;\n  margin-right: 15px; }\n\n.offPrice {\n  color: green; }\n\n.unitP {\n  font-size: 14px;\n  float: right;\n  width: 50px;\n  padding: 4px; }\n\n.qty {\n  box-shadow: 0 0 3px rgba(0, 0, 0, 0.24);\n  margin-top: 9px;\n  border-radius: 5px;\n  max-width: 70px;\n  margin: 10px auto 3px; }\n\n.imgwrp {\n  box-shadow: 0 0 3px rgba(0, 0, 0, 0.35);\n  padding: 1px; }\n\n.tAmnt {\n  margin-top: 13px; }\n\n.rmvBtn.button-outline {\n  --border-width: 1px;\n  --border-color: rgba(0, 0, 0, 0.35);\n  height: 30px;\n  width: 80px; }\n\n.infoC {\n  text-align: right;\n  margin: 10px 0; }\n\n.PdActins {\n  text-align: center;\n  margin-top: 30px; }\n\n.PdActins ion-button {\n  width: 48%;\n  margin: 0 2px; }\n\nion-content ion-label {\n  font-size: 17px;\n  font-weight: 400; }\n\nion-content ion-textarea {\n  border: 1px solid #CCCCCC;\n  padding: 5px;\n  height: 160px;\n  border-radius: 6px; }\n\n.button-outline-md-danger {\n  border-color: gold !important;\n  color: gold !important; }\n\n.button-clear-md-danger {\n  color: gold !important; }\n\n.button-md-danger {\n  color: #fff;\n  background-color: purple !important; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy92YXAvRGVza3RvcC9pb25pYyBQcm9qZWN0L3BwL1NtYXJ0LUNhcnQgMi9zcmMvYXBwL2NhcnQvY2FydC5wYWdlLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSw0Q0FBNEM7RUFDNUMsaUJBQWlCLEVBQUE7O0FBRXJCO0VBQ0ksZUFBZTtFQUNmLGVBQWUsRUFBQTs7QUFFbkI7RUFBUyxjQUFjLEVBQUE7O0FBQ3ZCO0VBQ0ksZUFBZTtFQUNmLHFCQUFxQjtFQUNyQixrQkFBa0IsRUFBQTs7QUFFdEI7RUFDSSw2QkFBNkI7RUFDN0IseUJBQXlCO0VBQ3pCLHFCQUFxQjtFQUNyQixrQkFBa0IsRUFBQTs7QUFFdEI7RUFBVSxZQUFZLEVBQUE7O0FBQ3RCO0VBQ0ksZUFBZTtFQUNmLFlBQVk7RUFDWixXQUFXO0VBQ1gsWUFBWSxFQUFBOztBQUVoQjtFQUNJLHVDQUF1QztFQUN2QyxlQUFlO0VBQ2Ysa0JBQWtCO0VBQ2xCLGVBQWU7RUFDZixxQkFBcUIsRUFBQTs7QUFFekI7RUFDSSx1Q0FBdUM7RUFDdkMsWUFBWSxFQUFBOztBQUVoQjtFQUFXLGdCQUFnQixFQUFBOztBQUUzQjtFQUNJLG1CQUFlO0VBQ2YsbUNBQWU7RUFDZixZQUFXO0VBQ1gsV0FBVSxFQUFBOztBQUdkO0VBQ0ksaUJBQWlCO0VBQ2pCLGNBQWMsRUFBQTs7QUFFbEI7RUFDSSxrQkFBa0I7RUFDbEIsZ0JBQWdCLEVBQUE7O0FBRXBCO0VBQ0ksVUFBVTtFQUNWLGFBQWEsRUFBQTs7QUFHakI7RUFFUSxlQUFlO0VBRWYsZ0JBQWdCLEVBQUE7O0FBSnhCO0VBT1EseUJBQXlCO0VBQ3pCLFlBQVk7RUFDWixhQUFhO0VBQ2Isa0JBQWtCLEVBQUE7O0FBMEIxQjtFQUNJLDZCQUE2QjtFQUM3QixzQkFBc0IsRUFBQTs7QUFFMUI7RUFDSSxzQkFBc0IsRUFBQTs7QUFFMUI7RUFDSSxXQUFXO0VBQ1gsbUNBQW1DLEVBQUEiLCJmaWxlIjoic3JjL2FwcC9jYXJ0L2NhcnQucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmNhcnRJdGVte1xuICAgIGJvcmRlci1ib3R0b206IDFweCBzb2xpZCByZ2JhKDAsIDAsIDAsIDAuMDgpO1xuICAgIHBhZGRpbmctdG9wOiAxNXB4O1xufVxuLmNOYW1le1xuICAgIG1hcmdpbjogMCAwIDVweDtcbiAgICBmb250LXNpemU6IDE4cHg7XG59XG4uUHByaWNleyBtYXJnaW46IDEwcHggMDt9XG4uY3JQcmljZXtcbiAgICBmb250LXNpemU6IDE4cHg7XG4gICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICAgIG1hcmdpbi1yaWdodDogMTBweDtcbn1cbi5vbGRQcmljZXtcbiAgICB0ZXh0LWRlY29yYXRpb246IGxpbmUtdGhyb3VnaDtcbiAgICBjb2xvcjogcmdiYSgwLCAwLCAwLCAwLjYpO1xuICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbiAgICBtYXJnaW4tcmlnaHQ6IDE1cHg7XG59XG4ub2ZmUHJpY2V7Y29sb3I6IGdyZWVuO31cbi51bml0UHtcbiAgICBmb250LXNpemU6IDE0cHg7XG4gICAgZmxvYXQ6IHJpZ2h0O1xuICAgIHdpZHRoOiA1MHB4O1xuICAgIHBhZGRpbmc6IDRweDtcbn1cbi5xdHl7XG4gICAgYm94LXNoYWRvdzogMCAwIDNweCByZ2JhKDAsIDAsIDAsIDAuMjQpO1xuICAgIG1hcmdpbi10b3A6IDlweDtcbiAgICBib3JkZXItcmFkaXVzOiA1cHg7XG4gICAgbWF4LXdpZHRoOiA3MHB4O1xuICAgIG1hcmdpbjogMTBweCBhdXRvIDNweDtcbn1cbi5pbWd3cnB7XG4gICAgYm94LXNoYWRvdzogMCAwIDNweCByZ2JhKDAsIDAsIDAsIDAuMzUpO1xuICAgIHBhZGRpbmc6IDFweDtcbn1cbi50QW1udHsgICAgbWFyZ2luLXRvcDogMTNweDt9XG5cbi5ybXZCdG4uYnV0dG9uLW91dGxpbmUge1xuICAgIC0tYm9yZGVyLXdpZHRoOiAxcHg7XG4gICAgLS1ib3JkZXItY29sb3I6IHJnYmEoMCwgMCwgMCwgMC4zNSk7XG4gICAgaGVpZ2h0OjMwcHg7XG4gICAgd2lkdGg6ODBweDtcbn1cblxuLmluZm9De1xuICAgIHRleHQtYWxpZ246IHJpZ2h0O1xuICAgIG1hcmdpbjogMTBweCAwO1xufVxuLlBkQWN0aW5ze1xuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgICBtYXJnaW4tdG9wOiAzMHB4O1xufVxuLlBkQWN0aW5zIGlvbi1idXR0b257XG4gICAgd2lkdGg6IDQ4JTtcbiAgICBtYXJnaW46IDAgMnB4O1xufVxuXG5pb24tY29udGVudHtcbiAgICBpb24tbGFiZWx7XG4gICAgICAgIGZvbnQtc2l6ZTogMTdweDtcbiAgICAgICAgLy9jb2xvcjogI0E3Q0Y0NjtcbiAgICAgICAgZm9udC13ZWlnaHQ6IDQwMDtcbiAgICB9XG4gICAgaW9uLXRleHRhcmVhe1xuICAgICAgICBib3JkZXI6IDFweCBzb2xpZCAjQ0NDQ0NDO1xuICAgICAgICBwYWRkaW5nOiA1cHg7XG4gICAgICAgIGhlaWdodDogMTYwcHg7XG4gICAgICAgIGJvcmRlci1yYWRpdXM6IDZweDtcbiAgICB9XG59XG5cbi8vIC5udW1iZXItZmllbGR7XG4vLyAgICAgcG9zaXRpb246IHJlbGF0aXZlO1xuLy8gICAgIGJvcmRlci13aWR0aDogMnB4O1xuLy8gICAgIGJvcmRlci1jb2xvcjogYmx1ZTtcbi8vICAgICAvL3RvcDogMjBweDtcbi8vICAgICAvLyBsZWZ0OiA1cHg7XG4vLyAgICAgLy8gLmFkZHtcbi8vICAgICAvLyAgICAgcG9zaXRpb246IGFic29sdXRlO1xuLy8gICAgIC8vICAgICAvL3JpZ2h0OiA2MHB4O1xuLy8gICAgIC8vICAgICB0b3A6IDBweDtcbi8vICAgICAvLyAgICAgZm9udC1zaXplOiAyNHB4O1xuLy8gICAgIC8vICAgICBjb2xvcjogIzAwMDtcbi8vICAgICAvLyB9XG4vLyAgICAgLy8gLnJlbW92ZXtcbi8vICAgICAvLyAgICAgcG9zaXRpb246IGFic29sdXRlO1xuLy8gICAgIC8vICAgICAvL2xlZnQ6IDQ1JTtcbi8vICAgICAvLyAgICAgdG9wOiAwcHg7XG4vLyAgICAgLy8gICAgIGZvbnQtc2l6ZTogMjRweDtcbi8vICAgICAvLyAgICAgY29sb3I6ICMwMDA7XG4vLyAgICAgLy8gfVxuLy8gfVxuXG4uYnV0dG9uLW91dGxpbmUtbWQtZGFuZ2VyIHtcbiAgICBib3JkZXItY29sb3I6IGdvbGQgIWltcG9ydGFudDtcbiAgICBjb2xvcjogZ29sZCAhaW1wb3J0YW50O1xufSAgICBcbi5idXR0b24tY2xlYXItbWQtZGFuZ2VyIHtcbiAgICBjb2xvcjogZ29sZCAhaW1wb3J0YW50O1xufSAgICBcbi5idXR0b24tbWQtZGFuZ2VyIHtcbiAgICBjb2xvcjogI2ZmZjtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiBwdXJwbGUgIWltcG9ydGFudDtcbn0iXX0= */"
 
 /***/ }),
 
@@ -149,12 +149,15 @@ var CartPage = /** @class */ (function () {
         this.modalController = modalController;
         this.activeroute = activeroute;
         this.menuCtrl = menuCtrl;
+        this.totalCart = 0;
         this.totalCost = 0;
         this.deliveryPrice = 0;
         this.couponCode = '';
         this.couponId = '';
         this.discountAmount = 0;
         this.isCouponApplied = false;
+        this.quantity = 1;
+        this.arrQuantity = [];
         if (localStorage.getItem('loginDataKKart') != null) {
             this.myCartlist();
         }
@@ -165,7 +168,7 @@ var CartPage = /** @class */ (function () {
     CartPage.prototype.ngOnInit = function () {
     };
     CartPage.prototype.ionViewWillEnter = function () {
-        console.log("viewwillentercalling");
+        //console.log("viewwillentercalling")
         this.menuCtrl.enable(true);
         //this.pageDetails = { 'showMenu': true, 'showBack': false, 'showButtons': false, 'title': 'My Wishlist', 'prevPage': '' };
         //this.showMenu(this.pageDetails);
@@ -176,16 +179,19 @@ var CartPage = /** @class */ (function () {
     };
     CartPage.prototype.myCartlist = function () {
         var _this = this;
-        this.totalCost = 0;
         var myData = JSON.stringify({});
-        console.log("Your myData: ", myData);
+        //console.log("Your myData: ", myData);
         this.util.presentLoading();
         this.util.getTypeDetailsWithAuth('carts/getcartitems.json', myData).subscribe(function (result) {
             _this.util.dismissLoader();
-            console.log("Your data: ", result);
+            _this.totalCost = 0;
+            _this.deliveryPrice = 0;
+            _this.arrQuantity = [];
+            console.log("Your cart data: ", result);
             _this.data = result;
             if (_this.data.success) {
                 _this.cartList = _this.data.data;
+                _this.totalCart = _this.cartList.length;
                 if (_this.data.coupon_id == "0") {
                     _this.isCouponApplied = false;
                 }
@@ -193,24 +199,26 @@ var CartPage = /** @class */ (function () {
                     _this.isCouponApplied = true;
                     _this.couponId = _this.data.coupon_id;
                 }
-                console.log("this.cartList", _this.cartList.length);
+                //console.log("this.cartList",this.cartList.length)
                 if (_this.cartList.length == 0 || _this.data.success == "2") {
                     _this.isCartList = false;
                 }
                 else {
                     _this.isCartList = true;
                 }
-                console.log("cart list coupon check", _this.cartList, _this.isCouponApplied);
+                //console.log("cart list coupon check", this.cartList , this.isCouponApplied)
                 var cost = 0;
                 if (_this.isCartList == true) {
                     for (var i = 0; i < _this.cartList.length; i++) {
                         cost = cost + Number(_this.cartList[i].CartItems.item_net_amount);
                         //cost = cost + Number(this.cartList[i].UserProducts.offer_price)
-                        _this.deliveryPrice = _this.deliveryPrice + Number(_this.cartList[i].UserProducts.delivery_charge);
+                        _this.deliveryPrice = _this.deliveryPrice + Number(_this.cartList[i].UserProducts.delivery_charge * _this.cartList[i].CartItems.quantity);
                         _this.discountAmount = Number(_this.cartList[i].CartItems.discount_amt);
+                        //this.arrQuantity.push(1)
+                        _this.arrQuantity.push(_this.cartList[i].CartItems.quantity);
                     }
                     _this.totalCost = cost + _this.deliveryPrice;
-                    console.log("Total Cost", _this.totalCost);
+                    //console.log("Total Cost", this.totalCost)
                 }
             }
             else {
@@ -262,19 +270,18 @@ var CartPage = /** @class */ (function () {
         var myData = JSON.stringify({
             info_id: singleCart.CartItems.id
         });
-        console.log("Your myData: ", myData);
+        //console.log("Your myData: ", myData);
         this.util.presentLoading();
         this.util.getTypeDetailsWithAuth('carts/deletecartitem.json', myData).subscribe(function (result) {
             _this.util.dismissLoader();
-            console.log("Your data: ", result);
+            //console.log("Your data: ", result);
             _this.data = result;
             if (_this.data.success) {
-                console.log("cart list", _this.cartList);
+                //console.log("cart list", this.cartList)
                 _this.util.showToast(_this.data.data);
                 setTimeout(function () {
                     _this.myCartlist();
                 }, 2000);
-                //this.util.myCartlist()
             }
             else {
                 _this.util.showToast(_this.data.message);
@@ -287,10 +294,25 @@ var CartPage = /** @class */ (function () {
     CartPage.prototype.continueShopping = function () {
         this.navCtrl.navigateRoot('/home');
     };
-    CartPage.prototype.updateCart = function (ev, singleCart) {
-        console.log(ev.detail.value, singleCart);
-        this.postDataupdateCart(ev.detail.value, singleCart.CartItems.id);
+    CartPage.prototype.decrement = function (pos, singleCart) {
+        if (this.arrQuantity[pos] > 1) {
+            this.arrQuantity[pos] = this.arrQuantity[pos] - 1;
+            this.postDataupdateCart(this.arrQuantity[pos], singleCart.CartItems.id);
+        }
+        // if (this.quantity > 1){
+        //   this.quantity = this.quantity - 1
+        // }
+        //this.postDataupdateCart(this.arrQuantity[pos],singleCart.CartItems.id)
     };
+    CartPage.prototype.inrement = function (pos, singleCart) {
+        this.arrQuantity[pos] = this.arrQuantity[pos] + 1;
+        //this.quantity = this.quantity + 1
+        this.postDataupdateCart(this.arrQuantity[pos], singleCart.CartItems.id);
+    };
+    // updateCart(ev,singleCart){
+    //   console.log(ev.detail.value,singleCart)
+    //   this.postDataupdateCart(ev.detail.value,singleCart.CartItems.id)
+    // }
     CartPage.prototype.postDataupdateCart = function (value, productId) {
         var _this = this;
         console.log("To Add to Cart");
@@ -298,11 +320,11 @@ var CartPage = /** @class */ (function () {
             info_id: productId,
             quantity: value
         });
-        console.log("Your myData: ", myData);
+        //console.log("Your myData: ", myData);
         this.util.presentLoading3();
         this.util.getTypeDetailsWithAuth('carts/updateItem.json', myData).subscribe(function (result) {
             _this.util.dismissLoader();
-            console.log("Your Cart data: ", result);
+            //console.log("Your Cart data: ", result);
             _this.data = result;
             //console.log(this.data)
             if (_this.data.success) {
@@ -310,7 +332,7 @@ var CartPage = /** @class */ (function () {
                 setTimeout(function () {
                     _this.myCartlist();
                 }, 2000);
-                _this.util.myCartlist();
+                //this.util.myCartlist()
             }
             else {
                 _this.util.showToast(_this.data.data);
@@ -345,11 +367,11 @@ var CartPage = /** @class */ (function () {
         var myData = JSON.stringify({
             coupon_code: this.couponCode
         });
-        console.log("Your coupon code myData: ", myData);
+        //console.log("Your coupon code myData: ", myData);
         this.util.presentLoading();
         this.util.getTypeDetailsWithAuth('carts/checkcouponcode.json', myData).subscribe(function (result) {
             _this.util.dismissLoader();
-            console.log("Your couponCode data: ", result);
+            //console.log("Your couponCode data: ", result);
             _this.data = result;
             if (_this.data.success) {
                 _this.util.showToast(_this.data.data.msg);
@@ -370,11 +392,11 @@ var CartPage = /** @class */ (function () {
         var myData = JSON.stringify({
             coupon_id: this.couponId
         });
-        console.log("Your coupon code myData: ", myData);
+        //console.log("Your coupon code myData: ", myData);
         this.util.presentLoading();
         this.util.getTypeDetailsWithAuth('carts/deletecouponcode.json', myData).subscribe(function (result) {
             _this.util.dismissLoader();
-            console.log("Your delete couponCode data: ", result);
+            //console.log("Your delete couponCode data: ", result);
             _this.data = result;
             if (_this.data.success) {
                 _this.util.showToast(_this.data.data);

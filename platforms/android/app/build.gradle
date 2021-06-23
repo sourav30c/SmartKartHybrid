@@ -44,11 +44,8 @@ buildscript {
         ext.kotlin_version = gradlePluginKotlinVersion
     }
 
-    repositories {
-        mavenCentral()
-        google()
-        jcenter()
-    }
+    apply from: 'repositories.gradle'
+    repositories repos
 
     dependencies {
         apply from: '../CordovaLib/cordova.gradle'
@@ -82,10 +79,8 @@ buildscript {
 
 // Allow plugins to declare Maven dependencies via build-extras.gradle.
 allprojects {
-    repositories {
-        mavenCentral()
-        jcenter()
-    }
+    apply from: 'repositories.gradle'
+    repositories repos
 }
 
 task wrapper(type: Wrapper) {
@@ -99,11 +94,11 @@ ext {
 
     // The value for android.compileSdkVersion.
     if (!project.hasProperty('cdvCompileSdkVersion')) {
-        cdvCompileSdkVersion = null
+        cdvCompileSdkVersion = null;
     }
     // The value for android.buildToolsVersion.
     if (!project.hasProperty('cdvBuildToolsVersion')) {
-        cdvBuildToolsVersion = null
+        cdvBuildToolsVersion = null;
     }
     // Sets the versionCode to the given value.
     if (!project.hasProperty('cdvVersionCode')) {
@@ -119,7 +114,7 @@ ext {
     }
     // The value for android.targetSdkVersion.
     if (!project.hasProperty('cdvTargetSdkVersion')) {
-        cdvTargetSdkVersion = null
+        cdvTargetSdkVersion = null;
     }
     // Whether to build architecture-specific APKs.
     if (!project.hasProperty('cdvBuildMultipleApks')) {
@@ -164,7 +159,7 @@ ext.cdvCompileSdkVersion = cdvCompileSdkVersion == null ? (
     defaultCompileSdkVersion == null
         ? privateHelpers.getProjectTarget()
         : defaultCompileSdkVersion
-) : Integer.parseInt('' + cdvCompileSdkVersion)
+) : Integer.parseInt('' + cdvCompileSdkVersion);
 
 if (ext.cdvBuildToolsVersion == null) {
     ext.cdvBuildToolsVersion = privateHelpers.findLatestInstalledBuildTools()
@@ -178,8 +173,8 @@ if (ext.cdvReleaseSigningPropertiesFile == null && file('../release-signing.prop
 }
 
 // Cast to appropriate types.
-ext.cdvBuildMultipleApks = cdvBuildMultipleApks == null ? false : cdvBuildMultipleApks.toBoolean()
-ext.cdvVersionCodeForceAbiDigit = cdvVersionCodeForceAbiDigit == null ? false : cdvVersionCodeForceAbiDigit.toBoolean()
+ext.cdvBuildMultipleApks = cdvBuildMultipleApks == null ? false : cdvBuildMultipleApks.toBoolean();
+ext.cdvVersionCodeForceAbiDigit = cdvVersionCodeForceAbiDigit == null ? false : cdvVersionCodeForceAbiDigit.toBoolean();
 
 // minSdkVersion, maxSdkVersion and targetSdkVersion
 ext.cdvMinSdkVersion = cdvMinSdkVersion == null ? defaultMinSdkVersion : Integer.parseInt('' + cdvMinSdkVersion)
@@ -194,7 +189,7 @@ def computeBuildTargetName(debugBuild) {
     def ret = 'assemble'
     if (cdvBuildMultipleApks && cdvBuildArch) {
         def arch = cdvBuildArch == 'arm' ? 'armv7' : cdvBuildArch
-        ret += '' + arch.toUpperCase().charAt(0) + arch.substring(1)
+        ret += '' + arch.toUpperCase().charAt(0) + arch.substring(1);
     }
     return ret + (debugBuild ? 'Debug' : 'Release')
 }
@@ -249,7 +244,7 @@ android {
     }
 
     lintOptions {
-      abortOnError false
+      abortOnError false;
     }
 
     compileSdkVersion cdvCompileSdkVersion
@@ -357,13 +352,13 @@ dependencies {
 
 def promptForReleaseKeyPassword() {
     if (!cdvReleaseSigningPropertiesFile) {
-        return
+        return;
     }
     if ('__unset'.equals(android.signingConfigs.release.storePassword)) {
         android.signingConfigs.release.storePassword = privateHelpers.promptForPassword('Enter key store password: ')
     }
     if ('__unset'.equals(android.signingConfigs.release.keyPassword)) {
-        android.signingConfigs.release.keyPassword = privateHelpers.promptForPassword('Enter key password: ')
+        android.signingConfigs.release.keyPassword = privateHelpers.promptForPassword('Enter key password: ');
     }
 }
 
@@ -395,7 +390,7 @@ def addSigningProps(propsFilePath, signingConfig) {
     signingConfig.storePassword = props.get('storePassword', props.get('key.store.password', signingConfig.storePassword))
     def storeType = props.get('storeType', props.get('key.store.type', ''))
     if (!storeType) {
-        def filename = storeFile.getName().toLowerCase()
+        def filename = storeFile.getName().toLowerCase();
         if (filename.endsWith('.p12') || filename.endsWith('.pfx')) {
             storeType = 'pkcs12'
         } else {

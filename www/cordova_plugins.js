@@ -55,6 +55,15 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
       "clobbers": [
         "window.StatusBar"
       ]
+    },
+    {
+      "id": "ionic-plugin-deeplinks.deeplink",
+      "file": "plugins/ionic-plugin-deeplinks/www/deeplink.js",
+      "pluginId": "ionic-plugin-deeplinks",
+      "clobbers": [
+        "IonicDeeplink"
+      ],
+      "runs": true
     }
   ];
   module.exports.metadata = {
@@ -65,6 +74,7 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
     "cordova-plugin-speechrecognition": "1.1.2",
     "cordova-plugin-splashscreen": "5.0.2",
     "cordova-plugin-statusbar": "2.4.2",
-    "cordova-plugin-whitelist": "1.3.4"
+    "cordova-plugin-whitelist": "1.3.4",
+    "ionic-plugin-deeplinks": "1.0.22"
   };
 });

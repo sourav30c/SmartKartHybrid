@@ -185,16 +185,7 @@ var PaymentModePage = /** @class */ (function () {
         //   console.log("InAppbrowser loadstop Event Error: " + err);
         // });
         browser.on('loadstop').subscribe(function (event) {
-            // this.countYes = Number(this.countYes) + 1
-            // console.log('countYes', this.countYes);
-            // localStorage.setItem('countYes', String(this.countYes));
             browser.executeScript({ code: "localStorage.getItem('isCloseSelf')" }).then(function (cookie) {
-                //console.log("cookie", cookie, localStorage.getItem('countYes'));
-                // if (Number(localStorage.getItem('countYes')) != 1 && cookie == "yes") {
-                //   localStorage.setItem('this.datares', "1");
-                // } else {
-                //   localStorage.setItem('this.datares', "0");
-                // }
                 if (cookie == "yes") {
                     localStorage.setItem('this.datares', "1");
                 }

@@ -62,7 +62,7 @@ var AddAddressPageModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-header>\n  <ion-toolbar>\n      <ion-buttons slot=\"start\">\n          <ion-menu-button></ion-menu-button>\n      </ion-buttons>\n      <ion-title>\n          Add Address\n      </ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content class=\"ion-padding\">\n  <ion-grid>\n    <ion-row>\n      <ion-col class=\"ion-text-center\" size=\"12\">\n        <ion-label>Home Address <ion-text color=\"danger\">*</ion-text></ion-label>\n      </ion-col>\n      <ion-col size=\"12\">\n          <ion-textarea [(ngModel)]=\"homeaddress\"></ion-textarea>\n      </ion-col>\n    </ion-row>\n  </ion-grid> \n  <ion-grid>\n    <ion-row>\n      <ion-col class=\"ion-text-center\" size=\"12\">\n        <ion-label>Work Address <ion-text color=\"danger\">*</ion-text></ion-label>\n      </ion-col>\n      <ion-col size=\"12\">\n          <ion-textarea [(ngModel)]=\"workaddress\"></ion-textarea>\n      </ion-col>\n    </ion-row>\n  </ion-grid>     \n  <ion-button shape=\"round\" expand=\"full\" color=\"primary\" (click)=\"submitAddress()\">Submit</ion-button>\n</ion-content>\n"
+module.exports = "<ion-header>\n  <ion-toolbar>\n      <ion-buttons slot=\"start\">\n          <ion-menu-button style=\"color: #FFCC23\"></ion-menu-button>\n      </ion-buttons>\n      <ion-title>\n          Add Address\n      </ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content class=\"ion-padding\">\n  <ion-grid>\n    <ion-row>\n      <ion-col class=\"ion-text-center\" size=\"12\">\n        <ion-label>Home Address <ion-text color=\"danger\">*</ion-text></ion-label>\n      </ion-col>\n      <ion-col size=\"12\">\n          <ion-textarea [(ngModel)]=\"homeaddress\"></ion-textarea>\n      </ion-col>\n    </ion-row>\n  </ion-grid> \n  <ion-grid>\n    <ion-row>\n      <ion-col class=\"ion-text-center\" size=\"12\">\n        <ion-label>Work Address <ion-text color=\"danger\">*</ion-text></ion-label>\n      </ion-col>\n      <ion-col size=\"12\">\n          <ion-textarea [(ngModel)]=\"workaddress\"></ion-textarea>\n      </ion-col>\n    </ion-row>\n  </ion-grid>     \n  <ion-button shape=\"round\" expand=\"full\" color=\"primary\" (click)=\"submitAddress()\">Submit</ion-button>\n</ion-content>\n"
 
 /***/ }),
 
@@ -73,7 +73,7 @@ module.exports = "<ion-header>\n  <ion-toolbar>\n      <ion-buttons slot=\"start
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "ion-content ion-label {\n  font-size: 17px;\n  color: #008ED8;\n  font-weight: 400; }\n\nion-content ion-textarea {\n  border: 1px solid #CCCCCC;\n  padding: 5px;\n  height: 160px;\n  border-radius: 6px; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy92YXAvRGVza3RvcC9Jb25pY19Qcm9qZWN0L2FyY2hpdmUgaW9uaWMgZlByb2plY3Qvb2xkIGFyY2hpdmUgMi9BcmNoaXZlIDIvc3JjL2FwcC9hZGQtYWRkcmVzcy9hZGQtYWRkcmVzcy5wYWdlLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFFUSxlQUFlO0VBQ2YsY0FBYTtFQUNiLGdCQUFnQixFQUFBOztBQUp4QjtFQU9RLHlCQUF5QjtFQUN6QixZQUFZO0VBQ1osYUFBYTtFQUNiLGtCQUFrQixFQUFBIiwiZmlsZSI6InNyYy9hcHAvYWRkLWFkZHJlc3MvYWRkLWFkZHJlc3MucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiaW9uLWNvbnRlbnR7XG4gICAgaW9uLWxhYmVse1xuICAgICAgICBmb250LXNpemU6IDE3cHg7XG4gICAgICAgIGNvbG9yOiMwMDhFRDg7XG4gICAgICAgIGZvbnQtd2VpZ2h0OiA0MDA7XG4gICAgfVxuICAgIGlvbi10ZXh0YXJlYXtcbiAgICAgICAgYm9yZGVyOiAxcHggc29saWQgI0NDQ0NDQztcbiAgICAgICAgcGFkZGluZzogNXB4O1xuICAgICAgICBoZWlnaHQ6IDE2MHB4O1xuICAgICAgICBib3JkZXItcmFkaXVzOiA2cHg7XG4gICAgfVxufSJdfQ== */"
+module.exports = "ion-content ion-label {\n  font-size: 17px;\n  color: #008ED8;\n  font-weight: 400; }\n\nion-content ion-textarea {\n  border: 1px solid #CCCCCC;\n  padding: 5px;\n  height: 160px;\n  border-radius: 6px; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy92YXAvRGVza3RvcC9pb25pYyBQcm9qZWN0L3BwL1NtYXJ0LUNhcnQgMi9zcmMvYXBwL2FkZC1hZGRyZXNzL2FkZC1hZGRyZXNzLnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUVRLGVBQWU7RUFDZixjQUFhO0VBQ2IsZ0JBQWdCLEVBQUE7O0FBSnhCO0VBT1EseUJBQXlCO0VBQ3pCLFlBQVk7RUFDWixhQUFhO0VBQ2Isa0JBQWtCLEVBQUEiLCJmaWxlIjoic3JjL2FwcC9hZGQtYWRkcmVzcy9hZGQtYWRkcmVzcy5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJpb24tY29udGVudHtcbiAgICBpb24tbGFiZWx7XG4gICAgICAgIGZvbnQtc2l6ZTogMTdweDtcbiAgICAgICAgY29sb3I6IzAwOEVEODtcbiAgICAgICAgZm9udC13ZWlnaHQ6IDQwMDtcbiAgICB9XG4gICAgaW9uLXRleHRhcmVhe1xuICAgICAgICBib3JkZXI6IDFweCBzb2xpZCAjQ0NDQ0NDO1xuICAgICAgICBwYWRkaW5nOiA1cHg7XG4gICAgICAgIGhlaWdodDogMTYwcHg7XG4gICAgICAgIGJvcmRlci1yYWRpdXM6IDZweDtcbiAgICB9XG59Il19 */"
 
 /***/ }),
 
@@ -175,13 +175,13 @@ var AddAddressPage = /** @class */ (function () {
             address2: this.workaddress,
         });
         this.util.presentLoading();
-        console.log("Your changepassword myData: ", myData);
+        //console.log("Your changepassword myData: ", myData);
         this.util.getTypeDetailsWithAuth('users/addressbook.json', myData).subscribe(function (result) {
             _this.util.dismissLoader();
-            console.log("Your data: ", result);
+            //console.log("Your data: ", result);
             _this.data = result;
             if (_this.data.success) {
-                console.log("Your success data: ", _this.data.data);
+                //console.log("Your success data: ", this.data.data);
                 localStorage.setItem('loginDataKKart', JSON.stringify(_this.data.data.address));
                 _this.events.publish('user:login');
                 _this.presentConfirm();

@@ -62,7 +62,7 @@ var MyAccountDetailsPageModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-header>\n  <ion-toolbar>\n    <ion-buttons slot=\"start\">\n      <ion-menu-button></ion-menu-button>\n    </ion-buttons>\n    <ion-title>\n      My Account\n    </ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n  <ion-list lines=\"full\" class=\"ion-no-margin ion-no-padding\">\n    <ion-item>\n      <ion-label position=\"stacked\">Name <ion-text color=\"danger\">*</ion-text>\n      </ion-label>\n      <ion-input type=\"text\" [(ngModel)]=\"firstname\"></ion-input>\n    </ion-item>\n    <ion-item>\n      <ion-label position=\"stacked\">Phone <ion-text color=\"danger\">*</ion-text>\n      </ion-label>\n      <ion-input type=\"text\" [(ngModel)]=\"phone\"></ion-input>\n    </ion-item>\n    <ion-item>\n      <ion-label position=\"stacked\">Email <ion-text color=\"danger\">*</ion-text>\n      </ion-label>\n      <ion-input type=\"text\" [(ngModel)]=\"email\" disabled></ion-input>\n    </ion-item>\n    <ion-item>\n      <ion-col size=\"4\">\n        <ion-label>State</ion-label>\n      </ion-col>\n      <ion-select [(ngModel)]=\"user_state\" ng-init=\"user_state\" name=\"user_state\" (ionChange)=\"selectState($event)\"\n        [selectedText]=\"stateName\">\n        <ion-select-option *ngFor=\"let allState of allStates\" [value]=\"allState.id\"\n          [selected]=\"stateName == allState.name\">{{allState.name}}\n        </ion-select-option>\n      </ion-select>\n    </ion-item>\n\n\n    <ion-item>\n      <ion-label position=\"stacked\">City <ion-text color=\"danger\">*</ion-text>\n      </ion-label>\n      <ion-input type=\"text\" [(ngModel)]=\"city\"></ion-input>\n    </ion-item>\n    <ion-item>\n      <ion-label position=\"stacked\">Pin <ion-text color=\"danger\">*</ion-text>\n      </ion-label>\n      <ion-input type=\"text\" [(ngModel)]=\"pin\"></ion-input>\n    </ion-item>\n    <ion-item>\n      <ion-label position=\"stacked\">Alternate No. <ion-text color=\"danger\">*</ion-text>\n      </ion-label>\n      <ion-input type=\"text\" [(ngModel)]=\"alternateNo\"></ion-input>\n    </ion-item>\n    <ion-button shape=\"round\" expand=\"full\" color=\"primary\" (click)=\"submitAccountInfo()\">Submit</ion-button>\n  </ion-list>\n</ion-content>"
+module.exports = "<ion-header>\n  <ion-toolbar>\n    <ion-buttons slot=\"start\">\n      <ion-menu-button style=\"color: #FFCC23\"></ion-menu-button>\n    </ion-buttons>\n    <ion-title>\n      My Account\n    </ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content class=\"ion-padding\">\n  <ion-list lines=\"full\" class=\"ion-no-margin ion-no-padding\">\n    <ion-item>\n      <ion-label position=\"stacked\" style=\"color: #979797;\">Name <ion-text color=\"danger\">*</ion-text>\n      </ion-label>\n      <ion-input type=\"text\" [(ngModel)]=\"firstname\" style=\"color: #194AA1;\"></ion-input>\n    </ion-item>\n    <ion-item>\n      <ion-label position=\"stacked\" style=\"color: #979797;\">Phone <ion-text color=\"danger\">*</ion-text>\n      </ion-label>\n      <ion-input type=\"text\" [(ngModel)]=\"phone\" style=\"color: #194AA1;\"></ion-input>\n    </ion-item>\n    <ion-item>\n      <ion-label position=\"stacked\" style=\"color: #979797;\">Email <ion-text color=\"danger\">*</ion-text>\n      </ion-label>\n      <ion-input type=\"text\" [(ngModel)]=\"email\" disabled style=\"color: #194AA1;\"></ion-input>\n    </ion-item>\n    <ion-item>\n      <ion-col size=\"4\">\n        <ion-label style=\"color: #979797;\">State</ion-label>\n      </ion-col>\n      <ion-select [(ngModel)]=\"user_state\" ng-init=\"user_state\" name=\"user_state\" (ionChange)=\"selectState($event)\"\n        [selectedText]=\"stateName\">\n        <ion-select-option *ngFor=\"let allState of allStates\" [value]=\"allState.id\"\n          [selected]=\"stateName == allState.name\">{{allState.name}}\n        </ion-select-option>\n      </ion-select>\n    </ion-item>\n\n    <ion-item>\n      <ion-label position=\"stacked\" style=\"color: #979797;\">City <ion-text color=\"danger\">*</ion-text>\n      </ion-label>\n      <ion-input type=\"text\" [(ngModel)]=\"city\" style=\"color: #194AA1;\"></ion-input>\n    </ion-item>\n    <ion-item>\n      <ion-label position=\"stacked\" style=\"color: #979797;\">Pin <ion-text color=\"danger\">*</ion-text>\n      </ion-label>\n      <ion-input type=\"text\" [(ngModel)]=\"pin\" style=\"color: #194AA1;\"></ion-input>\n    </ion-item>\n    <ion-item>\n      <ion-label position=\"stacked\" style=\"color: #979797;\">Alternate No. <ion-text color=\"danger\">*</ion-text>\n      </ion-label>\n      <ion-input type=\"text\" [(ngModel)]=\"alternateNo\" style=\"color: #194AA1;\"></ion-input>\n    </ion-item>\n    <ion-button shape=\"round\" expand=\"full\" color=\"primary\" (click)=\"submitAccountInfo()\">Submit</ion-button>\n  </ion-list>\n</ion-content>"
 
 /***/ }),
 
@@ -158,7 +158,7 @@ var MyAccountDetailsPage = /** @class */ (function () {
         this.stateName = "";
         if (localStorage.getItem('loginDataKKart') != null) {
             this.myAccountData = JSON.parse(localStorage.getItem('loginDataKKart'));
-            console.log("My Account Data", this.myAccountData);
+            //console.log("My Account Data",this.myAccountData)
             this.stateList();
             this.firstname = this.myAccountData.first_name ? this.myAccountData.first_name : '';
             this.email = this.myAccountData.email ? this.myAccountData.email : '';
@@ -197,7 +197,7 @@ var MyAccountDetailsPage = /** @class */ (function () {
         }
     };
     MyAccountDetailsPage.prototype.selectState = function (ev) {
-        console.log("store id check in select store", ev, ev.detail, this.user_state);
+        //console.log("store id check in select store", ev, ev.detail, this.user_state);
         this.user_state = ev.detail.value;
         for (var i = 0; i < this.allStates.length; i++) {
             if (this.allStates[i].id == this.user_state) {
@@ -212,11 +212,11 @@ var MyAccountDetailsPage = /** @class */ (function () {
     MyAccountDetailsPage.prototype.stateList = function () {
         var _this = this;
         var myData = JSON.stringify({});
-        console.log("Your myData: ", JSON.parse(myData));
+        //console.log("Your myData: ", JSON.parse(myData));
         this.util.presentLoading();
         this.util.getTypeDetailsWithAuth('carts/statelist.json', myData).subscribe(function (result) {
             _this.util.dismissLoader();
-            console.log("Your state data: ", result);
+            //console.log("Your state data: ", result);
             _this.data = result;
             if (_this.data.success) {
                 _this.allStates = _this.data.data;
@@ -250,13 +250,13 @@ var MyAccountDetailsPage = /** @class */ (function () {
             alternate_phone: this.alternateNo
         });
         this.util.presentLoading();
-        console.log("Your changepassword myData: ", myData);
+        //console.log("Your changepassword myData: ", myData);
         this.util.getTypeDetailsWithAuth('users/myaccount.json', myData).subscribe(function (result) {
             _this.util.dismissLoader();
-            console.log("Your data: ", result);
+            //console.log("Your data: ", result);
             _this.data = result;
             if (_this.data.success) {
-                console.log("Your success data: ", _this.data.data);
+                //console.log("Your success data: ", this.data.data);
                 localStorage.setItem('loginDataKKart', JSON.stringify(_this.data.data.data_list));
                 _this.events.publish('user:login');
                 _this.presentConfirm();

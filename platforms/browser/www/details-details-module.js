@@ -62,7 +62,7 @@ var DetailsPageModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-header>\n  <ion-toolbar>\n    <ion-buttons slot=\"start\" (click)=\"goBack()\">\n      <ion-icon name=\"arrow-back\" class=\"backIcon\"></ion-icon>\n    </ion-buttons>\n    <!-- <ion-title>\n          Product Details\n        </ion-title> -->\n    <ion-img style=\"max-width: 70px;\" src=\"/assets/images/logo.png\"></ion-img>\n    <ion-buttons slot=\"secondary\">\n      <!-- <ion-button>\n        <ion-icon slot=\"icon-only\" name=\"search\"></ion-icon>\n      </ion-button>\n      <ion-button>\n        <ion-icon slot=\"icon-only\" name=\"notifications-outline\"></ion-icon>\n      </ion-button> -->\n      <ion-button (click)=\"toCart()\">\n        <ion-icon slot=\"icon-only\" name=\"cart\"></ion-icon>\n        <span class=\"badge badge-assertive\" style=\"color: red;\">{{util.cartCount}}</span>\n      </ion-button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n\n\n  <ion-slides *ngIf=\"productImage.length > 0\"  pager=\"true\">\n    <ion-slide *ngFor=\"let productImage of productImage; let i = index\">\n        <ion-card class=\"welcome-card\">\n           <img [src]=\"productImage || '/assets/images/p1.jpg'\">\n            <!-- <img (load)=\"loadImageSlider(i)\" [src]=\"productImage || '/assets/images/p1.jpg'\"> -->\n            <!-- <img  *ngIf=\"!productImage.isLoad\" src=\"/assets/images/p1.jpg\"> -->\n            <ion-card-header>\n            </ion-card-header>\n        </ion-card>\n    </ion-slide>\n</ion-slides>\n\n  <ion-grid>\n    <ion-row>\n      <ion-col>\n        <ion-text>\n          <h2 class=\"pName\">{{name}}</h2>\n        </ion-text>\n\n        <div class=\"rating\" (click)=\"toRatingPage()\">\n          <span class=\"ratingNo\">{{ratingStar}} Star</span>\n          {{ratingCount}} ratings, {{reviewCount}} reviews\n        </div>\n        <div class=\"Pprice\">\n          <span class=\"crPrice\">{{offer_price}}\n          </span>\n          <span class=\"oldPrice\">{{actual_price}}</span>\n          <span class=\"offPrice\">{{discount_percentage}} %</span>\n          <p style=\"font-size: small;\">Delivery Charge - {{delivery_charge}} /- </p>\n\n          <ion-col style=\"text-align: left;\" *ngIf=\"isInStock  == true\" size=\"6\">\n            <span class=\"stk instk\" >In Stock</span>\n          </ion-col>\n          <ion-col style=\"text-align: left;\" *ngIf=\"isInStock == false\" size=\"6\">\n            <span class=\"stk outstk\">Out of Stock</span>\n          </ion-col>\n\n        </div>\n        <div>\n          <ion-label position=\"stacked\">Check Pincode</ion-label>\n          <ion-row>\n            <ion-col size=\"8\">\n              <ion-input class=\"item-input\" type=\"text\" [(ngModel)]=\"pincode\"></ion-input>\n            </ion-col>\n            <ion-col size=\"4\">\n              <ion-button class=\"pincodeButton\" (click)=\"checkPincode(pincode)\">Check</ion-button>\n            </ion-col>\n          </ion-row>\n        </div>\n        <ion-item *ngIf=\"isDelivery===true\">\n          <p style=\"color: darkgreen;\">Delivery option Available</p>\n        </ion-item>\n        <ion-item *ngIf=\"isDelivery===false\">\n          <p style=\"color: firebrick;\">Delivery option not Available</p>\n        </ion-item>\n        <div class=\"\">\n          <ion-button *ngIf=\"isInStock == true\" class=\"addtoCrt\" expand=\"full\"  (click)=\"buyNow()\">\n            <ion-icon slot=\"start\" name=\"cart\"></ion-icon>\n            Buy Now\n          </ion-button>\n          <ion-button *ngIf=\"isInStock == true\" class=\"addtoCrt\" expand=\"full\"  (click)=\"addToCart()\">\n            <ion-icon slot=\"start\" name=\"cart\"></ion-icon>\n            Add to Cart\n          </ion-button>\n        </div>\n        <div>\n          <ion-button *ngIf=\"isInStock == true\" class=\"addtoWshLst\" expand=\"full\" color=\"light\" (click)=\"addToWishlist()\">\n            <ion-icon slot=\"start\" name=\"heart-empty\"></ion-icon>\n            Add to Wishlist\n          </ion-button>\n        </div>\n        <ion-text>\n          <h4>Product Details</h4>\n          <p>{{introduction}}</p>\n          <ion-item *ngFor=\"let productSpecification of productSpecification;\">\n            <p style=\"font-size: small;\">{{productSpecification.Name}} - {{productSpecification.Value}}</p>\n          </ion-item>\n\n        </ion-text>\n\n      </ion-col>\n      <!-- <div class=\"\">\n        <ion-button class=\"addtoWshLst\" color=\"light\" (click)=\"addToWishlist()\">\n          <ion-icon slot=\"start\" name=\"heart-empty\"></ion-icon>\n          Add to Wishlist\n        </ion-button>\n        <ion-button class=\"addtoCrt\" (click)=\"addToCart()\">\n          <ion-icon slot=\"start\" name=\"cart\"></ion-icon>\n          Add to Cart\n        </ion-button>\n      </div> -->\n    </ion-row>\n  </ion-grid>\n  <ion-toolbar class=\"forSecHed mb-0\">\n    <ion-title>Related Product</ion-title>\n    <ion-buttons slot=\"secondary\">\n      <ion-button color=\"medium\">\n        view all\n      </ion-button>\n    </ion-buttons>\n  </ion-toolbar>\n\n  <ion-grid>\n    <ion-row>\n      <ion-col size=\"12\" *ngFor=\"let relatedProduct of relatedProduct; let i = index\">\n        <ion-card style=\"margin: 0;\">\n          <ion-img src=\"{{relatedProduct.product.photo}}\" (click)=\"relateProductToDetails(relatedProduct)\"></ion-img>\n          <ion-card-header (click)=\"relateProductToDetails(relatedProduct)\">\n            <ion-card-subtitle>{{relatedProduct.product.name | slice:0:20}}</ion-card-subtitle>\n            <ion-row>\n              <ion-col style=\"text-align: left;\" *ngIf=\"relatedProduct.product.in_stock  == true\" size=\"6\">\n                <span class=\"stk instk\">In Stock</span>\n              </ion-col>\n              <ion-col style=\"text-align: left;\" *ngIf=\"relatedProduct.product.in_stock  == false\" size=\"6\">\n                <span class=\"stk outstk\">Out of Stock</span>\n              </ion-col>\n              <ion-col style=\"text-align: right;\" size=\"6\">\n                <span class=\"stkPrc\">Rs. {{relatedProduct.product.actual_price}}</span>\n              </ion-col>\n            </ion-row>\n          </ion-card-header>\n          \n          <div class=\"lstBtnGrp\">\n            <ion-button color=\"light\" (click)=\"addToWishlist2(relatedProduct,i)\">\n              <ion-icon slot=\"icon-only\" name=\"heart-empty\" *ngIf=\"wishListCheck[i] !== relatedProduct.product_id\"></ion-icon>\n              <ion-icon slot=\"icon-only\" name=\"heart\" *ngIf=\"wishListCheck[i] === relatedProduct.product_id\" color=\"success\"></ion-icon>\n            </ion-button>\n            <ion-button color=\"light\" *ngIf=\"relatedProduct.product.in_stock == true\" (click)=\"addToCart2(relatedProduct)\">\n                <ion-icon slot=\"icon-only\" name=\"cart\"></ion-icon>\n            </ion-button>\n            <ion-button color=\"light\" *ngIf=\"relatedProduct.product.in_stock == false\">\n              <ion-icon slot=\"icon-only\" style=\"color:gainsboro;\" name=\"cart\"></ion-icon>\n          </ion-button>\n        </div>\n\n        </ion-card>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n</ion-content>\n\n<ion-footer>\n  <ion-toolbar text-center color=\"dark\">\n      <ion-buttons>\n          <ion-button (click)=\"tabBarHome()\">\n              <div class=\"fotricn\">\n                  <ion-icon name=\"home\"></ion-icon>\n                  <ion-label>Home</ion-label>\n              </div>\n          </ion-button>\n          <ion-button (click)=\"tabBarList()\">\n              <div class=\"fotricn\">\n                  <ion-icon name=\"basket\"></ion-icon>\n                  <ion-label>Shop</ion-label>\n              </div>\n          </ion-button>\n          <ion-button (click)=\"tabBarPolicy()\">\n              <div class=\"fotricn\">\n                  <ion-icon name=\"open\"></ion-icon>\n                  <ion-label>Policy</ion-label>\n              </div>\n          </ion-button>\n          <ion-button (click)=\"tabBarContacts()\">\n              <div class=\"fotricnlst\">\n                  <ion-icon name=\"contacts\"></ion-icon>\n                  <ion-label>Contact</ion-label>\n              </div>\n          </ion-button>\n      </ion-buttons>\n  </ion-toolbar>\n</ion-footer>"
+module.exports = "<ion-header>\n  <ion-toolbar>\n    <ion-buttons slot=\"start\" (click)=\"goBack()\" >\n      <ion-icon name=\"arrow-back\" class=\"backIcon\" style=\"color: #FFCC23\"></ion-icon>\n    </ion-buttons>\n    <ion-title>\n          Product Details\n        </ion-title>\n    <!-- <ion-img style=\"max-width: 70px;\" src=\"/assets/images/logo.png\"></ion-img> -->\n    <ion-buttons slot=\"secondary\">\n      <!-- <ion-button>\n        <ion-icon slot=\"icon-only\" name=\"search\"></ion-icon>\n      </ion-button>\n      <ion-button>\n        <ion-icon slot=\"icon-only\" name=\"notifications-outline\"></ion-icon>\n      </ion-button> -->\n      <ion-button (click)=\"toCart()\">\n        <ion-icon slot=\"icon-only\" name=\"cart\" style=\"color: #FFCC23\"></ion-icon>\n        <span class=\"badge badge-assertive\" style=\"color: black;\">{{util.cartCount}}</span>\n      </ion-button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n\n<!-- <ion-content *ngIf=\"productImage.length > 0\"> -->\n<ion-content>\n  <ion-slides *ngIf=\"productImage.length > 0\"  pager=\"true\">\n    <ion-slide *ngFor=\"let productImage of productImage; let i = index\">\n        <ion-card class=\"welcome-card\">\n           <img [src]=\"productImage || '/assets/images/p1.jpg'\">\n            <ion-card-header>\n            </ion-card-header>\n        </ion-card>\n    </ion-slide>\n</ion-slides>\n\n  <ion-grid *ngIf=\"isProductDetails==true\">\n    <ion-row>\n      <ion-col>\n        <ion-text>\n          <h2 class=\"pName\">{{name}}</h2>\n        </ion-text>\n        <span *ngIf=\"productTag != ''\" style=\"background-color: yellow;border-radius: 2px;padding-left: 2px;padding-right: 2px;color: darkgreen;\">\n          {{productTag}}\n        </span>\n        <div class=\"rating\" (click)=\"toRatingPage()\">\n          <span>\n            <!-- <ion-col class=\"left\" size=\"6\"> -->\n              <ion-item class=\"star\" *ngIf=\"ratingStar=='5'\" lines=\"none\">\n                <ion-icon name=\"star\" style=\"color: #FFCC23\"></ion-icon>\n                <ion-icon name=\"star\" style=\"color: #FFCC23\"></ion-icon>\n                <ion-icon name=\"star\" style=\"color: #FFCC23\"></ion-icon>\n                <ion-icon name=\"star\" style=\"color: #FFCC23\"></ion-icon>\n                <ion-icon name=\"star\" style=\"color: #FFCC23\"></ion-icon>\n              </ion-item>\n              <ion-item class=\"star\" *ngIf=\"ratingStar=='4'\" lines=\"none\">\n                <ion-icon name=\"star\" style=\"color: #FFCC23\"></ion-icon>\n                <ion-icon name=\"star\" style=\"color: #FFCC23\"></ion-icon>\n                <ion-icon name=\"star\" style=\"color: #FFCC23\"></ion-icon>\n                <ion-icon name=\"star\" style=\"color: #FFCC23\"></ion-icon>\n                <ion-icon name=\"star-outline\"></ion-icon>\n              </ion-item>\n              <ion-item class=\"star\" *ngIf=\"ratingStar=='3'\" lines=\"none\">\n                <ion-icon name=\"star\" style=\"color: #FFCC23\"></ion-icon>\n                <ion-icon name=\"star\" style=\"color: #FFCC23\"></ion-icon>\n                <ion-icon name=\"star\" style=\"color: #FFCC23\"></ion-icon>\n                <ion-icon name=\"star-outline\"></ion-icon>\n                <ion-icon name=\"star-outline\"></ion-icon>\n              </ion-item>\n              <ion-item class=\"star\" *ngIf=\"ratingStar=='2'\" lines=\"none\">\n                <ion-icon name=\"star\" style=\"color: #FFCC23\"></ion-icon>\n                <ion-icon name=\"star\" style=\"color: #FFCC23\"></ion-icon>\n                <ion-icon name=\"star-outline\"></ion-icon>\n                <ion-icon name=\"star-outline\"></ion-icon>\n                <ion-icon name=\"star-outline\"></ion-icon>\n              </ion-item>\n              <ion-item class=\"star\" *ngIf=\"ratingStar=='1'\" lines=\"none\">\n                <ion-icon name=\"star\" style=\"color: #FFCC23\"></ion-icon>\n                <ion-icon name=\"star-outline\"></ion-icon>\n                <ion-icon name=\"star-outline\"></ion-icon>\n                <ion-icon name=\"star-outline\"></ion-icon>\n                <ion-icon name=\"star-outline\"></ion-icon>\n              </ion-item>\n              <ion-item class=\"star\" *ngIf=\"ratingStar=='0'\" lines=\"none\">\n                <ion-icon name=\"star-outline\"></ion-icon>\n                <ion-icon name=\"star-outline\"></ion-icon>\n                <ion-icon name=\"star-outline\"></ion-icon>\n                <ion-icon name=\"star-outline\"></ion-icon>\n                <ion-icon name=\"star-outline\"></ion-icon>\n              </ion-item>\n            <!-- </ion-col>  *ngIf=\"this.rating_count_details.length != 0\" -->\n          </span>\n          <span>\n            {{ratingCount}} ratings, {{reviewCount}} reviews\n          </span>\n        </div>\n\n        <div class=\"Pprice\">\n          <span class=\"crPrice\">₹ {{offer_price}}\n          </span>\n          <span class=\"oldPrice\">₹ {{actual_price}}</span>\n          <span class=\"offPrice\">Save {{discount_percentage}} %</span>\n          <!-- <p style=\"font-size: small;\">Delivery Charge - {{delivery_charge}} /- </p> -->\n\n          <ion-col style=\"text-align: left;\" *ngIf=\"total_quantity!='0'\" size=\"6\">\n            <span class=\"stk instk\" >In Stock</span>\n          </ion-col>\n          <ion-col style=\"text-align: left;\" *ngIf=\"total_quantity=='0'\" size=\"6\">\n            <span class=\"stk outstk\">Out of Stock</span>\n          </ion-col>\n        </div>\n\n\n\n        <div class=\"Pprice\" *ngIf=\"arrColorName.length != '0'\">\n          <span class=\"crPrice\">{{arrfilterType1[0]}}\n          </span>\n          <ion-col size=\"4\" *ngFor=\"let arrColorName of arrColorName; let i = index\">\n            <ion-button ion-button id=\"{{i}}\" [ngClass]=\"i==this.buttonClicked1 ? 'pincodeButton': 'pincodeButton2'\" (click)=\"changeProduct(i)\">{{arrColorName}}</ion-button>\n          </ion-col>\n        </div>\n\n        <!-- <div class=\"Pprice\" *ngIf=\"arrColorName2.length != '0'\">\n          <span class=\"crPrice\">{{arrfilterType2[0]}}\n          </span>\n          <ion-col size=\"4\" *ngFor=\"let arrColorName2 of arrColorName2; let i = index\">\n            <ion-button class=\"pincodeButton\" (click)=\"changeProduct2(i)\">{{arrColorName2}}</ion-button>\n          </ion-col>\n        </div> -->\n\n        <div class=\"Pprice\" *ngIf=\"arrColorName2.length != '0'\">\n          <span class=\"crPrice\">{{arrfilterType2[0]}}\n          </span>\n          <ion-col *ngFor=\"let arrColorName2 of arrColorName2; let i = index\">\n            <ion-button id=\"{{i}}\" [ngClass]=\"i==this.buttonClicked2 ? 'pincodeButton': 'pincodeButton2'\" (click)=\"changeProduct2(i)\">{{arrColorName2}}</ion-button>\n          </ion-col>\n        </div>\n\n\n\n        <div>\n          <ion-label position=\"stacked\">Check Pincode</ion-label>\n          <ion-row>\n            <ion-col size=\"8\">\n              <ion-input class=\"item-input\" type=\"text\" [(ngModel)]=\"pincode\"></ion-input>\n            </ion-col>\n            <ion-col size=\"4\">\n              <ion-button class=\"pincodeButton3\" (click)=\"checkPincode(pincode)\">Check</ion-button>\n            </ion-col>\n          </ion-row>\n        </div>\n        <ion-item *ngIf=\"isDelivery===true\">\n          <p style=\"color: darkgreen;\">Delivery option Available</p>\n        </ion-item>\n        <ion-item *ngIf=\"isDelivery===false\">\n          <p style=\"color: firebrick;\">Delivery option not Available</p>\n        </ion-item>\n        <!-- <div class=\"\">\n          <ion-button *ngIf=\"total_quantity!='0'\" class=\"addtoCrt\" expand=\"full\"  (click)=\"buyNow()\">\n            <ion-icon slot=\"start\" name=\"cart\"></ion-icon>\n            Buy Now\n          </ion-button>\n          <ion-button *ngIf=\"total_quantity!='0'\" class=\"addtoCrt\" expand=\"full\"  (click)=\"addToCart()\">\n            <ion-icon slot=\"start\" name=\"cart\"></ion-icon>\n            Add to Cart\n          </ion-button>\n        </div> -->\n        <div>\n          <ion-button *ngIf=\"total_quantity!='0'\" class=\"addtoWshLst\" expand=\"full\" color=\"light\" (click)=\"addToWishlist()\">\n            <ion-icon slot=\"start\" name=\"heart-empty\"></ion-icon>\n            Add to Wishlist\n          </ion-button>\n        </div>\n        <ion-text>\n          <h4>Product Details</h4>\n          <p>{{introduction}}</p>\n          <ion-item *ngFor=\"let productSpecification of productSpecification;\">\n            <p style=\"font-size: small;\">{{productSpecification.Name}} - {{productSpecification.Value}}</p>\n          </ion-item>\n\n        </ion-text>\n\n      </ion-col>\n      <!-- <div class=\"\">\n        <ion-button class=\"addtoWshLst\" color=\"light\" (click)=\"addToWishlist()\">\n          <ion-icon slot=\"start\" name=\"heart-empty\"></ion-icon>\n          Add to Wishlist\n        </ion-button>\n        <ion-button class=\"addtoCrt\" (click)=\"addToCart()\">\n          <ion-icon slot=\"start\" name=\"cart\"></ion-icon>\n          Add to Cart\n        </ion-button>\n      </div> -->\n    </ion-row>\n  </ion-grid>\n  <ion-toolbar class=\"forSecHed mb-0\">\n    <h3>Related Product</h3>\n    <!-- <ion-buttons slot=\"secondary\">\n      <ion-button color=\"medium\">\n        view all\n      </ion-button>\n    </ion-buttons> -->\n  </ion-toolbar>\n\n  <ion-grid>\n    <ion-row>\n      <ion-col size=\"6\" *ngFor=\"let relatedProduct of relatedProduct; let i = index\">\n        <ion-card style=\"margin: 0;\">\n          <div class=\"lstBtnGrp\">\n            <label style=\"background-color: #FFCC23;color: white;border-radius: 2px;\">{{relatedProduct.discount}} %</label>\n            <button color=\"light\" (click)=\"addToWishlist2(relatedProduct,i)\" style=\"right: -40px;background: transparent;\">\n              <ion-icon slot=\"icon-only\" name=\"heart-empty\" *ngIf=\"wishListCheck[i] !== relatedProduct.product_id\"></ion-icon>\n              <ion-icon slot=\"icon-only\" name=\"heart\" *ngIf=\"wishListCheck[i] === relatedProduct.product_id\" style=\"color: #0000A0\"></ion-icon>\n            </button>\n        </div>\n\n          <ion-img src=\"{{relatedProduct.product.photo}}\" (click)=\"relateProductToDetails(relatedProduct)\" style=\"height: 128px;width: 100%;\"></ion-img>\n          \n          <!-- <div class=\"rating\">\n            <span>\n                <ion-item class=\"star\" lines=\"none\">\n                    <ion-icon name=\"star-outline\"></ion-icon>\n                    <ion-icon name=\"star-outline\"></ion-icon>\n                    <ion-icon name=\"star-outline\"></ion-icon>\n                    <ion-icon name=\"star-outline\"></ion-icon>\n                    <ion-icon name=\"star-outline\"></ion-icon>\n                  </ion-item>\n            </span>\n          </div> -->\n\n          <ion-card-header (click)=\"relateProductToDetails(relatedProduct)\" style=\"height: 135px;\">\n            <ion-card-subtitle>{{relatedProduct.product.name | slice:0:20}}</ion-card-subtitle>\n            <ion-row>\n              <ion-col style=\"text-align: left;\" *ngIf=\"relatedProduct.product.total_quantity!='0'\" size=\"6\">\n                <span class=\"stk instk\">In Stock</span>\n              </ion-col>\n              <ion-col style=\"text-align: left;\" *ngIf=\"relatedProduct.product.total_quantity=='0'\" size=\"6\">\n                <span class=\"stk outstk\">Out of Stock</span>\n              </ion-col>\n              <ion-col style=\"text-align: right;\" size=\"6\">\n                <span class=\"stkPrc\">Rs. {{relatedProduct.product.actual_price}}</span>\n              </ion-col>\n            </ion-row>\n          </ion-card-header>\n          \n          <div>\n            <!-- <ion-button color=\"light\" (click)=\"addToWishlist2(relatedProduct,i)\">\n              <ion-icon slot=\"icon-only\" name=\"heart-empty\" *ngIf=\"wishListCheck[i] !== relatedProduct.product_id\"></ion-icon>\n              <ion-icon slot=\"icon-only\" name=\"heart\" *ngIf=\"wishListCheck[i] === relatedProduct.product_id\" style=\"color: #0000A0\"></ion-icon>\n            </ion-button>\n            <ion-button color=\"light\" *ngIf=\"relatedProduct.product.in_stock == true\" (click)=\"addToCart2(relatedProduct)\">\n                <ion-icon slot=\"icon-only\" name=\"cart\"></ion-icon>\n            </ion-button> -->\n            <ion-button class=\"addtoCrt\" expand=\"full\" *ngIf=\"relatedProduct.product.total_quantity!='0'\" (click)=\"addToCart2(relatedProduct)\">\n              <!-- <ion-icon slot=\"icon-only\" style=\"color:gainsboro;\" name=\"cart\"></ion-icon> -->\n              Add To Cart\n          </ion-button>\n\n        </div>\n\n        </ion-card>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n</ion-content>\n\n<ion-footer *ngIf=\"total_quantity!='0'\">\n  <ion-toolbar text-center>\n    <ion-col size=\"6\">\n      <ion-button (click)=\"buyNow()\" style=\"width: 125px;\"> Buy Now\n    </ion-button>\n    </ion-col>\n    <ion-col size=\"6\">\n      <ion-button (click)=\"addToCart()\" style=\"width: 125px;\"> Add to Cart\n    </ion-button>\n    </ion-col>\n  </ion-toolbar>\n</ion-footer>"
 
 /***/ }),
 
@@ -73,7 +73,7 @@ module.exports = "<ion-header>\n  <ion-toolbar>\n    <ion-buttons slot=\"start\"
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".hasFix {\n  padding-bottom: 50px; }\n\n.pName {\n  font-size: 18px;\n  margin: 0 0 10px; }\n\n.rating {\n  color: #686868;\n  font-size: 12px; }\n\n.ratingNo {\n  display: inline-block;\n  background: green;\n  color: #fff;\n  padding: 4px;\n  border-radius: 4px;\n  margin-right: 5px; }\n\n.Pprice {\n  margin: 10px 0; }\n\n.crPrice {\n  font-size: 22px;\n  display: inline-block;\n  margin-right: 10px; }\n\n.oldPrice {\n  text-decoration: line-through;\n  color: rgba(0, 0, 0, 0.6);\n  display: inline-block;\n  margin-right: 15px; }\n\n.offPrice {\n  color: green; }\n\n.unitP {\n  font-size: 14px;\n  float: right;\n  width: 50px;\n  padding-left: 5px; }\n\n.nrmlwrp {\n  overflow: hidden; }\n\n.flt {\n  float: left; }\n\n.w-50 {\n  width: 50%; }\n\n.py-10 {\n  padding-top: 10px;\n  padding-bottom: 10px; }\n\n.forSecHed {\n  height: 44px !important;\n  min-height: auto !important; }\n\n.forSecHed * {\n  font-size: 14px !important;\n  text-transform: capitalize !important;\n  height: 20px !important;\n  min-height: auto !important; }\n\n.stk {\n  font-size: 10px;\n  font-weight: bold; }\n\n.instk {\n  color: green; }\n\n.outstk {\n  color: red; }\n\n.stkPrc {\n  font-size: 11px;\n  font-weight: bold;\n  display: inline-block; }\n\n.PdActins {\n  position: fixed;\n  width: 100%;\n  bottom: 0;\n  left: 0;\n  z-index: 1111;\n  background-color: #fff;\n  padding: 5px 0;\n  text-align: center; }\n\n.PdActins ion-button {\n  width: 48%;\n  margin: 0 2px; }\n\n.addtoWshLst {\n  position: relative;\n  border: solid .5px grey;\n  color: gray; }\n\n.addtoCrt {\n  background: transparent;\n  position: relative;\n  border-radius: 5px; }\n\n.backIcon {\n  font-size: 28px;\n  color: 226; }\n\n.item-input {\n  padding: 5px;\n  border: solid .5px grey;\n  border-radius: 6px; }\n\n.pincodeButton {\n  position: relative;\n  width: 70px;\n  top: -6px; }\n\n.instk[_ngcontent-c3] {\n  color: green;\n  font-size: 18px; }\n\n.outstk[_ngcontent-c3] {\n  color: red;\n  font-size: 18px; }\n\n.lstBtnGrp * {\n  font-size: 16px; }\n\n.lstBtnGrp .button {\n  width: 50%;\n  margin: 0;\n  box-shadow: none !important;\n  background: transparent;\n  border-radius: 0;\n  border-top: 1px solid rgba(0, 0, 0, 0.109804); }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy92YXAvRGVza3RvcC9Jb25pY19Qcm9qZWN0L2FyY2hpdmUgaW9uaWMgZlByb2plY3Qvb2xkIGFyY2hpdmUgMi9BcmNoaXZlIDIvc3JjL2FwcC9kZXRhaWxzL2RldGFpbHMucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQVEsb0JBQW1CLEVBQUE7O0FBRTNCO0VBQ0ksZUFBZTtFQUNmLGdCQUFnQixFQUFBOztBQUVwQjtFQUNJLGNBQWM7RUFDZCxlQUFlLEVBQUE7O0FBRW5CO0VBQ0kscUJBQXFCO0VBQ3JCLGlCQUFpQjtFQUNqQixXQUFXO0VBQ1gsWUFBWTtFQUNaLGtCQUFrQjtFQUNsQixpQkFBaUIsRUFBQTs7QUFFckI7RUFBUyxjQUFjLEVBQUE7O0FBQ3ZCO0VBQ0ksZUFBZTtFQUNmLHFCQUFxQjtFQUNyQixrQkFBa0IsRUFBQTs7QUFFdEI7RUFDSSw2QkFBNkI7RUFDN0IseUJBQXlCO0VBQ3pCLHFCQUFxQjtFQUNyQixrQkFBa0IsRUFBQTs7QUFFdEI7RUFBVSxZQUFZLEVBQUE7O0FBQ3RCO0VBQ0ksZUFBZTtFQUNmLFlBQVk7RUFDWixXQUFXO0VBQ1gsaUJBQWdCLEVBQUE7O0FBR3BCO0VBQ0ksZ0JBQWdCLEVBQUE7O0FBRXBCO0VBQ0ksV0FBVyxFQUFBOztBQUVmO0VBQ0ksVUFBVSxFQUFBOztBQUVkO0VBQ0ksaUJBQWlCO0VBQ2pCLG9CQUFvQixFQUFBOztBQUV4QjtFQUNJLHVCQUF1QjtFQUN2QiwyQkFBMkIsRUFBQTs7QUFFL0I7RUFDSSwwQkFBMEI7RUFDMUIscUNBQXFDO0VBQ3JDLHVCQUF1QjtFQUN2QiwyQkFBMkIsRUFBQTs7QUFFL0I7RUFDSSxlQUFlO0VBQ2YsaUJBQWlCLEVBQUE7O0FBRXJCO0VBQ0ksWUFBWSxFQUFBOztBQUVoQjtFQUNJLFVBQVUsRUFBQTs7QUFFZDtFQUNJLGVBQWU7RUFDZixpQkFBaUI7RUFDakIscUJBQXFCLEVBQUE7O0FBRXpCO0VBQ0ksZUFBZTtFQUNmLFdBQVc7RUFDWCxTQUFTO0VBQ1QsT0FBTztFQUNQLGFBQWE7RUFDYixzQkFBc0I7RUFDdEIsY0FBYztFQUNkLGtCQUFrQixFQUFBOztBQUV0QjtFQUNJLFVBQVU7RUFDVixhQUFhLEVBQUE7O0FBRWpCO0VBQ0ksa0JBQWtCO0VBQ2xCLHVCQUF1QjtFQUN2QixXQUFXLEVBQUE7O0FBRWY7RUFDSSx1QkFBdUI7RUFDdkIsa0JBQWtCO0VBQ2xCLGtCQUFrQixFQUFBOztBQUd0QjtFQUNJLGVBQWU7RUFDZixVQUE0QixFQUFBOztBQUdoQztFQUNJLFlBQVk7RUFDWix1QkFBdUI7RUFDdkIsa0JBQWtCLEVBQUE7O0FBR3RCO0VBQ0ksa0JBQWtCO0VBQ2xCLFdBQVU7RUFDVixTQUNKLEVBQUE7O0FBRUE7RUFDSSxZQUFZO0VBQ1osZUFBZSxFQUFBOztBQUduQjtFQUNJLFVBQVU7RUFDVixlQUFlLEVBQUE7O0FBRW5CO0VBQ0ksZUFBZSxFQUFBOztBQUVuQjtFQUNJLFVBQVU7RUFDVixTQUFTO0VBQ1QsMkJBQTJCO0VBQzNCLHVCQUF1QjtFQUN2QixnQkFBZ0I7RUFDaEIsNkNBQXdELEVBQUEiLCJmaWxlIjoic3JjL2FwcC9kZXRhaWxzL2RldGFpbHMucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmhhc0ZpeHtwYWRkaW5nLWJvdHRvbTo1MHB4O31cblxuLnBOYW1le1xuICAgIGZvbnQtc2l6ZTogMThweDtcbiAgICBtYXJnaW46IDAgMCAxMHB4O1xufVxuLnJhdGluZ3tcbiAgICBjb2xvcjogIzY4Njg2ODtcbiAgICBmb250LXNpemU6IDEycHg7XG59XG4ucmF0aW5nTm97XG4gICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICAgIGJhY2tncm91bmQ6IGdyZWVuO1xuICAgIGNvbG9yOiAjZmZmO1xuICAgIHBhZGRpbmc6IDRweDtcbiAgICBib3JkZXItcmFkaXVzOiA0cHg7XG4gICAgbWFyZ2luLXJpZ2h0OiA1cHg7XG59XG4uUHByaWNleyBtYXJnaW46IDEwcHggMDt9XG4uY3JQcmljZXtcbiAgICBmb250LXNpemU6IDIycHg7XG4gICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICAgIG1hcmdpbi1yaWdodDogMTBweDtcbn1cbi5vbGRQcmljZXtcbiAgICB0ZXh0LWRlY29yYXRpb246IGxpbmUtdGhyb3VnaDtcbiAgICBjb2xvcjogcmdiYSgwLCAwLCAwLCAwLjYpO1xuICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbiAgICBtYXJnaW4tcmlnaHQ6IDE1cHg7XG59XG4ub2ZmUHJpY2V7Y29sb3I6IGdyZWVuO31cbi51bml0UHtcbiAgICBmb250LXNpemU6IDE0cHg7XG4gICAgZmxvYXQ6IHJpZ2h0O1xuICAgIHdpZHRoOiA1MHB4O1xuICAgIHBhZGRpbmctbGVmdDo1cHg7XG59XG5cbi5ucm1sd3Jwe1xuICAgIG92ZXJmbG93OiBoaWRkZW47XG59XG4uZmx0e1xuICAgIGZsb2F0OiBsZWZ0O1xufVxuLnctNTB7XG4gICAgd2lkdGg6IDUwJTtcbn1cbi5weS0xMHtcbiAgICBwYWRkaW5nLXRvcDogMTBweDtcbiAgICBwYWRkaW5nLWJvdHRvbTogMTBweDtcbn1cbi5mb3JTZWNIZWR7XG4gICAgaGVpZ2h0OiA0NHB4ICFpbXBvcnRhbnQ7XG4gICAgbWluLWhlaWdodDogYXV0byAhaW1wb3J0YW50OyBcbn1cbi5mb3JTZWNIZWQgKntcbiAgICBmb250LXNpemU6IDE0cHggIWltcG9ydGFudDtcbiAgICB0ZXh0LXRyYW5zZm9ybTogY2FwaXRhbGl6ZSAhaW1wb3J0YW50O1xuICAgIGhlaWdodDogMjBweCAhaW1wb3J0YW50O1xuICAgIG1pbi1oZWlnaHQ6IGF1dG8gIWltcG9ydGFudDsgXG59XG4uc3Rre1xuICAgIGZvbnQtc2l6ZTogMTBweDtcbiAgICBmb250LXdlaWdodDogYm9sZDtcbn1cbi5pbnN0a3tcbiAgICBjb2xvcjogZ3JlZW47XG59XG4ub3V0c3Rre1xuICAgIGNvbG9yOiByZWQ7XG59XG4uc3RrUHJje1xuICAgIGZvbnQtc2l6ZTogMTFweDtcbiAgICBmb250LXdlaWdodDogYm9sZDtcbiAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG59XG4uUGRBY3RpbnN7XG4gICAgcG9zaXRpb246IGZpeGVkO1xuICAgIHdpZHRoOiAxMDAlO1xuICAgIGJvdHRvbTogMDtcbiAgICBsZWZ0OiAwO1xuICAgIHotaW5kZXg6IDExMTE7XG4gICAgYmFja2dyb3VuZC1jb2xvcjogI2ZmZjtcbiAgICBwYWRkaW5nOiA1cHggMDtcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XG59XG4uUGRBY3RpbnMgaW9uLWJ1dHRvbntcbiAgICB3aWR0aDogNDglO1xuICAgIG1hcmdpbjogMCAycHg7XG59XG4uYWRkdG9Xc2hMc3R7XG4gICAgcG9zaXRpb246IHJlbGF0aXZlO1xuICAgIGJvcmRlcjogc29saWQgLjVweCBncmV5O1xuICAgIGNvbG9yOiBncmF5O1xufVxuLmFkZHRvQ3J0e1xuICAgIGJhY2tncm91bmQ6IHRyYW5zcGFyZW50O1xuICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgICBib3JkZXItcmFkaXVzOiA1cHg7XG59XG5cbi5iYWNrSWNvbntcbiAgICBmb250LXNpemU6IDI4cHg7XG4gICAgY29sb3I6IGJsdWUoJGNvbG9yOiAjMjAwYWUyKTtcbn1cblxuLml0ZW0taW5wdXQge1xuICAgIHBhZGRpbmc6IDVweDtcbiAgICBib3JkZXI6IHNvbGlkIC41cHggZ3JleTtcbiAgICBib3JkZXItcmFkaXVzOiA2cHg7XG59XG5cbi5waW5jb2RlQnV0dG9uIHtcbiAgICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gICAgd2lkdGg6NzBweDtcbiAgICB0b3A6LTZweFxufVxuXG4uaW5zdGtbX25nY29udGVudC1jM10ge1xuICAgIGNvbG9yOiBncmVlbjtcbiAgICBmb250LXNpemU6IDE4cHg7XG59XG5cbi5vdXRzdGtbX25nY29udGVudC1jM10ge1xuICAgIGNvbG9yOiByZWQ7XG4gICAgZm9udC1zaXplOiAxOHB4O1xufVxuLmxzdEJ0bkdycCAqe1xuICAgIGZvbnQtc2l6ZTogMTZweDtcbn1cbi5sc3RCdG5HcnAgLmJ1dHRvbntcbiAgICB3aWR0aDogNTAlO1xuICAgIG1hcmdpbjogMDtcbiAgICBib3gtc2hhZG93OiBub25lICFpbXBvcnRhbnQ7XG4gICAgYmFja2dyb3VuZDogdHJhbnNwYXJlbnQ7XG4gICAgYm9yZGVyLXJhZGl1czogMDtcbiAgICBib3JkZXItdG9wOiAxcHggc29saWQgcmdiYSgwLCAwLCAwLCAwLjEwOTgwMzkyMTU2ODYyNzQ1KTtcbn0iXX0= */"
+module.exports = ".hasFix {\n  padding-bottom: 50px; }\n\n.pName {\n  font-size: 18px;\n  margin: 0 0 10px; }\n\n.rating {\n  color: #686868;\n  font-size: 12px; }\n\n.ratingNo {\n  display: inline-block;\n  background: green;\n  color: #fff;\n  padding: 4px;\n  border-radius: 4px;\n  margin-right: 5px; }\n\n.Pprice {\n  margin: 10px 0; }\n\n.crPrice {\n  font-size: 22px;\n  display: inline-block;\n  margin-right: 10px; }\n\n.oldPrice {\n  text-decoration: line-through;\n  color: rgba(0, 0, 0, 0.6);\n  display: inline-block;\n  margin-right: 15px; }\n\n.offPrice {\n  color: #FFCC23; }\n\n.unitP {\n  font-size: 14px;\n  float: right;\n  width: 50px;\n  padding-left: 5px; }\n\n.nrmlwrp {\n  overflow: hidden; }\n\n.flt {\n  float: left; }\n\n.w-50 {\n  width: 50%; }\n\n.py-10 {\n  padding-top: 10px;\n  padding-bottom: 10px; }\n\n.forSecHed {\n  height: 44px !important;\n  min-height: auto !important; }\n\n.forSecHed * {\n  font-size: 14px !important;\n  text-transform: capitalize !important;\n  height: 20px !important;\n  min-height: auto !important; }\n\n.stk {\n  font-size: 10px;\n  font-weight: bold; }\n\n.instk {\n  color: green; }\n\n.outstk {\n  color: red; }\n\n.stkPrc {\n  font-size: 11px;\n  font-weight: bold;\n  display: inline-block; }\n\n.PdActins {\n  position: fixed;\n  width: 100%;\n  bottom: 0;\n  left: 0;\n  z-index: 1111;\n  background-color: #fff;\n  padding: 5px 0;\n  text-align: center; }\n\n.PdActins ion-button {\n  width: 48%;\n  margin: 0 2px; }\n\n.addtoWshLst {\n  position: relative;\n  border: solid .5px grey;\n  color: gray; }\n\n.addtoCrt {\n  background: transparent;\n  position: relative;\n  border-radius: 5px; }\n\n.backIcon {\n  font-size: 28px;\n  color: 226; }\n\n.item-input {\n  padding: 5px;\n  border: solid .5px grey;\n  border-radius: 6px; }\n\n.pincodeButton {\n  position: relative;\n  top: -6px;\n  color: #FFCC23;\n  --background: #e95e28; }\n\n.pincodeButton2 {\n  position: relative;\n  top: -6px;\n  color: aqua; }\n\n.pincodeButton3 {\n  position: relative;\n  width: 70px;\n  top: -6px; }\n\n.instk[_ngcontent-c3] {\n  color: green;\n  font-size: 14px; }\n\n.outstk[_ngcontent-c3] {\n  color: red;\n  font-size: 14px; }\n\n.lstBtnGrp * {\n  font-size: 16px;\n  position: relative; }\n\n.lstBtnGrp .button {\n  position: absolute;\n  top: 5px; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy92YXAvRGVza3RvcC9pb25pYyBQcm9qZWN0L3BwL1NtYXJ0LUNhcnQgMi9zcmMvYXBwL2RldGFpbHMvZGV0YWlscy5wYWdlLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFBUSxvQkFBbUIsRUFBQTs7QUFFM0I7RUFDSSxlQUFlO0VBQ2YsZ0JBQWdCLEVBQUE7O0FBRXBCO0VBQ0ksY0FBYztFQUNkLGVBQWUsRUFBQTs7QUFFbkI7RUFDSSxxQkFBcUI7RUFDckIsaUJBQWlCO0VBQ2pCLFdBQVc7RUFDWCxZQUFZO0VBQ1osa0JBQWtCO0VBQ2xCLGlCQUFpQixFQUFBOztBQUVyQjtFQUFTLGNBQWMsRUFBQTs7QUFDdkI7RUFDSSxlQUFlO0VBQ2YscUJBQXFCO0VBQ3JCLGtCQUFrQixFQUFBOztBQUV0QjtFQUNJLDZCQUE2QjtFQUM3Qix5QkFBeUI7RUFDekIscUJBQXFCO0VBQ3JCLGtCQUFrQixFQUFBOztBQUV0QjtFQUFVLGNBQWMsRUFBQTs7QUFDeEI7RUFDSSxlQUFlO0VBQ2YsWUFBWTtFQUNaLFdBQVc7RUFDWCxpQkFBZ0IsRUFBQTs7QUFHcEI7RUFDSSxnQkFBZ0IsRUFBQTs7QUFFcEI7RUFDSSxXQUFXLEVBQUE7O0FBRWY7RUFDSSxVQUFVLEVBQUE7O0FBRWQ7RUFDSSxpQkFBaUI7RUFDakIsb0JBQW9CLEVBQUE7O0FBRXhCO0VBQ0ksdUJBQXVCO0VBQ3ZCLDJCQUEyQixFQUFBOztBQUUvQjtFQUNJLDBCQUEwQjtFQUMxQixxQ0FBcUM7RUFDckMsdUJBQXVCO0VBQ3ZCLDJCQUEyQixFQUFBOztBQUUvQjtFQUNJLGVBQWU7RUFDZixpQkFBaUIsRUFBQTs7QUFFckI7RUFDSSxZQUFZLEVBQUE7O0FBRWhCO0VBQ0ksVUFBVSxFQUFBOztBQUVkO0VBQ0ksZUFBZTtFQUNmLGlCQUFpQjtFQUNqQixxQkFBcUIsRUFBQTs7QUFFekI7RUFDSSxlQUFlO0VBQ2YsV0FBVztFQUNYLFNBQVM7RUFDVCxPQUFPO0VBQ1AsYUFBYTtFQUNiLHNCQUFzQjtFQUN0QixjQUFjO0VBQ2Qsa0JBQWtCLEVBQUE7O0FBRXRCO0VBQ0ksVUFBVTtFQUNWLGFBQWEsRUFBQTs7QUFFakI7RUFDSSxrQkFBa0I7RUFDbEIsdUJBQXVCO0VBQ3ZCLFdBQVcsRUFBQTs7QUFFZjtFQUNJLHVCQUF1QjtFQUN2QixrQkFBa0I7RUFDbEIsa0JBQWtCLEVBQUE7O0FBR3RCO0VBQ0ksZUFBZTtFQUNmLFVBQTRCLEVBQUE7O0FBR2hDO0VBQ0ksWUFBWTtFQUNaLHVCQUF1QjtFQUN2QixrQkFBa0IsRUFBQTs7QUFHdEI7RUFDSSxrQkFBa0I7RUFFbEIsU0FBUTtFQUVSLGNBQWM7RUFHZCxxQkFBYSxFQUFBOztBQUdqQjtFQUNJLGtCQUFrQjtFQUVsQixTQUFRO0VBRVIsV0FBVyxFQUFBOztBQUdmO0VBQ0ksa0JBQWtCO0VBQ2xCLFdBQVU7RUFDVixTQUFRLEVBQUE7O0FBSVo7RUFDSSxZQUFZO0VBQ1osZUFBZSxFQUFBOztBQUduQjtFQUNJLFVBQVU7RUFDVixlQUFlLEVBQUE7O0FBRW5CO0VBQ0ksZUFBZTtFQUNmLGtCQUFrQixFQUFBOztBQUV0QjtFQVFJLGtCQUFrQjtFQUNsQixRQUFRLEVBQUEiLCJmaWxlIjoic3JjL2FwcC9kZXRhaWxzL2RldGFpbHMucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmhhc0ZpeHtwYWRkaW5nLWJvdHRvbTo1MHB4O31cblxuLnBOYW1le1xuICAgIGZvbnQtc2l6ZTogMThweDtcbiAgICBtYXJnaW46IDAgMCAxMHB4O1xufVxuLnJhdGluZ3tcbiAgICBjb2xvcjogIzY4Njg2ODtcbiAgICBmb250LXNpemU6IDEycHg7XG59XG4ucmF0aW5nTm97XG4gICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICAgIGJhY2tncm91bmQ6IGdyZWVuO1xuICAgIGNvbG9yOiAjZmZmO1xuICAgIHBhZGRpbmc6IDRweDtcbiAgICBib3JkZXItcmFkaXVzOiA0cHg7XG4gICAgbWFyZ2luLXJpZ2h0OiA1cHg7XG59XG4uUHByaWNleyBtYXJnaW46IDEwcHggMDt9XG4uY3JQcmljZXtcbiAgICBmb250LXNpemU6IDIycHg7XG4gICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICAgIG1hcmdpbi1yaWdodDogMTBweDtcbn1cbi5vbGRQcmljZXtcbiAgICB0ZXh0LWRlY29yYXRpb246IGxpbmUtdGhyb3VnaDtcbiAgICBjb2xvcjogcmdiYSgwLCAwLCAwLCAwLjYpO1xuICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbiAgICBtYXJnaW4tcmlnaHQ6IDE1cHg7XG59XG4ub2ZmUHJpY2V7Y29sb3I6ICNGRkNDMjM7fVxuLnVuaXRQe1xuICAgIGZvbnQtc2l6ZTogMTRweDtcbiAgICBmbG9hdDogcmlnaHQ7XG4gICAgd2lkdGg6IDUwcHg7XG4gICAgcGFkZGluZy1sZWZ0OjVweDtcbn1cblxuLm5ybWx3cnB7XG4gICAgb3ZlcmZsb3c6IGhpZGRlbjtcbn1cbi5mbHR7XG4gICAgZmxvYXQ6IGxlZnQ7XG59XG4udy01MHtcbiAgICB3aWR0aDogNTAlO1xufVxuLnB5LTEwe1xuICAgIHBhZGRpbmctdG9wOiAxMHB4O1xuICAgIHBhZGRpbmctYm90dG9tOiAxMHB4O1xufVxuLmZvclNlY0hlZHtcbiAgICBoZWlnaHQ6IDQ0cHggIWltcG9ydGFudDtcbiAgICBtaW4taGVpZ2h0OiBhdXRvICFpbXBvcnRhbnQ7IFxufVxuLmZvclNlY0hlZCAqe1xuICAgIGZvbnQtc2l6ZTogMTRweCAhaW1wb3J0YW50O1xuICAgIHRleHQtdHJhbnNmb3JtOiBjYXBpdGFsaXplICFpbXBvcnRhbnQ7XG4gICAgaGVpZ2h0OiAyMHB4ICFpbXBvcnRhbnQ7XG4gICAgbWluLWhlaWdodDogYXV0byAhaW1wb3J0YW50OyBcbn1cbi5zdGt7XG4gICAgZm9udC1zaXplOiAxMHB4O1xuICAgIGZvbnQtd2VpZ2h0OiBib2xkO1xufVxuLmluc3Rre1xuICAgIGNvbG9yOiBncmVlbjtcbn1cbi5vdXRzdGt7XG4gICAgY29sb3I6IHJlZDtcbn1cbi5zdGtQcmN7XG4gICAgZm9udC1zaXplOiAxMXB4O1xuICAgIGZvbnQtd2VpZ2h0OiBib2xkO1xuICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbn1cbi5QZEFjdGluc3tcbiAgICBwb3NpdGlvbjogZml4ZWQ7XG4gICAgd2lkdGg6IDEwMCU7XG4gICAgYm90dG9tOiAwO1xuICAgIGxlZnQ6IDA7XG4gICAgei1pbmRleDogMTExMTtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjZmZmO1xuICAgIHBhZGRpbmc6IDVweCAwO1xuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcbn1cbi5QZEFjdGlucyBpb24tYnV0dG9ue1xuICAgIHdpZHRoOiA0OCU7XG4gICAgbWFyZ2luOiAwIDJweDtcbn1cbi5hZGR0b1dzaExzdHtcbiAgICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gICAgYm9yZGVyOiBzb2xpZCAuNXB4IGdyZXk7XG4gICAgY29sb3I6IGdyYXk7XG59XG4uYWRkdG9DcnR7XG4gICAgYmFja2dyb3VuZDogdHJhbnNwYXJlbnQ7XG4gICAgcG9zaXRpb246IHJlbGF0aXZlO1xuICAgIGJvcmRlci1yYWRpdXM6IDVweDtcbn1cblxuLmJhY2tJY29ue1xuICAgIGZvbnQtc2l6ZTogMjhweDtcbiAgICBjb2xvcjogYmx1ZSgkY29sb3I6ICMyMDBhZTIpO1xufVxuXG4uaXRlbS1pbnB1dCB7XG4gICAgcGFkZGluZzogNXB4O1xuICAgIGJvcmRlcjogc29saWQgLjVweCBncmV5O1xuICAgIGJvcmRlci1yYWRpdXM6IDZweDtcbn1cblxuLnBpbmNvZGVCdXR0b24ge1xuICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgICAvL3dpZHRoOjcwcHg7XG4gICAgdG9wOi02cHg7XG4gICAgLy9ib3JkZXI6IHNvbGlkIC41cHggI0ZGQ0MyMztcbiAgICBjb2xvcjogI0ZGQ0MyMztcbiAgICAvL2JhY2tncm91bmQtY29sb3I6c2FkZGxlYnJvd247XG4gICAgLy9AYXQtcm9vdDogdmFyKHJlZCk7XG4gICAgLS1iYWNrZ3JvdW5kOiAjZTk1ZTI4O1xufVxuXG4ucGluY29kZUJ1dHRvbjIge1xuICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgICAvL3dpZHRoOjcwcHg7XG4gICAgdG9wOi02cHg7XG4gICAgLy9ib3JkZXI6IHNvbGlkIC41cHggYXF1YTtcbiAgICBjb2xvcjogYXF1YTtcbn1cblxuLnBpbmNvZGVCdXR0b24zIHtcbiAgICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gICAgd2lkdGg6NzBweDtcbiAgICB0b3A6LTZweDtcbn1cblxuXG4uaW5zdGtbX25nY29udGVudC1jM10ge1xuICAgIGNvbG9yOiBncmVlbjtcbiAgICBmb250LXNpemU6IDE0cHg7XG59XG5cbi5vdXRzdGtbX25nY29udGVudC1jM10ge1xuICAgIGNvbG9yOiByZWQ7XG4gICAgZm9udC1zaXplOiAxNHB4O1xufVxuLmxzdEJ0bkdycCAqe1xuICAgIGZvbnQtc2l6ZTogMTZweDtcbiAgICBwb3NpdGlvbjogcmVsYXRpdmU7XG59XG4ubHN0QnRuR3JwIC5idXR0b257XG4gICAgLy93aWR0aDogNTAlO1xuICAgIC8vbWFyZ2luOiAwO1xuICAgIC8vYm94LXNoYWRvdzogbm9uZSAhaW1wb3J0YW50O1xuICAgIC8vYmFja2dyb3VuZDogdHJhbnNwYXJlbnQ7XG4gICAgLy9ib3JkZXItcmFkaXVzOiAwO1xuICAgIC8vYm9yZGVyLXRvcDogMXB4IHNvbGlkIHJnYmEoMCwgMCwgMCwgMC4xMDk4MDM5MjE1Njg2Mjc0NSk7XG5cbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gICAgdG9wOiA1cHg7XG59Il19 */"
 
 /***/ }),
 
@@ -115,6 +115,8 @@ var DetailsPage = /** @class */ (function () {
         this.modalController = modalController;
         this.activeroute = activeroute;
         this.menuCtrl = menuCtrl;
+        this.ratingCount = 0;
+        this.reviewCount = 0;
         this.productImage = [];
         this.name = '';
         this.offer_price = '';
@@ -130,6 +132,22 @@ var DetailsPage = /** @class */ (function () {
         this.vendorId = '';
         this.subCategoryId = "";
         this.wishListCheck = [];
+        this.isProductDetails = false;
+        this.quantity = "1";
+        this.quantityCheck = "0";
+        this.total_quantity = "";
+        this.arrVariationFilter = [];
+        this.arrColorName = [];
+        this.arrVariationFilter2 = [];
+        this.arrColorName2 = [];
+        this.varposition = 0;
+        this.arrfilterType1 = [];
+        this.arrfilterType2 = [];
+        this.isClick1 = false;
+        this.isClick2 = false;
+        this.buttonClicked1 = 0;
+        this.buttonClicked2 = 0;
+        this.productTag = "";
         this.pushedFrom = this.activeroute.snapshot.paramMap.get("pushedFrom");
         if (this.pushedFrom == 'loginCart') {
             this.productDetails = JSON.parse(localStorage.getItem('singleProduct'));
@@ -201,37 +219,101 @@ var DetailsPage = /** @class */ (function () {
         //this.productDetails = this.route.getCurrentNavigation().extras.state.parms;
         //console.log("product details in view will enter", this.productDetails)
         this.getProductDetailsData();
+        //console.log("localStorage.getItem('loginDataKKart')", localStorage.getItem('loginDataKKart'))
         if (localStorage.getItem('loginDataKKart') != null) {
             this.util.myCartlist();
             this.myWishlistWithoutCheck();
         }
     };
     DetailsPage.prototype.showMenu = function (pageDetails) {
-        console.log('User created!');
+        //console.log('User created!')
         this.events.publish('showMenu', pageDetails, Date.now());
     };
     DetailsPage.prototype.ngOnInit = function () {
         //this.getProductDetailsData()
     };
+    DetailsPage.prototype.isClicked = function () {
+        //return this.isClick;
+    };
+    // onClick(){
+    //  this.isClick=!this.isClick;
+    // }
+    DetailsPage.prototype.changeProduct = function (i) {
+        //console.log(i)
+        this.buttonClicked1 = i;
+        this.isClick1 = !this.isClick1;
+        this.varposition = i;
+        this.slugProduct = this.arrVariationFilter[i].slug;
+        this.getProductDetailsData();
+    };
+    DetailsPage.prototype.changeProduct2 = function (i) {
+        this.buttonClicked2 = i;
+        this.isClick2 = !this.isClick2;
+        //console.log(i)
+        this.slugProduct = this.arrVariationFilter2[0][i].slug;
+        this.getProductDetailsData();
+    };
     DetailsPage.prototype.getProductDetailsData = function () {
         var _this = this;
         var myData = JSON.stringify({
-            slug: this.slugProduct
+            slug: this.slugProduct ? this.slugProduct : "renew-honor-4a-smartphone-champagne-gold-8gb-internal-memory-2gb-ram-screen-size-5-inches-2200-mah-battery"
         });
-        console.log("Your myData: ", myData);
-        this.util.presentLoading3();
+        //console.log("Your myData: ", myData);
+        //this.util.presentLoading3();
+        this.util.presentLoading();
         this.util.getTypeDetails('products/productDetails.json', myData).subscribe(function (result) {
             _this.util.dismissLoader();
             //console.log("Your data: ", result);
             _this.data = result;
+            _this.arrColorName = [];
+            _this.arrVariationFilter = [];
+            _this.arrVariationFilter2 = [];
+            _this.arrColorName2 = [];
+            _this.productImage = [];
             console.log("ProductDetails", _this.data);
             if (_this.data.success) {
+                _this.isProductDetails = true;
                 _this.productDetailsFromApi = _this.data.data.product;
+                _this.total_quantity = _this.productDetailsFromApi.total_quantity;
                 _this.reviewListData = _this.data.data.review_list;
                 _this.rating_count_details = _this.data.data.count_rating_1_2_3_4_5;
-                _this.discount_percentage = _this.productDetailsFromApi.discount_percentage;
+                //console.log("this.productDetailsFromApi.discount_percentage" , this.productDetailsFromApi.discount_percentage)
+                if (_this.productDetailsFromApi.discount_percentage != 'inf') {
+                    _this.discount_percentage = _this.productDetailsFromApi.discount_percentage;
+                }
+                else {
+                    _this.discount_percentage = 0;
+                }
+                if (_this.productDetailsFromApi.product_tag != null) {
+                    _this.productTag = _this.productDetailsFromApi.product_tag;
+                }
+                else {
+                    _this.productTag = "";
+                }
                 _this.name = _this.productDetailsFromApi.name;
                 _this.productImage.push(_this.productDetailsFromApi.photo);
+                _this.quantityCheck = _this.productDetailsFromApi.minimum_order;
+                if (_this.data.data.product.single != null) {
+                    _this.arrVariationFilter = _this.data.data.product.single;
+                    //console.log("this.arrVariationFilter", this.arrVariationFilter)
+                    for (var i = 0; i < _this.arrVariationFilter.length; i++) {
+                        _this.arrColorName.push(_this.arrVariationFilter[i].filter_option.name);
+                        _this.arrfilterType1.push(_this.arrVariationFilter[i].filter.name);
+                    }
+                }
+                //console.log("this.arrVariationFilter", this.arrVariationFilter)
+                if (_this.arrVariationFilter.length != 0 && _this.arrVariationFilter[_this.varposition].double != null) {
+                    _this.arrVariationFilter2.push(_this.arrVariationFilter[_this.varposition].double);
+                }
+                //console.log("this.arrVariationFilter2", this.arrVariationFilter2)
+                if (_this.arrVariationFilter2.length != 0) {
+                    //console.log("this.arrVariationFilter2 varposition",this.varposition, this.arrVariationFilter2[0])
+                    for (var i = 0; i < _this.arrVariationFilter2[0].length; i++) {
+                        //console.log("this.arrVariationFilter", this.arrVariationFilter2[0][i].filter_option)
+                        _this.arrColorName2.push(_this.arrVariationFilter2[0][i].filter_option_news.name);
+                        _this.arrfilterType2.push(_this.arrVariationFilter2[0][i].filter_news.name);
+                    }
+                }
                 for (var i = 0; i < _this.productDetailsFromApi.product_images.length; i++) {
                     //console.log("i",this.productDetailsFromApi.product_images[i])
                     _this.productImage.push(_this.productDetailsFromApi.product_images[i].image);
@@ -254,26 +336,39 @@ var DetailsPage = /** @class */ (function () {
                     _this.isInStock = true;
                 }
                 //this.isInStock = this.productDetailsFromApi.in_stock
-                _this.ratingCount = _this.rating_count_details.length;
-                _this.reviewCount = _this.reviewListData.length;
-                var sum = 0;
-                for (var i = 0; i < _this.rating_count_details.length; i++) {
-                    sum = sum + Number(_this.rating_count_details[i].rating);
+                //console.log("this.rating_count_details.length", this.rating_count_details.length)
+                if (_this.rating_count_details.length > 0) {
+                    _this.ratingCount = _this.rating_count_details.length;
+                    var sum = 0;
+                    for (var i = 0; i < _this.rating_count_details.length; i++) {
+                        sum = sum + Number(_this.rating_count_details[i].rating);
+                    }
+                    _this.ratingStar = Number(sum) / Number(_this.ratingCount);
                 }
-                _this.ratingStar = Number(sum) / Number(_this.ratingCount);
+                else {
+                    _this.ratingCount = 0;
+                    _this.ratingStar = 0;
+                }
+                if (_this.reviewListData.length > 0) {
+                    _this.reviewCount = _this.reviewListData.length;
+                }
+                else {
+                    _this.reviewCount = 0;
+                }
+                //console.log("this.ratingStar",this.ratingStar)
                 if (localStorage.getItem('loginDataKKart') != null) {
                     _this.myWishlist();
                 }
                 //console.log("ratiing check", this.ratingCount , sum, this.ratingStar)
             }
             else {
-                _this.util.showToast(_this.data.message);
+                //this.util.showToast(this.data.message);
             }
         }, function (error) {
             _this.util.dismissLoader();
-            _this.util.showToast('Server error occured. Try again.');
+            _this.util.showToast('Product is not available in server. Please try again.');
         });
-        this.util.dismissLoader();
+        //this.util.dismissLoader();
     };
     DetailsPage.prototype.loadImageSlider = function (i) {
         this.productImage[i]["isLoad"] = true;
@@ -295,7 +390,7 @@ var DetailsPage = /** @class */ (function () {
             pincode: this.pincode,
             vendor_id: this.vendorId
         });
-        console.log("Your myData: ", myData);
+        //console.log("Your myData: ", myData);
         this.util.presentLoading3();
         this.util.getTypeDetails('products/checkpin.json', myData).subscribe(function (result) {
             _this.util.dismissLoader();
@@ -348,30 +443,36 @@ var DetailsPage = /** @class */ (function () {
         }
     };
     DetailsPage.prototype.postDataAddtoCart = function () {
+        //console.log("quantity Check", this.quantityCheck)
         var _this = this;
-        var myData = JSON.stringify({
-            slug: this.slugProduct,
-            quentity: 1
-        });
-        //console.log("Your myData: ", myData);
-        this.util.presentLoading3();
-        this.util.getTypeDetailsWithAuth('carts/addtocart.json', myData).subscribe(function (result) {
-            _this.util.dismissLoader();
-            console.log("Your Cart data: ", result);
-            _this.data = result;
-            //console.log(this.data)
-            if (_this.data.success) {
-                _this.util.showToast(_this.data.data);
-                _this.util.myCartlist();
-            }
-            else {
-                _this.util.showToast(_this.data.data);
-            }
-        }, function (error) {
-            _this.util.dismissLoader();
-            _this.util.showToast('Server error occured. Try again.');
-        });
-        this.util.dismissLoader();
+        if (Number(this.quantity) >= Number(this.quantityCheck)) {
+            var myData = JSON.stringify({
+                slug: this.slugProduct,
+                quentity: this.quantity
+            });
+            //console.log("Your myData: ", myData);
+            this.util.presentLoading3();
+            this.util.getTypeDetailsWithAuth('carts/addtocart.json', myData).subscribe(function (result) {
+                _this.util.dismissLoader();
+                //console.log("Your Cart data: ", result);
+                _this.data = result;
+                //console.log(this.data)
+                if (_this.data.success) {
+                    _this.util.showToast(_this.data.data);
+                    _this.util.myCartlist();
+                }
+                else {
+                    _this.util.showToast(_this.data.data);
+                }
+            }, function (error) {
+                _this.util.dismissLoader();
+                _this.util.showToast('Server error occured. Try again.');
+            });
+            this.util.dismissLoader();
+        }
+        else {
+            this.util.showToast("Please purchase minimum quantity-" + this.quantityCheck);
+        }
     };
     DetailsPage.prototype.postDataAddtoCartBuyNow = function () {
         var _this = this;
@@ -383,7 +484,7 @@ var DetailsPage = /** @class */ (function () {
         this.util.presentLoading3();
         this.util.getTypeDetailsWithAuth('carts/addtocart.json', myData).subscribe(function (result) {
             _this.util.dismissLoader();
-            console.log("Your Cart data: ", result);
+            //console.log("Your Cart data: ", result);
             _this.data = result;
             //console.log(this.data)
             if (_this.data.success) {
@@ -436,7 +537,8 @@ var DetailsPage = /** @class */ (function () {
             this.navCtrl.navigateBack('/home');
         }
         else if (this.pushedFrom == "autoSearch") {
-            this.navCtrl.navigateBack('/auto-search');
+            //this.navCtrl.navigateBack('/auto-search')
+            this.navCtrl.navigateBack('/home');
         }
         else {
             this.navCtrl.navigateBack('/list');
@@ -457,7 +559,7 @@ var DetailsPage = /** @class */ (function () {
         var myData = JSON.stringify({});
         this.util.getTypeDetailsWithAuth('users/wishlist.json', myData).subscribe(function (result) {
             _this.data = result;
-            console.log("wish list result", _this.data);
+            //console.log("wish list result", this.data)
             if (_this.data.success) {
                 _this.wishlistLists = _this.data.data.wishlist;
                 for (var i = 0; i < _this.relatedProduct.length; i++) {
@@ -498,7 +600,7 @@ var DetailsPage = /** @class */ (function () {
             _this.data = result;
             if (_this.data.success) {
                 _this.wishListListsForId = _this.data.data.wishlist;
-                console.log("wishListListsForId final list", _this.wishListListsForId);
+                //console.log("wishListListsForId final list", this.wishListListsForId)
                 _this.util.dismissLoader();
             }
             else {
@@ -566,7 +668,7 @@ var DetailsPage = /** @class */ (function () {
         this.util.presentLoading3();
         this.util.getTypeDetailsWithAuth('carts/addtocart.json', myData).subscribe(function (result) {
             _this.util.dismissLoader();
-            console.log("Your Cart data: ", result);
+            //console.log("Your Cart data: ", result);
             _this.data = result;
             //console.log(this.data)
             if (_this.data.success) {

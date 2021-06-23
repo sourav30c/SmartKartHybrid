@@ -839,193 +839,205 @@ module.exports = webpackAsyncContext;
 var map = {
 	"./about/about.module": [
 		"./src/app/about/about.module.ts",
-		"default~about-about-module~add-address-add-address-module~add-billing-address-add-billing-address-mo~7058fece",
+		"default~about-about-module~add-address-add-address-module~add-billing-address-add-billing-address-mo~1824aeab",
 		"common",
 		"about-about-module"
 	],
 	"./add-address/add-address.module": [
 		"./src/app/add-address/add-address.module.ts",
-		"default~about-about-module~add-address-add-address-module~add-billing-address-add-billing-address-mo~7058fece",
+		"default~about-about-module~add-address-add-address-module~add-billing-address-add-billing-address-mo~1824aeab",
 		"common",
 		"add-address-add-address-module"
 	],
 	"./add-billing-address/add-billing-address.module": [
 		"./src/app/add-billing-address/add-billing-address.module.ts",
-		"default~about-about-module~add-address-add-address-module~add-billing-address-add-billing-address-mo~7058fece",
+		"default~about-about-module~add-address-add-address-module~add-billing-address-add-billing-address-mo~1824aeab",
 		"common",
 		"add-billing-address-add-billing-address-module"
 	],
 	"./add-your-review/add-your-review.module": [
 		"./src/app/add-your-review/add-your-review.module.ts",
-		"default~about-about-module~add-address-add-address-module~add-billing-address-add-billing-address-mo~7058fece",
+		"default~about-about-module~add-address-add-address-module~add-billing-address-add-billing-address-mo~1824aeab",
 		"common",
 		"add-your-review-add-your-review-module"
 	],
 	"./auto-search/auto-search.module": [
 		"./src/app/auto-search/auto-search.module.ts",
-		"default~about-about-module~add-address-add-address-module~add-billing-address-add-billing-address-mo~7058fece",
+		"default~about-about-module~add-address-add-address-module~add-billing-address-add-billing-address-mo~1824aeab",
 		"common",
 		"auto-search-auto-search-module"
 	],
 	"./billing-address/billing-address.module": [
 		"./src/app/billing-address/billing-address.module.ts",
-		"default~about-about-module~add-address-add-address-module~add-billing-address-add-billing-address-mo~7058fece",
+		"default~about-about-module~add-address-add-address-module~add-billing-address-add-billing-address-mo~1824aeab",
 		"common",
 		"billing-address-billing-address-module"
 	],
 	"./cart/cart.module": [
 		"./src/app/cart/cart.module.ts",
-		"default~about-about-module~add-address-add-address-module~add-billing-address-add-billing-address-mo~7058fece",
+		"default~about-about-module~add-address-add-address-module~add-billing-address-add-billing-address-mo~1824aeab",
 		"common",
 		"cart-cart-module"
 	],
 	"./change-password/change-password.module": [
 		"./src/app/change-password/change-password.module.ts",
-		"default~about-about-module~add-address-add-address-module~add-billing-address-add-billing-address-mo~7058fece",
+		"default~about-about-module~add-address-add-address-module~add-billing-address-add-billing-address-mo~1824aeab",
 		"common",
 		"change-password-change-password-module"
 	],
 	"./contact/contact.module": [
 		"./src/app/contact/contact.module.ts",
-		"default~about-about-module~add-address-add-address-module~add-billing-address-add-billing-address-mo~7058fece",
+		"default~about-about-module~add-address-add-address-module~add-billing-address-add-billing-address-mo~1824aeab",
 		"common",
 		"contact-contact-module"
 	],
 	"./details/details.module": [
 		"./src/app/details/details.module.ts",
-		"default~about-about-module~add-address-add-address-module~add-billing-address-add-billing-address-mo~7058fece",
+		"default~about-about-module~add-address-add-address-module~add-billing-address-add-billing-address-mo~1824aeab",
 		"common",
 		"details-details-module"
 	],
 	"./forgotpassword/forgotpassword.module": [
 		"./src/app/forgotpassword/forgotpassword.module.ts",
-		"default~about-about-module~add-address-add-address-module~add-billing-address-add-billing-address-mo~7058fece",
+		"default~about-about-module~add-address-add-address-module~add-billing-address-add-billing-address-mo~1824aeab",
 		"common",
 		"forgotpassword-forgotpassword-module"
 	],
 	"./home/home.module": [
 		"./src/app/home/home.module.ts",
-		"default~about-about-module~add-address-add-address-module~add-billing-address-add-billing-address-mo~7058fece",
+		"default~about-about-module~add-address-add-address-module~add-billing-address-add-billing-address-mo~1824aeab",
 		"common",
 		"home-home-module"
 	],
 	"./list/list.module": [
 		"./src/app/list/list.module.ts",
-		"default~about-about-module~add-address-add-address-module~add-billing-address-add-billing-address-mo~7058fece",
+		"default~about-about-module~add-address-add-address-module~add-billing-address-add-billing-address-mo~1824aeab",
 		"common",
 		"list-list-module"
 	],
 	"./login/login.module": [
 		"./src/app/login/login.module.ts",
-		"default~about-about-module~add-address-add-address-module~add-billing-address-add-billing-address-mo~7058fece",
+		"default~about-about-module~add-address-add-address-module~add-billing-address-add-billing-address-mo~1824aeab",
 		"common",
 		"login-login-module"
 	],
 	"./logout/logout.module": [
 		"./src/app/logout/logout.module.ts",
-		"default~about-about-module~add-address-add-address-module~add-billing-address-add-billing-address-mo~7058fece",
+		"default~about-about-module~add-address-add-address-module~add-billing-address-add-billing-address-mo~1824aeab",
 		"common",
 		"logout-logout-module"
 	],
 	"./my-account-details/my-account-details.module": [
 		"./src/app/my-account-details/my-account-details.module.ts",
-		"default~about-about-module~add-address-add-address-module~add-billing-address-add-billing-address-mo~7058fece",
+		"default~about-about-module~add-address-add-address-module~add-billing-address-add-billing-address-mo~1824aeab",
 		"common",
 		"my-account-details-my-account-details-module"
 	],
 	"./my-reviews/my-reviews.module": [
 		"./src/app/my-reviews/my-reviews.module.ts",
-		"default~about-about-module~add-address-add-address-module~add-billing-address-add-billing-address-mo~7058fece",
+		"default~about-about-module~add-address-add-address-module~add-billing-address-add-billing-address-mo~1824aeab",
 		"common",
 		"my-reviews-my-reviews-module"
 	],
 	"./order-details/order-details.module": [
 		"./src/app/order-details/order-details.module.ts",
-		"default~about-about-module~add-address-add-address-module~add-billing-address-add-billing-address-mo~7058fece",
+		"default~about-about-module~add-address-add-address-module~add-billing-address-add-billing-address-mo~1824aeab",
 		"common",
 		"order-details-order-details-module"
 	],
 	"./order-list/order-list.module": [
 		"./src/app/order-list/order-list.module.ts",
-		"default~about-about-module~add-address-add-address-module~add-billing-address-add-billing-address-mo~7058fece",
+		"default~about-about-module~add-address-add-address-module~add-billing-address-add-billing-address-mo~1824aeab",
 		"common",
 		"order-list-order-list-module"
 	],
 	"./order-tracking/order-tracking.module": [
 		"./src/app/order-tracking/order-tracking.module.ts",
-		"default~about-about-module~add-address-add-address-module~add-billing-address-add-billing-address-mo~7058fece",
+		"default~about-about-module~add-address-add-address-module~add-billing-address-add-billing-address-mo~1824aeab",
 		"common",
 		"order-tracking-order-tracking-module"
 	],
+	"./otp-fp-submit/otp-fp-submit.module": [
+		"./src/app/otp-fp-submit/otp-fp-submit.module.ts",
+		"default~about-about-module~add-address-add-address-module~add-billing-address-add-billing-address-mo~1824aeab",
+		"common",
+		"otp-fp-submit-otp-fp-submit-module"
+	],
 	"./otp-registration/otp-registration.module": [
 		"./src/app/otp-registration/otp-registration.module.ts",
-		"default~about-about-module~add-address-add-address-module~add-billing-address-add-billing-address-mo~7058fece",
+		"default~about-about-module~add-address-add-address-module~add-billing-address-add-billing-address-mo~1824aeab",
 		"common",
 		"otp-registration-otp-registration-module"
 	],
 	"./payment-mode/payment-mode.module": [
 		"./src/app/payment-mode/payment-mode.module.ts",
-		"default~about-about-module~add-address-add-address-module~add-billing-address-add-billing-address-mo~7058fece",
+		"default~about-about-module~add-address-add-address-module~add-billing-address-add-billing-address-mo~1824aeab",
 		"common",
 		"payment-mode-payment-mode-module"
 	],
 	"./privacy-policy/privacy-policy.module": [
 		"./src/app/privacy-policy/privacy-policy.module.ts",
-		"default~about-about-module~add-address-add-address-module~add-billing-address-add-billing-address-mo~7058fece",
+		"default~about-about-module~add-address-add-address-module~add-billing-address-add-billing-address-mo~1824aeab",
 		"common",
 		"privacy-policy-privacy-policy-module"
 	],
 	"./product-category/product-category.module": [
 		"./src/app/product-category/product-category.module.ts",
-		"default~about-about-module~add-address-add-address-module~add-billing-address-add-billing-address-mo~7058fece",
+		"default~about-about-module~add-address-add-address-module~add-billing-address-add-billing-address-mo~1824aeab",
 		"common",
 		"product-category-product-category-module"
 	],
 	"./product-sub-category/product-sub-category.module": [
 		"./src/app/product-sub-category/product-sub-category.module.ts",
-		"default~about-about-module~add-address-add-address-module~add-billing-address-add-billing-address-mo~7058fece",
+		"default~about-about-module~add-address-add-address-module~add-billing-address-add-billing-address-mo~1824aeab",
 		"common",
 		"product-sub-category-product-sub-category-module"
 	],
 	"./return-details/return-details.module": [
 		"./src/app/return-details/return-details.module.ts",
-		"default~about-about-module~add-address-add-address-module~add-billing-address-add-billing-address-mo~7058fece",
+		"default~about-about-module~add-address-add-address-module~add-billing-address-add-billing-address-mo~1824aeab",
 		"common",
 		"return-details-return-details-module"
 	],
+	"./return-policy/return-policy.module": [
+		"./src/app/return-policy/return-policy.module.ts",
+		"default~about-about-module~add-address-add-address-module~add-billing-address-add-billing-address-mo~1824aeab",
+		"common",
+		"return-policy-return-policy-module"
+	],
 	"./review-list/review-list.module": [
 		"./src/app/review-list/review-list.module.ts",
-		"default~about-about-module~add-address-add-address-module~add-billing-address-add-billing-address-mo~7058fece",
+		"default~about-about-module~add-address-add-address-module~add-billing-address-add-billing-address-mo~1824aeab",
 		"common",
 		"review-list-review-list-module"
 	],
 	"./signup/signup.module": [
 		"./src/app/signup/signup.module.ts",
-		"default~about-about-module~add-address-add-address-module~add-billing-address-add-billing-address-mo~7058fece",
+		"default~about-about-module~add-address-add-address-module~add-billing-address-add-billing-address-mo~1824aeab",
 		"common",
 		"signup-signup-module"
 	],
 	"./terms-service/terms-service.module": [
 		"./src/app/terms-service/terms-service.module.ts",
-		"default~about-about-module~add-address-add-address-module~add-billing-address-add-billing-address-mo~7058fece",
+		"default~about-about-module~add-address-add-address-module~add-billing-address-add-billing-address-mo~1824aeab",
 		"common",
 		"terms-service-terms-service-module"
 	],
 	"./thank-you/thank-you.module": [
 		"./src/app/thank-you/thank-you.module.ts",
-		"default~about-about-module~add-address-add-address-module~add-billing-address-add-billing-address-mo~7058fece",
+		"default~about-about-module~add-address-add-address-module~add-billing-address-add-billing-address-mo~1824aeab",
 		"common",
 		"thank-you-thank-you-module"
 	],
 	"./top-selling-product-list/top-selling-product-list.module": [
 		"./src/app/top-selling-product-list/top-selling-product-list.module.ts",
-		"default~about-about-module~add-address-add-address-module~add-billing-address-add-billing-address-mo~7058fece",
+		"default~about-about-module~add-address-add-address-module~add-billing-address-add-billing-address-mo~1824aeab",
 		"common",
 		"top-selling-product-list-top-selling-product-list-module"
 	],
 	"./wishlist/wishlist.module": [
 		"./src/app/wishlist/wishlist.module.ts",
-		"default~about-about-module~add-address-add-address-module~add-billing-address-add-billing-address-mo~7058fece",
+		"default~about-about-module~add-address-add-address-module~add-billing-address-add-billing-address-mo~1824aeab",
 		"common",
 		"wishlist-wishlist-module"
 	]
@@ -1115,7 +1127,9 @@ var routes = [
     { path: 'privacy-policy', loadChildren: './privacy-policy/privacy-policy.module#PrivacyPolicyPageModule' },
     { path: 'otp-registration', loadChildren: './otp-registration/otp-registration.module#OtpRegistrationPageModule' },
     { path: 'my-reviews', loadChildren: './my-reviews/my-reviews.module#MyReviewsPageModule' },
-    { path: 'auto-search', loadChildren: './auto-search/auto-search.module#AutoSearchPageModule' }
+    { path: 'auto-search', loadChildren: './auto-search/auto-search.module#AutoSearchPageModule' },
+    { path: 'otp-fp-submit', loadChildren: './otp-fp-submit/otp-fp-submit.module#OtpFpSubmitPageModule' },
+    { path: 'return-policy', loadChildren: './return-policy/return-policy.module#ReturnPolicyPageModule' }
 ];
 var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {
@@ -1140,7 +1154,7 @@ var AppRoutingModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-app>\n  <!--<ion-header *ngIf=\"showHeader\">\n    <ion-toolbar>\n      <ion-buttons slot=\"start\">\n        <ion-menu-button color=\"dark\" *ngIf=\"showMenu\"></ion-menu-button>\n        <ion-back-button defaultHref=\"/{{prevPage}}\" *ngIf=\"showBack\" color=\"dark\"></ion-back-button>\n      </ion-buttons>\n\n        <ion-buttons slot=\"primary\" *ngIf=\"showMenu\">\n            <ion-button slot=\"end\" fill=\"clear\" class=\"tips-btn\" (click)=\"addRTO()\">\n              <ion-icon ios=\"ios-add-circle-outline\" md=\"md-add-circle\"></ion-icon>\n            </ion-button>\n          </ion-buttons> \n\n      <ion-title>{{title}}</ion-title>\n    </ion-toolbar>\n  </ion-header>-->\n\n  <ion-split-pane>\n    <ion-menu>\n      <ion-header>\n        <ion-toolbar>\n          <ion-title>{{menuTitle}}</ion-title>\n        </ion-toolbar>\n      </ion-header>\n      <ion-content>\n        <ion-list lines=\"none\">\n          <ion-menu-toggle auto-hide=\"true\" *ngFor=\"let p of appPages\">\n            <ion-item [routerDirection]=\"'root'\" [routerLink]=\"[p.url]\">\n              <ion-icon slot=\"start\" [name]=\"p.icon\" (click)=\"toggleMenu()\"></ion-icon>\n              <ion-label (click)=\"toggleMenu()\">\n                {{p.title}}\n              </ion-label>\n            </ion-item>\n          </ion-menu-toggle>\n        </ion-list>\n      </ion-content>\n    </ion-menu>\n    <ion-router-outlet main></ion-router-outlet>\n  </ion-split-pane>\n</ion-app>\n"
+module.exports = "<ion-app>\n  <!--<ion-header *ngIf=\"showHeader\">\n    <ion-toolbar>\n      <ion-buttons slot=\"start\">\n        <ion-menu-button color=\"dark\" *ngIf=\"showMenu\"></ion-menu-button>\n        <ion-back-button defaultHref=\"/{{prevPage}}\" *ngIf=\"showBack\" color=\"dark\"></ion-back-button>\n      </ion-buttons>\n\n        <ion-buttons slot=\"primary\" *ngIf=\"showMenu\">\n            <ion-button slot=\"end\" fill=\"clear\" class=\"tips-btn\" (click)=\"addRTO()\">\n              <ion-icon ios=\"ios-add-circle-outline\" md=\"md-add-circle\"></ion-icon>\n            </ion-button>\n          </ion-buttons> \n\n      <ion-title>{{title}}</ion-title>\n    </ion-toolbar>\n  </ion-header>-->\n\n  <ion-split-pane>\n    <ion-menu>\n      <ion-header>\n        <ion-toolbar>\n          <ion-title >{{menuTitle}}</ion-title>\n        </ion-toolbar>\n      </ion-header>\n      <ion-content>\n        <ion-list lines=\"none\">\n          <ion-menu-toggle auto-hide=\"true\" *ngFor=\"let p of appPages\">\n            <ion-item no-lines [routerDirection]=\"'forward'\" [routerLink]=\"[p.url]\">\n              <!-- <ion-icon slot=\"start\" style=\"color: #FFCC23\" [name]=\"p.icon\" (click)=\"toggleMenu()\"></ion-icon> -->\n              <img src=\"{{p.img}}\" alt=\"\" width=\"40\" (click)=\"toggleMenu()\">\n              <ion-label (click)=\"toggleMenu()\">\n                {{p.title}}\n              </ion-label>\n            </ion-item>\n          </ion-menu-toggle>\n        </ion-list>\n      </ion-content>\n    </ion-menu>\n    <ion-router-outlet main></ion-router-outlet>\n  </ion-split-pane>\n</ion-app>\n"
 
 /***/ }),
 
@@ -1151,7 +1165,7 @@ module.exports = "<ion-app>\n  <!--<ion-header *ngIf=\"showHeader\">\n    <ion-t
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".user-profile-pic {\n  padding: 15px;\n  text-align: center;\n  padding-bottom: 0; }\n\n.user-pic {\n  width: 62px;\n  height: 62px;\n  border-radius: 50%;\n  overflow: hidden;\n  margin-right: 10px;\n  float: left; }\n\n.user-pic img {\n    max-width: 100%; }\n\n.user-name {\n  color: #fff;\n  text-align: left; }\n\n.user-name .login-text {\n    margin-bottom: 0; }\n\nion-menu-button {\n  color: #fff; }\n\n.menu-header {\n  background: #008ED8;\n  padding-bottom: 0;\n  min-height: 95px; }\n\n.menu-header .user-name .login-text {\n    margin: 5px 0 0; }\n\n.menu-header .user-name button {\n    padding: 6px 12px;\n    border-radius: 15px;\n    font-size: 12px;\n    font-weight: 400;\n    color: #fff;\n    background-color: #FFB300;\n    margin: 4px 0 0; }\n\nion-menu .list-md {\n  padding-top: 0;\n  padding-bottom: 0; }\n\nion-menu ion-content {\n  --background: #008ED8; }\n\nion-menu ion-content ion-list {\n    margin: 0;\n    padding-top: px;\n    padding-bottom: px; }\n\nion-menu ion-item {\n  --background: #008ED8;\n  border-bottom: 1px solid #008ED8; }\n\nion-menu ion-item:hover {\n    --background: red; }\n\nion-menu ion-item img {\n    width: 20px;\n    margin-right: 8px; }\n\nion-menu ion-item:hover {\n    --background: #008ED8; }\n\nsmall {\n  font-size: 75%;\n  width: 100%;\n  display: block; }\n\nion-icon {\n  color: #fff !important; }\n\n.tips-btn {\n  color: #008ED8; }\n\nion-toolbar ion-title {\n  color: #000;\n  font-weight: 500;\n  align-content: center; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy92YXAvRGVza3RvcC9Jb25pY19Qcm9qZWN0L2FyY2hpdmUgaW9uaWMgZlByb2plY3Qvb2xkIGFyY2hpdmUgMi9BcmNoaXZlIDIvc3JjL2FwcC9hcHAuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxhQUFhO0VBQ2Isa0JBQWtCO0VBQ2xCLGlCQUFpQixFQUFBOztBQUVyQjtFQUNJLFdBQVc7RUFDWCxZQUFZO0VBQ1osa0JBQWtCO0VBQ2xCLGdCQUFnQjtFQUNoQixrQkFBa0I7RUFDbEIsV0FBVyxFQUFBOztBQU5mO0lBU1EsZUFBZSxFQUFBOztBQUl2QjtFQUNJLFdBQVc7RUFDWCxnQkFBZ0IsRUFBQTs7QUFGcEI7SUFJUSxnQkFBZ0IsRUFBQTs7QUFJeEI7RUFDSSxXQUFXLEVBQUE7O0FBRWY7RUFDSSxtQkFBbUI7RUFDbkIsaUJBQWlCO0VBQ2pCLGdCQUFnQixFQUFBOztBQUhwQjtJQU1ZLGVBQWUsRUFBQTs7QUFOM0I7SUFTWSxpQkFBaUI7SUFDakIsbUJBQW1CO0lBQ25CLGVBQWU7SUFDZixnQkFBZ0I7SUFDaEIsV0FBVTtJQUNWLHlCQUF5QjtJQUN6QixlQUFlLEVBQUE7O0FBSzNCO0VBRVEsY0FBYztFQUNkLGlCQUFpQixFQUFBOztBQUh6QjtFQU1RLHFCQUFhLEVBQUE7O0FBTnJCO0lBUVksU0FBUztJQUdULGVBQWU7SUFDZixrQkFBa0IsRUFBQTs7QUFaOUI7RUFnQlEscUJBQWE7RUFDYixnQ0FBZ0MsRUFBQTs7QUFqQnhDO0lBbUJZLGlCQUFhLEVBQUE7O0FBbkJ6QjtJQXNCWSxXQUFXO0lBQ1gsaUJBQWlCLEVBQUE7O0FBdkI3QjtJQTBCWSxxQkFBYSxFQUFBOztBQUl6QjtFQUNJLGNBQWM7RUFDZCxXQUFXO0VBQ1gsY0FBYyxFQUFBOztBQUVsQjtFQUNJLHNCQUFzQixFQUFBOztBQUcxQjtFQUNJLGNBQWMsRUFBQTs7QUFHbEI7RUFDSSxXQUFXO0VBQ1gsZ0JBQWdCO0VBQ2hCLHFCQUFxQixFQUFBIiwiZmlsZSI6InNyYy9hcHAvYXBwLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLnVzZXItcHJvZmlsZS1waWN7XG4gICAgcGFkZGluZzogMTVweDtcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XG4gICAgcGFkZGluZy1ib3R0b206IDA7XG59XG4udXNlci1waWN7XG4gICAgd2lkdGg6IDYycHg7XG4gICAgaGVpZ2h0OiA2MnB4O1xuICAgIGJvcmRlci1yYWRpdXM6IDUwJTtcbiAgICBvdmVyZmxvdzogaGlkZGVuO1xuICAgIG1hcmdpbi1yaWdodDogMTBweDtcbiAgICBmbG9hdDogbGVmdDtcbiAgICAvLyBib3JkZXI6IDFweCBzb2xpZCAjMzE1MzA2O1xuICAgIGltZ3tcbiAgICAgICAgbWF4LXdpZHRoOiAxMDAlO1xuICAgIH1cbn1cblxuLnVzZXItbmFtZXtcbiAgICBjb2xvcjogI2ZmZjtcbiAgICB0ZXh0LWFsaWduOiBsZWZ0O1xuICAgIC5sb2dpbi10ZXh0e1xuICAgICAgICBtYXJnaW4tYm90dG9tOiAwO1xuICAgIH1cbn1cblxuaW9uLW1lbnUtYnV0dG9ue1xuICAgIGNvbG9yOiAjZmZmO1xufVxuLm1lbnUtaGVhZGVye1xuICAgIGJhY2tncm91bmQ6ICMwMDhFRDg7XG4gICAgcGFkZGluZy1ib3R0b206IDA7XG4gICAgbWluLWhlaWdodDogOTVweDtcbiAgICAudXNlci1uYW1le1xuICAgICAgICAubG9naW4tdGV4dHtcbiAgICAgICAgICAgIG1hcmdpbjogNXB4IDAgMDtcbiAgICAgICAgfVxuICAgICAgICBidXR0b257XG4gICAgICAgICAgICBwYWRkaW5nOiA2cHggMTJweDtcbiAgICAgICAgICAgIGJvcmRlci1yYWRpdXM6IDE1cHg7XG4gICAgICAgICAgICBmb250LXNpemU6IDEycHg7XG4gICAgICAgICAgICBmb250LXdlaWdodDogNDAwO1xuICAgICAgICAgICAgY29sb3I6I2ZmZjtcbiAgICAgICAgICAgIGJhY2tncm91bmQtY29sb3I6ICNGRkIzMDA7XG4gICAgICAgICAgICBtYXJnaW46IDRweCAwIDA7XG4gICAgICAgIH1cbiAgICB9ICAgIFxufVxuXG5pb24tbWVudXtcbiAgICAubGlzdC1tZHtcbiAgICAgICAgcGFkZGluZy10b3A6IDA7XG4gICAgICAgIHBhZGRpbmctYm90dG9tOiAwO1xuICAgIH1cbiAgICBpb24tY29udGVudHtcbiAgICAgICAgLS1iYWNrZ3JvdW5kOiAjMDA4RUQ4OyAgXG4gICAgICAgIGlvbi1saXN0e1xuICAgICAgICAgICAgbWFyZ2luOiAwO1xuICAgICAgICAgICAgLy9wYWRkaW5nLXRvcDogMDtcbiAgICAgICAgICAgIC8vcGFkZGluZy1ib3R0b206IDA7XG4gICAgICAgICAgICBwYWRkaW5nLXRvcDogcHg7XG4gICAgICAgICAgICBwYWRkaW5nLWJvdHRvbTogcHg7XG4gICAgICAgIH1cbiAgICB9XG4gICAgaW9uLWl0ZW17XG4gICAgICAgIC0tYmFja2dyb3VuZDogIzAwOEVEODtcbiAgICAgICAgYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkICMwMDhFRDg7XG4gICAgICAgICY6aG92ZXJ7XG4gICAgICAgICAgICAtLWJhY2tncm91bmQ6IHJlZDtcbiAgICAgICAgfVxuICAgICAgICBpbWd7XG4gICAgICAgICAgICB3aWR0aDogMjBweDtcbiAgICAgICAgICAgIG1hcmdpbi1yaWdodDogOHB4O1xuICAgICAgICB9XG4gICAgICAgICY6aG92ZXJ7XG4gICAgICAgICAgICAtLWJhY2tncm91bmQ6ICMwMDhFRDg7XG4gICAgICAgIH1cbiAgICB9XG59XG5zbWFsbCB7XG4gICAgZm9udC1zaXplOiA3NSU7XG4gICAgd2lkdGg6IDEwMCU7XG4gICAgZGlzcGxheTogYmxvY2s7XG59XG5pb24taWNvbntcbiAgICBjb2xvcjogI2ZmZiAhaW1wb3J0YW50O1xufVxuXG4udGlwcy1idG57XG4gICAgY29sb3I6ICMwMDhFRDg7XG59XG5cbmlvbi10b29sYmFyIGlvbi10aXRsZSB7XG4gICAgY29sb3I6ICMwMDA7XG4gICAgZm9udC13ZWlnaHQ6IDUwMDtcbiAgICBhbGlnbi1jb250ZW50OiBjZW50ZXI7XG4gICAgfSJdfQ== */"
+module.exports = ".user-profile-pic {\n  padding: 15px;\n  text-align: center;\n  padding-bottom: 0; }\n\n.user-pic {\n  width: 62px;\n  height: 62px;\n  border-radius: 50%;\n  overflow: hidden;\n  margin-right: 10px;\n  float: left; }\n\n.user-pic img {\n    max-width: 100%; }\n\n.user-name {\n  color: #fff;\n  text-align: left; }\n\n.user-name .login-text {\n    margin-bottom: 0; }\n\nion-menu-button {\n  color: #fff; }\n\n.menu-header {\n  background: #0000A0;\n  padding-bottom: 0;\n  min-height: 95px; }\n\n.menu-header .user-name .login-text {\n    margin: 5px 0 0; }\n\n.menu-header .user-name button {\n    padding: 6px 12px;\n    border-radius: 15px;\n    font-size: 12px;\n    font-weight: 400;\n    color: #fff;\n    background-color: #FFB300;\n    margin: 4px 0 0; }\n\nion-menu .list-md {\n  padding-top: 0;\n  padding-bottom: 0; }\n\nion-menu ion-content {\n  --background: #0000A0; }\n\nion-menu ion-content ion-list {\n    margin: 0;\n    padding-top: px;\n    padding-bottom: px; }\n\nion-menu ion-item {\n  --background: #0000A0;\n  border-bottom: 1px solid #0000A0; }\n\nion-menu ion-item:hover {\n    --background: red; }\n\nion-menu ion-item img {\n    width: 20px;\n    margin-right: 8px; }\n\nion-menu ion-item:hover {\n    --background: #0000A0; }\n\nsmall {\n  font-size: 75%;\n  width: 100%;\n  display: block; }\n\nion-icon {\n  color: #FFB300 !important; }\n\n.tips-btn {\n  color: #0000A0; }\n\nion-toolbar ion-title {\n  color: #000;\n  font-weight: 500;\n  align-content: center; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy92YXAvRGVza3RvcC9pb25pYyBQcm9qZWN0L3BwL1NtYXJ0LUNhcnQgMi9zcmMvYXBwL2FwcC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLGFBQWE7RUFDYixrQkFBa0I7RUFDbEIsaUJBQWlCLEVBQUE7O0FBRXJCO0VBQ0ksV0FBVztFQUNYLFlBQVk7RUFDWixrQkFBa0I7RUFDbEIsZ0JBQWdCO0VBQ2hCLGtCQUFrQjtFQUNsQixXQUFXLEVBQUE7O0FBTmY7SUFTUSxlQUFlLEVBQUE7O0FBSXZCO0VBQ0ksV0FBVztFQUNYLGdCQUFnQixFQUFBOztBQUZwQjtJQUlRLGdCQUFnQixFQUFBOztBQUl4QjtFQUNJLFdBQVcsRUFBQTs7QUFFZjtFQUNJLG1CQUFtQjtFQUNuQixpQkFBaUI7RUFDakIsZ0JBQWdCLEVBQUE7O0FBSHBCO0lBTVksZUFBZSxFQUFBOztBQU4zQjtJQVNZLGlCQUFpQjtJQUNqQixtQkFBbUI7SUFDbkIsZUFBZTtJQUNmLGdCQUFnQjtJQUNoQixXQUFVO0lBQ1YseUJBQXlCO0lBQ3pCLGVBQWUsRUFBQTs7QUFLM0I7RUFFUSxjQUFjO0VBQ2QsaUJBQWlCLEVBQUE7O0FBSHpCO0VBTVEscUJBQWEsRUFBQTs7QUFOckI7SUFRWSxTQUFTO0lBR1QsZUFBZTtJQUNmLGtCQUFrQixFQUFBOztBQVo5QjtFQWdCUSxxQkFBYTtFQUNiLGdDQUFnQyxFQUFBOztBQWpCeEM7SUFtQlksaUJBQWEsRUFBQTs7QUFuQnpCO0lBc0JZLFdBQVc7SUFDWCxpQkFBaUIsRUFBQTs7QUF2QjdCO0lBMEJZLHFCQUFhLEVBQUE7O0FBSXpCO0VBQ0ksY0FBYztFQUNkLFdBQVc7RUFDWCxjQUFjLEVBQUE7O0FBRWxCO0VBQ0kseUJBQXlCLEVBQUE7O0FBRzdCO0VBQ0ksY0FBYyxFQUFBOztBQUdsQjtFQUNJLFdBQVc7RUFDWCxnQkFBZ0I7RUFDaEIscUJBQXFCLEVBQUEiLCJmaWxlIjoic3JjL2FwcC9hcHAuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIudXNlci1wcm9maWxlLXBpY3tcbiAgICBwYWRkaW5nOiAxNXB4O1xuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgICBwYWRkaW5nLWJvdHRvbTogMDtcbn1cbi51c2VyLXBpY3tcbiAgICB3aWR0aDogNjJweDtcbiAgICBoZWlnaHQ6IDYycHg7XG4gICAgYm9yZGVyLXJhZGl1czogNTAlO1xuICAgIG92ZXJmbG93OiBoaWRkZW47XG4gICAgbWFyZ2luLXJpZ2h0OiAxMHB4O1xuICAgIGZsb2F0OiBsZWZ0O1xuICAgIC8vIGJvcmRlcjogMXB4IHNvbGlkICMzMTUzMDY7XG4gICAgaW1ne1xuICAgICAgICBtYXgtd2lkdGg6IDEwMCU7XG4gICAgfVxufVxuXG4udXNlci1uYW1le1xuICAgIGNvbG9yOiAjZmZmO1xuICAgIHRleHQtYWxpZ246IGxlZnQ7XG4gICAgLmxvZ2luLXRleHR7XG4gICAgICAgIG1hcmdpbi1ib3R0b206IDA7XG4gICAgfVxufVxuXG5pb24tbWVudS1idXR0b257XG4gICAgY29sb3I6ICNmZmY7XG59XG4ubWVudS1oZWFkZXJ7XG4gICAgYmFja2dyb3VuZDogIzAwMDBBMDtcbiAgICBwYWRkaW5nLWJvdHRvbTogMDtcbiAgICBtaW4taGVpZ2h0OiA5NXB4O1xuICAgIC51c2VyLW5hbWV7XG4gICAgICAgIC5sb2dpbi10ZXh0e1xuICAgICAgICAgICAgbWFyZ2luOiA1cHggMCAwO1xuICAgICAgICB9XG4gICAgICAgIGJ1dHRvbntcbiAgICAgICAgICAgIHBhZGRpbmc6IDZweCAxMnB4O1xuICAgICAgICAgICAgYm9yZGVyLXJhZGl1czogMTVweDtcbiAgICAgICAgICAgIGZvbnQtc2l6ZTogMTJweDtcbiAgICAgICAgICAgIGZvbnQtd2VpZ2h0OiA0MDA7XG4gICAgICAgICAgICBjb2xvcjojZmZmO1xuICAgICAgICAgICAgYmFja2dyb3VuZC1jb2xvcjogI0ZGQjMwMDtcbiAgICAgICAgICAgIG1hcmdpbjogNHB4IDAgMDtcbiAgICAgICAgfVxuICAgIH0gICAgXG59XG5cbmlvbi1tZW51e1xuICAgIC5saXN0LW1ke1xuICAgICAgICBwYWRkaW5nLXRvcDogMDtcbiAgICAgICAgcGFkZGluZy1ib3R0b206IDA7XG4gICAgfVxuICAgIGlvbi1jb250ZW50e1xuICAgICAgICAtLWJhY2tncm91bmQ6ICMwMDAwQTA7XG4gICAgICAgIGlvbi1saXN0e1xuICAgICAgICAgICAgbWFyZ2luOiAwO1xuICAgICAgICAgICAgLy9wYWRkaW5nLXRvcDogMDtcbiAgICAgICAgICAgIC8vcGFkZGluZy1ib3R0b206IDA7XG4gICAgICAgICAgICBwYWRkaW5nLXRvcDogcHg7XG4gICAgICAgICAgICBwYWRkaW5nLWJvdHRvbTogcHg7XG4gICAgICAgIH1cbiAgICB9XG4gICAgaW9uLWl0ZW17XG4gICAgICAgIC0tYmFja2dyb3VuZDogIzAwMDBBMDtcbiAgICAgICAgYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkICMwMDAwQTA7XG4gICAgICAgICY6aG92ZXJ7XG4gICAgICAgICAgICAtLWJhY2tncm91bmQ6IHJlZDtcbiAgICAgICAgfVxuICAgICAgICBpbWd7XG4gICAgICAgICAgICB3aWR0aDogMjBweDtcbiAgICAgICAgICAgIG1hcmdpbi1yaWdodDogOHB4O1xuICAgICAgICB9XG4gICAgICAgICY6aG92ZXJ7XG4gICAgICAgICAgICAtLWJhY2tncm91bmQ6ICMwMDAwQTA7XG4gICAgICAgIH1cbiAgICB9XG59XG5zbWFsbCB7XG4gICAgZm9udC1zaXplOiA3NSU7XG4gICAgd2lkdGg6IDEwMCU7XG4gICAgZGlzcGxheTogYmxvY2s7XG59XG5pb24taWNvbntcbiAgICBjb2xvcjogI0ZGQjMwMCAhaW1wb3J0YW50O1xufVxuXG4udGlwcy1idG57XG4gICAgY29sb3I6ICMwMDAwQTA7XG59XG5cbmlvbi10b29sYmFyIGlvbi10aXRsZSB7XG4gICAgY29sb3I6ICMwMDA7XG4gICAgZm9udC13ZWlnaHQ6IDUwMDtcbiAgICBhbGlnbi1jb250ZW50OiBjZW50ZXI7XG4gICAgLy9iYWNrZ3JvdW5kLWNvbG9yOiAjRkZCMzAwICFpbXBvcnRhbnQgO1xuICAgIH1cblxuLy8gaW9uLXRvb2xiYXIge1xuLy8gICAgIGJhY2tncm91bmQtY29sb3I6ICNGRkIzMDAgIWltcG9ydGFudDtcbi8vIH0iXX0= */"
 
 /***/ }),
 
@@ -1209,33 +1223,36 @@ var AppComponent = /** @class */ (function () {
             console.log("Logiiiiin cheeeck", (localStorage.getItem('loginDataKKart')));
             if (localStorage.getItem('loginDataKKart') != null) {
                 _this.menuTitle = "Welcome," + JSON.parse(localStorage.getItem('loginDataKKart')).first_name.toString().split(' ')[0];
-                _this.appPages = [{ title: 'Home', url: '/home', icon: 'home' },
-                    { title: 'Category', url: '/product-category', icon: 'list' },
-                    { title: 'Product list', url: '/list', icon: 'list-box' },
-                    { title: 'Todays offer', url: '/top-selling-product-list', icon: 'Flame' },
-                    { title: 'My Orders', url: '/order-list', icon: 'albums' },
-                    { title: 'My Wishlist', url: '/wishlist', icon: 'heart' },
-                    { title: 'My Cart', url: '/cart', icon: 'cart' },
-                    { title: 'My Account', url: '/my-account-details', icon: 'person' },
-                    { title: 'My Reviews', url: '/my-reviews', icon: 'text' },
-                    { title: 'Address', url: '/add-address', icon: 'contacts' },
-                    { title: 'Change Password', url: '/change-password', icon: 'key' },
-                    { title: 'Terms & Conditions', url: '/terms-service', icon: 'radio-button-on' },
-                    { title: 'About us', url: '/about', icon: 'information-circle' },
-                    { title: 'Contact', url: '/contact', icon: 'contacts' },
-                    { title: 'Logout', url: '/logout', icon: 'log-out' },
+                _this.appPages = [{ title: 'Home', url: '/home', img: 'assets/images/Group 313.png' },
+                    { title: 'Category', url: '/product-category', img: 'assets/images/Group 315.png' },
+                    { title: 'Product list', url: '/list', img: 'assets/images/Group 316.png' },
+                    { title: 'Todays offer', url: '/top-selling-product-list', img: 'assets/images/Group 326.png' },
+                    { title: 'My Orders', url: '/order-list', img: 'assets/images/Group 239.png' },
+                    { title: 'My Wishlist', url: '/wishlist', img: 'assets/images/Path 950.png' },
+                    { title: 'My Cart', url: '/cart', img: 'assets/images/Group 327.png' },
+                    { title: 'My Account', url: '/my-account-details', img: 'assets/images/Group 717.png' },
+                    { title: 'My Reviews', url: '/my-reviews', img: 'assets/images/Group 717.png' },
+                    { title: 'Address', url: '/add-address', img: 'assets/images/Group 717.png' },
+                    { title: 'Change Password', url: '/change-password', img: 'assets/images/Group 717.png' },
+                    { title: 'Terms & Conditions', url: '/terms-service', img: 'assets/images/Group 715.png' },
+                    { title: 'About us', url: '/about', img: 'assets/images/Group 717.png' },
+                    { title: 'Return Policy', url: '/return-policy', img: 'assets/images/Group 717.png' },
+                    { title: 'Contact', url: '/contact', img: 'assets/images/Group 719.png' },
+                    { title: 'Logout', url: '/logout', img: 'assets/images/Group 714.png' },
                 ];
             }
             else {
-                _this.menuTitle = "Welcome to kkarts";
-                _this.appPages = [{ title: 'Home', url: '/home', icon: 'home' },
-                    { title: 'Category', url: '/product-category', icon: 'list' },
-                    { title: 'Product list', url: '/list', icon: 'list-box' },
-                    { title: 'Todays offer', url: '/top-selling-product-list', icon: 'Flame' },
-                    { title: 'Terms & Conditions', url: '/terms-service', icon: 'radio-button-on' },
-                    { title: 'About us', url: '/about', icon: 'information-circle' },
-                    { title: 'Contact', url: '/contact', icon: 'contacts' },
-                    { title: 'Login', url: '/login', icon: 'log-in' },
+                _this.menuTitle = "Welcome to Smartkarts";
+                _this.appPages = [
+                    { title: 'Home', url: '/home', img: 'assets/images/Group 313.png' },
+                    { title: 'Category', url: '/product-category', img: 'assets/images/Group 315.png' },
+                    { title: 'Product list', url: '/list', img: 'assets/images/Group 316.png' },
+                    { title: 'Todays offer', url: '/top-selling-product-list', img: 'assets/images/Group 326.png' },
+                    { title: 'Terms & Conditions', url: '/terms-service', img: 'assets/images/Group 715.png' },
+                    { title: 'About us', url: '/about', img: 'assets/images/Group 717.png' },
+                    { title: 'Return Policy', url: '/return-policy', img: 'assets/images/Group 717.png' },
+                    { title: 'Contact', url: '/contact', img: 'assets/images/Group 719.png' },
+                    { title: 'Login', url: '/login', img: 'assets/images/Group 714.png' },
                 ];
             }
             _this.statusBar.styleLightContent();
@@ -1299,12 +1316,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
 /* harmony import */ var _ionic_native_in_app_browser_ngx__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @ionic-native/in-app-browser/ngx */ "./node_modules/@ionic-native/in-app-browser/ngx/index.js");
 /* harmony import */ var _ionic_native_keyboard_ngx__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @ionic-native/keyboard/ngx */ "./node_modules/@ionic-native/keyboard/ngx/index.js");
+/* harmony import */ var _ionic_native_speech_recognition_ngx__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @ionic-native/speech-recognition/ngx */ "./node_modules/@ionic-native/speech-recognition/ngx/index.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -1337,6 +1356,7 @@ var AppModule = /** @class */ (function () {
                 _ionic_native_splash_screen_ngx__WEBPACK_IMPORTED_MODULE_5__["SplashScreen"],
                 _ionic_native_in_app_browser_ngx__WEBPACK_IMPORTED_MODULE_9__["InAppBrowser"],
                 _ionic_native_keyboard_ngx__WEBPACK_IMPORTED_MODULE_10__["Keyboard"],
+                _ionic_native_speech_recognition_ngx__WEBPACK_IMPORTED_MODULE_11__["SpeechRecognition"],
                 { provide: _angular_router__WEBPACK_IMPORTED_MODULE_2__["RouteReuseStrategy"], useClass: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonicRouteStrategy"] }
             ],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_7__["AppComponent"]]
@@ -1410,7 +1430,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/vap/Desktop/Ionic_Project/archive ionic fProject/old archive 2/Archive 2/src/main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! /Users/vap/Desktop/ionic Project/pp/Smart-Cart 2/src/main.ts */"./src/main.ts");
 
 
 /***/ })
