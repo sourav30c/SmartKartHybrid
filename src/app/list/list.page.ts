@@ -192,7 +192,12 @@ export class ListPage {
     setTimeout(() => {
       //console.log('Done Load Data Calling');
       event.target.complete();
-      this.getProductListData();
+      //this.getProductListData();
+      if(this.searchText == ""){
+        this.getProductListData()
+      }else{
+        this.getSearchProductListData()
+      }
     }, 500);
   }
 
@@ -209,7 +214,6 @@ export class ListPage {
   }
 
   myWishlistWithoutCheck() {
-    //alert(1)
     //this.wishListListsForId = []
     var myData = JSON.stringify({
     });
@@ -235,7 +239,6 @@ export class ListPage {
   }
 
   myWishlist() { // check user have which product in wishlist
-    //alert(2)
     this.wishListCheck = []
 
     var myData = JSON.stringify({
@@ -282,8 +285,6 @@ export class ListPage {
   }
 
   addToWishlist(singleproductlistslug, i) {
-    //alert(3)
-    //console.log("wishlist data check", singleproductlistslug, this.wishListCheck , i)
     let wishlistIdForDelete = ""
     if (localStorage.getItem('loginDataKKart') != null) {
       //console.log("this.wishlistLists.length ", this.wishListListsForId, Number(i + 1), this.wishListCheck)

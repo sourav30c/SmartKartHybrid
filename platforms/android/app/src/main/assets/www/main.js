@@ -894,7 +894,6 @@ var map = {
 	"./details/details.module": [
 		"./src/app/details/details.module.ts",
 		"default~about-about-module~add-address-add-address-module~add-billing-address-add-billing-address-mo~1824aeab",
-		"default~details-details-module~product-category-product-category-module",
 		"common",
 		"details-details-module"
 	],
@@ -985,7 +984,6 @@ var map = {
 	"./product-category/product-category.module": [
 		"./src/app/product-category/product-category.module.ts",
 		"default~about-about-module~add-address-add-address-module~add-billing-address-add-billing-address-mo~1824aeab",
-		"default~details-details-module~product-category-product-category-module",
 		"common",
 		"product-category-product-category-module"
 	],
