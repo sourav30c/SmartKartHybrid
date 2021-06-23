@@ -5,6 +5,8 @@ import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { Events } from '@ionic/angular';
 import { MenuController } from '@ionic/angular';
+import { Deeplinks } from '@ionic-native/deeplinks/ngx';
+import { AboutPage } from './about/about.page';
 
 @Component({
   selector: 'app-root',
@@ -28,11 +30,11 @@ export class AppComponent {
     private platform: Platform,
     private splashScreen: SplashScreen,
     private statusBar: StatusBar, public events: Events ,
-    public menuCtrl: MenuController
+    public menuCtrl: MenuController,
+    protected deeplinks: Deeplinks,
   ) {
     this.initializeMenu();
     this.initializeApp();
-
     events.subscribe('user:login', () => {
       console.log('user login');
       this.initializeApp();
@@ -82,6 +84,7 @@ export class AppComponent {
       }
       this.statusBar.styleLightContent();
       this.splashScreen.hide();
+      this.listenToDeeplink()
     });
   }
 
@@ -103,5 +106,47 @@ export class AppComponent {
       this.prevPage = pageDetails.prevPage;
     });
   }
+
+  listenToDeeplink(){
+
+  console.log("Deeplink Route test", this.deeplinks.route)
+ 
+   this.deeplinks.route({
+      '/about-us': AboutPage,
+     // '/universal-links-test': AboutPage,
+     // '/products/:productId': ProductCategoryPage
+   }).subscribe(match => {
+     // match.$route - the route we matched, which is the matched entry from the arguments to route()
+     // match.$args - the args passed in the link
+     // match.$link - the full link data
+     alert(JSON.stringify(match))
+     console.log('Successfully matched route', match);
+   }, nomatch => {
+     // nomatch.$link - the full link data
+     alert(JSON.stringify(nomatch));
+     console.error('Got a deeplink that didn\'t match', nomatch);
+   });
+ 
+   // console.log("Deeplink Route test end end", this.deeplinks.route)
+ 
+   // this.platform.ready().then(() => {
+   //   console.log("platform is there")
+ 
+   //   this.deeplinks.routeWithNavController(this.navCtrl, {
+   //     '/about-us': AboutPage,
+   
+   //   }).subscribe((match) => {
+   //     console.log("match", JSON.stringify(match))
+   //        alert(JSON.stringify(match))
+   //   }, (noMatch) =>{
+   //     console.log("noMatch", JSON.stringify(noMatch))
+   //     alert(JSON.stringify(noMatch));
+   //     }
+   //   )
+   
+   // })
+ 
+ }
+
 
 }

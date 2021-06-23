@@ -175,44 +175,7 @@ export class DetailsPage implements OnInit {
   // }
 
 sharePageDeeplink(){
-
-   console.log("Deeplink Route test", this.deeplinks.route)
-
-  // this.deeplinks.route({
-  //   '/about-us': AboutPage,
-  //   '/universal-links-test': AboutPage,
-  //   '/products/:productId': ProductCategoryPage
-  // }).subscribe(match => {
-  //   // match.$route - the route we matched, which is the matched entry from the arguments to route()
-  //   // match.$args - the args passed in the link
-  //   // match.$link - the full link data
-  //   alert(JSON.stringify(match))
-  //   console.log('Successfully matched route', match);
-  // }, nomatch => {
-  //   // nomatch.$link - the full link data
-  //   alert(JSON.stringify(nomatch));
-  //   console.error('Got a deeplink that didn\'t match', nomatch);
-  // });
-
-  // console.log("Deeplink Route test end end", this.deeplinks.route)
-
-  this.platform.ready().then(() => {
-    console.log("platform is there")
-
-    this.deeplinks.routeWithNavController(this.navCtrl, {
-      '/about-us': AboutPage,
   
-    }).subscribe((match) => {
-      console.log("match", JSON.stringify(match))
-         alert(JSON.stringify(match))
-    }, (noMatch) =>{
-      console.log("noMatch", JSON.stringify(noMatch))
-      alert(JSON.stringify(noMatch));
-      }
-    )
-  
-  })
-
 }
 
 
