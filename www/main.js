@@ -839,206 +839,138 @@ module.exports = webpackAsyncContext;
 var map = {
 	"./about/about.module": [
 		"./src/app/about/about.module.ts",
-		"default~about-about-module~add-address-add-address-module~add-billing-address-add-billing-address-mo~1824aeab",
-		"common",
 		"about-about-module"
 	],
 	"./add-address/add-address.module": [
 		"./src/app/add-address/add-address.module.ts",
-		"default~about-about-module~add-address-add-address-module~add-billing-address-add-billing-address-mo~1824aeab",
-		"common",
 		"add-address-add-address-module"
 	],
 	"./add-billing-address/add-billing-address.module": [
 		"./src/app/add-billing-address/add-billing-address.module.ts",
-		"default~about-about-module~add-address-add-address-module~add-billing-address-add-billing-address-mo~1824aeab",
-		"common",
 		"add-billing-address-add-billing-address-module"
 	],
 	"./add-your-review/add-your-review.module": [
 		"./src/app/add-your-review/add-your-review.module.ts",
-		"default~about-about-module~add-address-add-address-module~add-billing-address-add-billing-address-mo~1824aeab",
-		"common",
 		"add-your-review-add-your-review-module"
 	],
 	"./auto-search/auto-search.module": [
 		"./src/app/auto-search/auto-search.module.ts",
-		"default~about-about-module~add-address-add-address-module~add-billing-address-add-billing-address-mo~1824aeab",
-		"common",
 		"auto-search-auto-search-module"
 	],
 	"./billing-address/billing-address.module": [
 		"./src/app/billing-address/billing-address.module.ts",
-		"default~about-about-module~add-address-add-address-module~add-billing-address-add-billing-address-mo~1824aeab",
-		"common",
 		"billing-address-billing-address-module"
 	],
 	"./cart/cart.module": [
 		"./src/app/cart/cart.module.ts",
-		"default~about-about-module~add-address-add-address-module~add-billing-address-add-billing-address-mo~1824aeab",
-		"common",
 		"cart-cart-module"
 	],
 	"./change-password/change-password.module": [
 		"./src/app/change-password/change-password.module.ts",
-		"default~about-about-module~add-address-add-address-module~add-billing-address-add-billing-address-mo~1824aeab",
-		"common",
 		"change-password-change-password-module"
 	],
 	"./contact/contact.module": [
 		"./src/app/contact/contact.module.ts",
-		"default~about-about-module~add-address-add-address-module~add-billing-address-add-billing-address-mo~1824aeab",
-		"common",
 		"contact-contact-module"
 	],
 	"./details/details.module": [
 		"./src/app/details/details.module.ts",
-		"default~about-about-module~add-address-add-address-module~add-billing-address-add-billing-address-mo~1824aeab",
-		"common",
 		"details-details-module"
 	],
 	"./forgotpassword/forgotpassword.module": [
 		"./src/app/forgotpassword/forgotpassword.module.ts",
-		"default~about-about-module~add-address-add-address-module~add-billing-address-add-billing-address-mo~1824aeab",
-		"common",
 		"forgotpassword-forgotpassword-module"
 	],
 	"./home/home.module": [
 		"./src/app/home/home.module.ts",
-		"default~about-about-module~add-address-add-address-module~add-billing-address-add-billing-address-mo~1824aeab",
-		"common",
 		"home-home-module"
 	],
 	"./list/list.module": [
 		"./src/app/list/list.module.ts",
-		"default~about-about-module~add-address-add-address-module~add-billing-address-add-billing-address-mo~1824aeab",
-		"common",
 		"list-list-module"
 	],
 	"./login/login.module": [
 		"./src/app/login/login.module.ts",
-		"default~about-about-module~add-address-add-address-module~add-billing-address-add-billing-address-mo~1824aeab",
-		"common",
 		"login-login-module"
 	],
 	"./logout/logout.module": [
 		"./src/app/logout/logout.module.ts",
-		"default~about-about-module~add-address-add-address-module~add-billing-address-add-billing-address-mo~1824aeab",
-		"common",
 		"logout-logout-module"
 	],
 	"./my-account-details/my-account-details.module": [
 		"./src/app/my-account-details/my-account-details.module.ts",
-		"default~about-about-module~add-address-add-address-module~add-billing-address-add-billing-address-mo~1824aeab",
-		"common",
 		"my-account-details-my-account-details-module"
 	],
 	"./my-reviews/my-reviews.module": [
 		"./src/app/my-reviews/my-reviews.module.ts",
-		"default~about-about-module~add-address-add-address-module~add-billing-address-add-billing-address-mo~1824aeab",
-		"common",
 		"my-reviews-my-reviews-module"
 	],
 	"./order-details/order-details.module": [
 		"./src/app/order-details/order-details.module.ts",
-		"default~about-about-module~add-address-add-address-module~add-billing-address-add-billing-address-mo~1824aeab",
-		"common",
 		"order-details-order-details-module"
 	],
 	"./order-list/order-list.module": [
 		"./src/app/order-list/order-list.module.ts",
-		"default~about-about-module~add-address-add-address-module~add-billing-address-add-billing-address-mo~1824aeab",
-		"common",
 		"order-list-order-list-module"
 	],
 	"./order-tracking/order-tracking.module": [
 		"./src/app/order-tracking/order-tracking.module.ts",
-		"default~about-about-module~add-address-add-address-module~add-billing-address-add-billing-address-mo~1824aeab",
-		"common",
 		"order-tracking-order-tracking-module"
 	],
 	"./otp-fp-submit/otp-fp-submit.module": [
 		"./src/app/otp-fp-submit/otp-fp-submit.module.ts",
-		"default~about-about-module~add-address-add-address-module~add-billing-address-add-billing-address-mo~1824aeab",
-		"common",
 		"otp-fp-submit-otp-fp-submit-module"
 	],
 	"./otp-registration/otp-registration.module": [
 		"./src/app/otp-registration/otp-registration.module.ts",
-		"default~about-about-module~add-address-add-address-module~add-billing-address-add-billing-address-mo~1824aeab",
-		"common",
 		"otp-registration-otp-registration-module"
 	],
 	"./payment-mode/payment-mode.module": [
 		"./src/app/payment-mode/payment-mode.module.ts",
-		"default~about-about-module~add-address-add-address-module~add-billing-address-add-billing-address-mo~1824aeab",
-		"common",
 		"payment-mode-payment-mode-module"
 	],
 	"./privacy-policy/privacy-policy.module": [
 		"./src/app/privacy-policy/privacy-policy.module.ts",
-		"default~about-about-module~add-address-add-address-module~add-billing-address-add-billing-address-mo~1824aeab",
-		"common",
 		"privacy-policy-privacy-policy-module"
 	],
 	"./product-category/product-category.module": [
 		"./src/app/product-category/product-category.module.ts",
-		"default~about-about-module~add-address-add-address-module~add-billing-address-add-billing-address-mo~1824aeab",
-		"common",
 		"product-category-product-category-module"
 	],
 	"./product-sub-category/product-sub-category.module": [
 		"./src/app/product-sub-category/product-sub-category.module.ts",
-		"default~about-about-module~add-address-add-address-module~add-billing-address-add-billing-address-mo~1824aeab",
-		"common",
 		"product-sub-category-product-sub-category-module"
 	],
 	"./return-details/return-details.module": [
 		"./src/app/return-details/return-details.module.ts",
-		"default~about-about-module~add-address-add-address-module~add-billing-address-add-billing-address-mo~1824aeab",
-		"common",
 		"return-details-return-details-module"
 	],
 	"./return-policy/return-policy.module": [
 		"./src/app/return-policy/return-policy.module.ts",
-		"default~about-about-module~add-address-add-address-module~add-billing-address-add-billing-address-mo~1824aeab",
-		"common",
 		"return-policy-return-policy-module"
 	],
 	"./review-list/review-list.module": [
 		"./src/app/review-list/review-list.module.ts",
-		"default~about-about-module~add-address-add-address-module~add-billing-address-add-billing-address-mo~1824aeab",
-		"common",
 		"review-list-review-list-module"
 	],
 	"./signup/signup.module": [
 		"./src/app/signup/signup.module.ts",
-		"default~about-about-module~add-address-add-address-module~add-billing-address-add-billing-address-mo~1824aeab",
-		"common",
 		"signup-signup-module"
 	],
 	"./terms-service/terms-service.module": [
 		"./src/app/terms-service/terms-service.module.ts",
-		"default~about-about-module~add-address-add-address-module~add-billing-address-add-billing-address-mo~1824aeab",
-		"common",
 		"terms-service-terms-service-module"
 	],
 	"./thank-you/thank-you.module": [
 		"./src/app/thank-you/thank-you.module.ts",
-		"default~about-about-module~add-address-add-address-module~add-billing-address-add-billing-address-mo~1824aeab",
-		"common",
 		"thank-you-thank-you-module"
 	],
 	"./top-selling-product-list/top-selling-product-list.module": [
 		"./src/app/top-selling-product-list/top-selling-product-list.module.ts",
-		"default~about-about-module~add-address-add-address-module~add-billing-address-add-billing-address-mo~1824aeab",
-		"common",
 		"top-selling-product-list-top-selling-product-list-module"
 	],
 	"./wishlist/wishlist.module": [
 		"./src/app/wishlist/wishlist.module.ts",
-		"default~about-about-module~add-address-add-address-module~add-billing-address-add-billing-address-mo~1824aeab",
-		"common",
 		"wishlist-wishlist-module"
 	]
 };
@@ -1051,7 +983,7 @@ function webpackAsyncContext(req) {
 			throw e;
 		});
 	}
-	return Promise.all(ids.slice(1).map(__webpack_require__.e)).then(function() {
+	return __webpack_require__.e(ids[1]).then(function() {
 		var id = ids[0];
 		return __webpack_require__(id);
 	});
@@ -1061,6 +993,446 @@ webpackAsyncContext.keys = function webpackAsyncContextKeys() {
 };
 webpackAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 module.exports = webpackAsyncContext;
+
+/***/ }),
+
+/***/ "./src/app/about/about.page.html":
+/*!***************************************!*\
+  !*** ./src/app/about/about.page.html ***!
+  \***************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<ion-header>\n    <ion-toolbar>\n      <ion-buttons slot=\"start\">\n        <ion-menu-button style=\"color: #FFCC23\"></ion-menu-button>\n      </ion-buttons>\n      <ion-title>\n        About Us\n      </ion-title>\n    </ion-toolbar>\n  </ion-header>\n\n<ion-content>\n  <ion-grid>\n    <ion-row class=\"loginBx\" *ngIf=\"isTerms == true\">\n      <ion-col>\n      <ion-text>  \n        <div [innerHTML]=\"description\"></div>\n      </ion-text>  \n      </ion-col>\n    </ion-row>\n  </ion-grid>\n\n  <!-- <ion-card style=\"text-align:center;margin-top:50% \" *ngIf=\"isTerms == false\">\n    <ion-card-content>\n        No Data Found\n    </ion-card-content>\n  </ion-card> -->\n</ion-content>"
+
+/***/ }),
+
+/***/ "./src/app/about/about.page.scss":
+/*!***************************************!*\
+  !*** ./src/app/about/about.page.scss ***!
+  \***************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".bg {\n  background-image: url(\"/assets/images/bg1.jpg\");\n  height: auto;\n  background-size: cover;\n  -webkit-filter: blur(0px);\n          filter: blur(0px);\n  background-repeat: no-repeat;\n  background-position: center center; }\n\n.loginBx {\n  margin: auto;\n  max-width: 374px;\n  padding: 25px;\n  background: rgba(252, 250, 250, 0.5);\n  border-radius: 10px;\n  text-align: center; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy92YXAvRGVza3RvcC9pb25pYyBQcm9qZWN0L3BwL1NtYXJ0LUNhcnQgMi9zcmMvYXBwL2Fib3V0L2Fib3V0LnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLCtDQUErQztFQUMvQyxZQUFZO0VBQ1osc0JBQXNCO0VBQ3RCLHlCQUFpQjtVQUFqQixpQkFBaUI7RUFDakIsNEJBQTRCO0VBQzVCLGtDQUFrQyxFQUFBOztBQUV0QztFQUNJLFlBQVk7RUFDWixnQkFBZ0I7RUFDaEIsYUFBYTtFQUNiLG9DQUFtQztFQUNuQyxtQkFBbUI7RUFDbkIsa0JBQWtCLEVBQUEiLCJmaWxlIjoic3JjL2FwcC9hYm91dC9hYm91dC5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuYmd7XHJcbiAgICBiYWNrZ3JvdW5kLWltYWdlOiB1cmwoJy9hc3NldHMvaW1hZ2VzL2JnMS5qcGcnKTtcclxuICAgIGhlaWdodDogYXV0bztcclxuICAgIGJhY2tncm91bmQtc2l6ZTogY292ZXI7XHJcbiAgICBmaWx0ZXI6IGJsdXIoMHB4KTtcclxuICAgIGJhY2tncm91bmQtcmVwZWF0OiBuby1yZXBlYXQ7XHJcbiAgICBiYWNrZ3JvdW5kLXBvc2l0aW9uOiBjZW50ZXIgY2VudGVyO1xyXG59XHJcbi5sb2dpbkJ4IHtcclxuICAgIG1hcmdpbjogYXV0bztcclxuICAgIG1heC13aWR0aDogMzc0cHg7XHJcbiAgICBwYWRkaW5nOiAyNXB4O1xyXG4gICAgYmFja2dyb3VuZDpyZ2JhKDI1MiwgMjUwLCAyNTAsIDAuNSk7XHJcbiAgICBib3JkZXItcmFkaXVzOiAxMHB4O1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG59Il19 */"
+
+/***/ }),
+
+/***/ "./src/app/about/about.page.ts":
+/*!*************************************!*\
+  !*** ./src/app/about/about.page.ts ***!
+  \*************************************/
+/*! exports provided: AboutPage */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AboutPage", function() { return AboutPage; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _api_utility_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../api/utility.service */ "./src/app/api/utility.service.ts");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/fesm5.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+var AboutPage = /** @class */ (function () {
+    function AboutPage(util, alertController, events, navCtrl, route, modalController, activeroute, menuCtrl) {
+        this.util = util;
+        this.alertController = alertController;
+        this.events = events;
+        this.navCtrl = navCtrl;
+        this.route = route;
+        this.modalController = modalController;
+        this.activeroute = activeroute;
+        this.menuCtrl = menuCtrl;
+        this.description = "";
+        this.isTerms = false;
+        this.myTermsService();
+    }
+    AboutPage.prototype.ngOnInit = function () {
+    };
+    AboutPage.prototype.myTermsService = function () {
+        var _this = this;
+        var myData = JSON.stringify({});
+        console.log("Your myData: ", myData);
+        this.util.presentLoading();
+        this.util.getTypeDetailsWithAuth('sliders/pages.json', myData).subscribe(function (result) {
+            _this.util.dismissLoader();
+            //console.log("Your data: ", result);
+            _this.data = result;
+            if (_this.data.success) {
+                _this.aboutUs = _this.data.data.pages;
+                if (_this.aboutUs.length == 0) {
+                    _this.isTerms = false;
+                }
+                else {
+                    _this.isTerms = true;
+                }
+                _this.description = _this.aboutUs[1].description;
+                //console.log("this.aboutUs",this.aboutUs)
+            }
+            else {
+                _this.util.showToast(_this.data.message);
+            }
+        }, function (error) {
+            _this.util.dismissLoader();
+            _this.util.showToast('Server error occured. Try again.');
+        });
+    };
+    AboutPage = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-about',
+            template: __webpack_require__(/*! ./about.page.html */ "./src/app/about/about.page.html"),
+            styles: [__webpack_require__(/*! ./about.page.scss */ "./src/app/about/about.page.scss")]
+        }),
+        __metadata("design:paramtypes", [_api_utility_service__WEBPACK_IMPORTED_MODULE_1__["UtilityService"], _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["AlertController"],
+            _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["Events"], _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["NavController"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"], _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["ModalController"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"], _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["MenuController"]])
+    ], AboutPage);
+    return AboutPage;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/api/utility.service.ts":
+/*!****************************************!*\
+  !*** ./src/app/api/utility.service.ts ***!
+  \****************************************/
+/*! exports provided: UtilityService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UtilityService", function() { return UtilityService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/http */ "./node_modules/@angular/http/fesm5/http.js");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/fesm5.js");
+/* harmony import */ var rxjs_Observable__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/Observable */ "./node_modules/rxjs-compat/_esm5/Observable.js");
+/* harmony import */ var rxjs_Rx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs/Rx */ "./node_modules/rxjs-compat/_esm5/Rx.js");
+/* harmony import */ var rxjs_add_operator_map__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! rxjs/add/operator/map */ "./node_modules/rxjs-compat/_esm5/add/operator/map.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (undefined && undefined.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
+
+
+
+
+
+
+var UtilityService = /** @class */ (function () {
+    function UtilityService(http, loadingController, alertCtrl, toastCtrl) {
+        this.http = http;
+        this.loadingController = loadingController;
+        this.alertCtrl = alertCtrl;
+        this.toastCtrl = toastCtrl;
+        this.codLimit = "";
+        this.baseURL = "https://www.smartkart.online/api/"; //"https://www.kkcarts.com/api/";
+        this.isLoading = false;
+        this.cartCount = 0;
+        //this.userdata = JSON.parse(localStorage.getItem('loginDataKKart'))
+        //console.log("this.userdata",this.userdata)
+    }
+    UtilityService.prototype.presentLoading = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var _a;
+            return __generator(this, function (_b) {
+                switch (_b.label) {
+                    case 0:
+                        _a = this;
+                        return [4 /*yield*/, this.loadingController.create({
+                                message: 'Please wait...',
+                            })];
+                    case 1:
+                        _a.loader = _b.sent();
+                        return [4 /*yield*/, this.loader.present()];
+                    case 2:
+                        _b.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    UtilityService.prototype.presentLoading3 = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var _this = this;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        this.isLoading = true;
+                        return [4 /*yield*/, this.loadingController.create({
+                                duration: 200,
+                            }).then(function (a) {
+                                a.present().then(function () {
+                                    console.log('presented');
+                                    if (!_this.isLoading) {
+                                        a.dismiss().then(function () { return console.log('abort presenting'); });
+                                    }
+                                });
+                            })];
+                    case 1: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    UtilityService.prototype.presentLoadingWithOptions = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var loading;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.loadingController.create({
+                            spinner: null,
+                            duration: 5000,
+                            message: 'Please wait...',
+                            translucent: true,
+                            cssClass: 'custom-class custom-loading'
+                        })];
+                    case 1:
+                        loading = _a.sent();
+                        return [4 /*yield*/, loading.present()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    // presentLoader() {
+    //   this.loader = this.loading.create({
+    //     message: 'Loading...',
+    //   });
+    //   this.loader.present();
+    // }
+    UtilityService.prototype.dismissLoader = function () {
+        this.loader.dismiss();
+    };
+    UtilityService.prototype.showAlert = function ($title, $subTitle) {
+        var alert = this.alertCtrl.create({
+            header: $title,
+            subHeader: $subTitle,
+            buttons: ['OK']
+        }).then(function (alert) { return alert.present(); });
+        ;
+        //alert.present();
+    };
+    /* toast */
+    UtilityService.prototype.showToast = function (message) {
+        var toast = this.toastCtrl.create({
+            message: message,
+            duration: 3000,
+            position: "bottom"
+        }).then(function (alert) { return alert.present(); });
+        ;
+        // toast.present(toast);
+    };
+    UtilityService.prototype.showToastWithCloseButton = function () {
+        var toast = this.toastCtrl.create({
+            message: 'Your files were successfully saved',
+            showCloseButton: true,
+            closeButtonText: 'Ok'
+        }).then(function (alert) { return alert.present(); });
+        ;
+        //toast.present();
+    };
+    UtilityService.prototype.showLongToast = function () {
+        var toast = this.toastCtrl.create({
+            message: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea voluptatibus quibusdam eum nihil optio, ullam accusamus magni, nobis suscipit reprehenderit, sequi quam amet impedit. Accusamus dolorem voluptates laborum dolor obcaecati.',
+            duration: 2000,
+        }).then(function (alert) { return alert.present(); });
+        ;
+        //toast.present();
+    };
+    /* toast */
+    /*-----post data-----*/
+    UtilityService.prototype.getTypeDetails = function ($apiFunc, $postDate) {
+        var favoritesURL = this.baseURL + $apiFunc;
+        console.log("Api heating", this.baseURL + $apiFunc);
+        var myData = $postDate;
+        var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]({
+            'Content-Type': 'application/json',
+        });
+        //console.log("Header is",headers)
+        var options = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["RequestOptions"]({ headers: headers });
+        return this.http.post(favoritesURL, myData, options)
+            //.pipe (.map(res => res.json()))
+            .map(function (res) { return res.json(); })
+            .catch(this.handleError);
+    };
+    /*-----post data-----*/
+    UtilityService.prototype.getTypeDetailsWithAuth = function ($apiFunc, $postDate) {
+        var favoritesURL = this.baseURL + $apiFunc;
+        console.log("Api heating", this.baseURL + $apiFunc);
+        var myData = $postDate;
+        if (localStorage.getItem('userToken') != null) {
+            this.userToken = JSON.parse(localStorage.getItem('userToken'));
+            //console.log(this.userToken)
+        }
+        var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]({
+            'Content-Type': 'application/json',
+            'authorization': this.userToken,
+        });
+        //console.log("Header is",headers)
+        var options = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["RequestOptions"]({ headers: headers });
+        return this.http.post(favoritesURL, myData, options)
+            //.pipe (.map(res => res.json()))
+            .map(function (res) { return res.json(); })
+            .catch(this.handleError);
+    };
+    /*-----get data-----*/
+    UtilityService.prototype.getTypeDetailsGet = function ($apiFunc, $postDate) {
+        var favoritesURL = this.baseURL + $apiFunc;
+        console.log("Api heating", this.baseURL + $apiFunc);
+        var myData = $postDate;
+        var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]({
+            'Content-Type': 'application/json',
+        });
+        //console.log("Header is",headers)
+        var options = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["RequestOptions"]({ headers: headers });
+        return this.http.get(favoritesURL, options)
+            .map(function (res) { return res.json(); })
+            .catch(this.handleError);
+    };
+    UtilityService.prototype.handleError = function (error) {
+        console.error(error);
+        this.dismissLoader();
+        return rxjs_Observable__WEBPACK_IMPORTED_MODULE_3__["Observable"].throw(error.json().error || 'Server error');
+    };
+    /*-----wishlist data-----*/
+    UtilityService.prototype.addToWishlist = function (productSlug) {
+        var _this = this;
+        //console.log("product slug", productSlug)
+        var myData = JSON.stringify({
+            slug: productSlug
+        });
+        //console.log("Your myData: ", myData);
+        this.presentLoading();
+        this.getTypeDetailsWithAuth('users/addtowishlist.json', myData).subscribe(function (result) {
+            _this.dismissLoader();
+            //console.log("Your data: ", result);
+            _this.data = result;
+            //console.log(this.data)
+            if (_this.data.success) {
+                _this.showToast(_this.data.data.status);
+            }
+            else {
+                _this.showToast(_this.data.message);
+            }
+        }, function (error) {
+            _this.dismissLoader();
+            _this.showToast('Server error occured. Try again.');
+        });
+    };
+    UtilityService.prototype.deleteFromWishlist = function (singleWishlistId) {
+        var _this = this;
+        //console.log("singleWishlistId", singleWishlistId)
+        var myData = JSON.stringify({
+            id: singleWishlistId
+        });
+        //console.log("Your delete wishlist myData: ", myData);
+        this.presentLoading();
+        this.getTypeDetailsWithAuth('users/wishlistdelete.json', myData).subscribe(function (result) {
+            _this.dismissLoader();
+            //console.log("Your data: ", result);
+            _this.data = result;
+            if (_this.data.success) {
+                _this.showToast(_this.data.data.wishlist);
+            }
+            else {
+                _this.showToast(_this.data.message);
+            }
+        }, function (error) {
+            _this.dismissLoader();
+            _this.showToast('Server error occured. Try again.');
+        });
+    };
+    UtilityService.prototype.myCartlist = function () {
+        var _this = this;
+        var myData = JSON.stringify({});
+        //console.log("Your myData: ", myData);
+        //this.presentLoading();
+        this.getTypeDetailsWithAuth('carts/getcartitems.json', myData).subscribe(function (result) {
+            //this.dismissLoader();
+            //console.log("Your Cart data: ", result);
+            _this.data = result;
+            if (_this.data.success) {
+                _this.cartList = _this.data.data;
+                if (_this.cartList != "no data found") {
+                    _this.cartCount = _this.cartList.length;
+                }
+                else {
+                    _this.cartCount = 0;
+                }
+                //console.log("this.cartList util",this.cartList,  this.cartList.length)
+                //this.dismissLoader()
+            }
+            else {
+                _this.showToast(_this.data.message);
+            }
+        }, function (error) {
+            //this.dismissLoader();
+            _this.showToast('Server error occured. Try again.');
+        });
+    };
+    UtilityService = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
+            providedIn: 'root'
+        }),
+        __metadata("design:paramtypes", [_angular_http__WEBPACK_IMPORTED_MODULE_1__["Http"], _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["LoadingController"], _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["AlertController"], _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["ToastController"]])
+    ], UtilityService);
+    return UtilityService;
+}());
+
+
 
 /***/ }),
 
@@ -1183,6 +1555,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/fesm5.js");
 /* harmony import */ var _ionic_native_splash_screen_ngx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ionic-native/splash-screen/ngx */ "./node_modules/@ionic-native/splash-screen/ngx/index.js");
 /* harmony import */ var _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ionic-native/status-bar/ngx */ "./node_modules/@ionic-native/status-bar/ngx/index.js");
+/* harmony import */ var _ionic_native_deeplinks_ngx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic-native/deeplinks/ngx */ "./node_modules/@ionic-native/deeplinks/ngx/index.js");
+/* harmony import */ var _about_about_page__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./about/about.page */ "./src/app/about/about.page.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1198,14 +1572,17 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
+
 var AppComponent = /** @class */ (function () {
-    function AppComponent(platform, splashScreen, statusBar, events, menuCtrl) {
+    function AppComponent(platform, splashScreen, statusBar, events, menuCtrl, deeplinks) {
         var _this = this;
         this.platform = platform;
         this.splashScreen = splashScreen;
         this.statusBar = statusBar;
         this.events = events;
         this.menuCtrl = menuCtrl;
+        this.deeplinks = deeplinks;
         this.appPages = [];
         this.title = '';
         this.menuTitle = '';
@@ -1257,6 +1634,7 @@ var AppComponent = /** @class */ (function () {
             }
             _this.statusBar.styleLightContent();
             _this.splashScreen.hide();
+            //this.listenToDeeplink()
         });
     };
     AppComponent.prototype.toggleMenu = function () {
@@ -1277,6 +1655,36 @@ var AppComponent = /** @class */ (function () {
             _this.prevPage = pageDetails.prevPage;
         });
     };
+    AppComponent.prototype.listenToDeeplink = function () {
+        console.log("Deeplink Route test", this.deeplinks.route);
+        this.deeplinks.route({
+            '/about-us': _about_about_page__WEBPACK_IMPORTED_MODULE_5__["AboutPage"],
+        }).subscribe(function (match) {
+            // match.$route - the route we matched, which is the matched entry from the arguments to route()
+            // match.$args - the args passed in the link
+            // match.$link - the full link data
+            alert(JSON.stringify(match));
+            console.log('Successfully matched route', match);
+        }, function (nomatch) {
+            // nomatch.$link - the full link data
+            alert(JSON.stringify(nomatch));
+            console.error('Got a deeplink that didn\'t match', nomatch);
+        });
+        // console.log("Deeplink Route test end end", this.deeplinks.route)
+        // this.platform.ready().then(() => {
+        //   console.log("platform is there")
+        //   this.deeplinks.routeWithNavController(this.navCtrl, {
+        //     '/about-us': AboutPage,
+        //   }).subscribe((match) => {
+        //     console.log("match", JSON.stringify(match))
+        //        alert(JSON.stringify(match))
+        //   }, (noMatch) =>{
+        //     console.log("noMatch", JSON.stringify(noMatch))
+        //     alert(JSON.stringify(noMatch));
+        //     }
+        //   )
+        // })
+    };
     AppComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-root',
@@ -1286,7 +1694,8 @@ var AppComponent = /** @class */ (function () {
         __metadata("design:paramtypes", [_ionic_angular__WEBPACK_IMPORTED_MODULE_1__["Platform"],
             _ionic_native_splash_screen_ngx__WEBPACK_IMPORTED_MODULE_2__["SplashScreen"],
             _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_3__["StatusBar"], _ionic_angular__WEBPACK_IMPORTED_MODULE_1__["Events"],
-            _ionic_angular__WEBPACK_IMPORTED_MODULE_1__["MenuController"]])
+            _ionic_angular__WEBPACK_IMPORTED_MODULE_1__["MenuController"],
+            _ionic_native_deeplinks_ngx__WEBPACK_IMPORTED_MODULE_4__["Deeplinks"]])
     ], AppComponent);
     return AppComponent;
 }());

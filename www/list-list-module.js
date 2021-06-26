@@ -264,7 +264,13 @@ var ListPage = /** @class */ (function () {
         setTimeout(function () {
             //console.log('Done Load Data Calling');
             event.target.complete();
-            _this.getProductListData();
+            //this.getProductListData();
+            if (_this.searchText == "") {
+                _this.getProductListData();
+            }
+            else {
+                _this.getSearchProductListData();
+            }
         }, 500);
     };
     ListPage.prototype.details = function (productListSingle) {
@@ -280,7 +286,6 @@ var ListPage = /** @class */ (function () {
     };
     ListPage.prototype.myWishlistWithoutCheck = function () {
         var _this = this;
-        //alert(1)
         //this.wishListListsForId = []
         var myData = JSON.stringify({});
         //this.util.presentLoading();
@@ -303,7 +308,6 @@ var ListPage = /** @class */ (function () {
     };
     ListPage.prototype.myWishlist = function () {
         var _this = this;
-        //alert(2)
         this.wishListCheck = [];
         var myData = JSON.stringify({});
         this.util.getTypeDetailsWithAuth('users/wishlist.json', myData).subscribe(function (result) {
@@ -346,8 +350,6 @@ var ListPage = /** @class */ (function () {
     };
     ListPage.prototype.addToWishlist = function (singleproductlistslug, i) {
         var _this = this;
-        //alert(3)
-        //console.log("wishlist data check", singleproductlistslug, this.wishListCheck , i)
         var wishlistIdForDelete = "";
         if (localStorage.getItem('loginDataKKart') != null) {
             //console.log("this.wishlistLists.length ", this.wishListListsForId, Number(i + 1), this.wishListCheck)

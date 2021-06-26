@@ -84,7 +84,7 @@ export class AppComponent {
       }
       this.statusBar.styleLightContent();
       this.splashScreen.hide();
-      this.listenToDeeplink()
+      //this.listenToDeeplink()
     });
   }
 
