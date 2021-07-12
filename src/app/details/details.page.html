@@ -98,8 +98,9 @@
         <div class="Pprice">
           <span class="crPrice">₹ {{offer_price}}
           </span>
-          <span class="oldPrice">₹ {{actual_price}}</span>
-          <span class="offPrice">Save {{discount_percentage}} %</span>
+          
+          <span class="oldPrice" *ngIf="actual_price!=''">₹ {{actual_price}}</span>
+          <span class="offPrice" *ngIf="discount_percentage!=0">Save {{discount_percentage}} %</span>
           <!-- <p style="font-size: small;">Delivery Charge - {{delivery_charge}} /- </p> -->
 
           <ion-col style="text-align: left;" *ngIf="total_quantity!='0'" size="6">
@@ -215,18 +216,6 @@
         </div>
 
           <ion-img src="{{relatedProduct.product.photo}}" (click)="relateProductToDetails(relatedProduct)" style="height: 128px;width: 100%;"></ion-img>
-          
-          <!-- <div class="rating">
-            <span>
-                <ion-item class="star" lines="none">
-                    <ion-icon name="star-outline"></ion-icon>
-                    <ion-icon name="star-outline"></ion-icon>
-                    <ion-icon name="star-outline"></ion-icon>
-                    <ion-icon name="star-outline"></ion-icon>
-                    <ion-icon name="star-outline"></ion-icon>
-                  </ion-item>
-            </span>
-          </div> -->
 
           <ion-card-header (click)="relateProductToDetails(relatedProduct)" style="height: 135px;">
             <ion-card-subtitle>{{relatedProduct.product.name | slice:0:20}}</ion-card-subtitle>
@@ -238,7 +227,7 @@
                 <span class="stk outstk">Out of Stock</span>
               </ion-col>
               <ion-col style="text-align: right;" size="6">
-                <span class="stkPrc">Rs. {{relatedProduct.product.actual_price}}</span>
+                <span class="stkPrc">Rs. {{relatedProduct.product.offer_price}}</span>
               </ion-col>
             </ion-row>
           </ion-card-header>

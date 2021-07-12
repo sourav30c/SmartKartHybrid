@@ -36,9 +36,8 @@ export class ForgotpasswordPage implements OnInit {
         console.log("Your data: ", result);
         this.data = result;
   
-        console.log(this.data)
         if (this.data.success) {
-          //this.navCtrl.navigateForward('/otp-fp-submit')
+          this.util.showToast(this.data.data.status);
         } else {
           this.util.showToast(this.data.message);
         }

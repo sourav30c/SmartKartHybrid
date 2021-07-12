@@ -284,7 +284,7 @@ sharePageDeeplink(){
 
         //console.log("Product Image", this.productImage , this.productDetailsFromApi.product_images.length)
         this.offer_price = this.productDetailsFromApi.offer_price
-        this.actual_price = this.productDetailsFromApi.actual_price
+        this.actual_price = this.productDetailsFromApi.actual_price ? this.productDetailsFromApi.actual_price : ''
         this.delivery_charge = this.productDetailsFromApi.delivery_charge
         this.relatedProduct = this.data.data.related_products
         this.introduction = this.productDetailsFromApi.introduction
