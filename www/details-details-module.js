@@ -91,7 +91,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _api_utility_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../api/utility.service */ "./src/app/api/utility.service.ts");
 /* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/fesm5.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _ionic_native_deeplinks_ngx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic-native/deeplinks/ngx */ "./node_modules/@ionic-native/deeplinks/ngx/index.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -107,11 +106,12 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 //import { DeeplinksOriginal } from '@ionic-native/deeplinks';
-
+//import { Deeplinks } from '@ionic-native/deeplinks/ngx';
 var DetailsPage = /** @class */ (function () {
     function DetailsPage(util, alertController, events, navCtrl, route, modalController, activeroute, menuCtrl, 
     //private deeplinks: DeeplinksOriginal,
-    deeplinks, platform) {
+    //protected deeplinks: Deeplinks, 
+    platform) {
         this.util = util;
         this.alertController = alertController;
         this.events = events;
@@ -120,7 +120,6 @@ var DetailsPage = /** @class */ (function () {
         this.modalController = modalController;
         this.activeroute = activeroute;
         this.menuCtrl = menuCtrl;
-        this.deeplinks = deeplinks;
         this.platform = platform;
         this.ratingCount = 0;
         this.reviewCount = 0;
@@ -718,7 +717,7 @@ var DetailsPage = /** @class */ (function () {
             _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["Events"], _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["NavController"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"],
             _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["ModalController"],
             _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"], _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["MenuController"],
-            _ionic_native_deeplinks_ngx__WEBPACK_IMPORTED_MODULE_4__["Deeplinks"], _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["Platform"]])
+            _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["Platform"]])
     ], DetailsPage);
     return DetailsPage;
 }());

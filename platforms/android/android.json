@@ -93,29 +93,29 @@
   },
   "installed_plugins": {
     "cordova-plugin-device": {
-      "PACKAGE_NAME": "com.app.SmartCarts"
+      "PACKAGE_NAME": "com.smartkart"
     },
     "cordova-plugin-inappbrowser": {
-      "PACKAGE_NAME": "com.app.SmartCarts"
+      "PACKAGE_NAME": "com.smartkart"
     },
     "cordova-plugin-ionic-keyboard": {
-      "PACKAGE_NAME": "com.app.SmartCarts"
+      "PACKAGE_NAME": "com.smartkart"
     },
     "cordova-plugin-ionic-webview": {
       "ANDROID_SUPPORT_ANNOTATIONS_VERSION": "27.+",
-      "PACKAGE_NAME": "com.app.SmartCarts"
+      "PACKAGE_NAME": "com.smartkart"
     },
     "cordova-plugin-speechrecognition": {
-      "PACKAGE_NAME": "com.app.SmartCarts"
+      "PACKAGE_NAME": "com.smartkart"
     },
     "cordova-plugin-splashscreen": {
-      "PACKAGE_NAME": "com.app.SmartCarts"
+      "PACKAGE_NAME": "com.smartkart"
     },
     "cordova-plugin-statusbar": {
-      "PACKAGE_NAME": "com.app.SmartCarts"
+      "PACKAGE_NAME": "com.smartkart"
     },
     "cordova-plugin-whitelist": {
-      "PACKAGE_NAME": "com.app.SmartCarts"
+      "PACKAGE_NAME": "com.smartkart"
     },
     "ionic-plugin-deeplinks": {
       "URL_SCHEME": "smartcart",
@@ -134,7 +134,7 @@
       "DEEPLINK_4_HOST": " ",
       "DEEPLINK_5_SCHEME": " ",
       "DEEPLINK_5_HOST": " ",
-      "PACKAGE_NAME": "com.app.SmartCarts"
+      "PACKAGE_NAME": "com.smartkart"
     }
   },
   "dependent_plugins": {},

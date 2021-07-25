@@ -17,7 +17,7 @@
        under the License.
  */
 
-package com.app.SmartCarts;
+package com.smartkart;
 
 import android.os.Bundle;
 import org.apache.cordova.*;

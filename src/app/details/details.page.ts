@@ -11,7 +11,7 @@ import { timeStamp } from 'console';
 import { AboutPage } from '../about/about.page';
 import { ProductCategoryPage } from '../product-category/product-category.page';
 //import { DeeplinksOriginal } from '@ionic-native/deeplinks';
-import { Deeplinks } from '@ionic-native/deeplinks/ngx';
+//import { Deeplinks } from '@ionic-native/deeplinks/ngx';
 @Component({
   selector: 'app-details',
   templateUrl: './details.page.html',
@@ -74,7 +74,8 @@ export class DetailsPage implements OnInit {
     public modalController: ModalController,
     private activeroute: ActivatedRoute, private menuCtrl: MenuController,
     //private deeplinks: DeeplinksOriginal,
-    protected deeplinks: Deeplinks, protected platform: Platform
+    //protected deeplinks: Deeplinks, 
+    protected platform: Platform
     ) {
     this.pushedFrom = this.activeroute.snapshot.paramMap.get("pushedFrom")
     if (this.pushedFrom == 'loginCart') {

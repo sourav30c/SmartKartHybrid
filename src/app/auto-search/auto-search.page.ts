@@ -90,7 +90,7 @@ export class AutoSearchPage implements OnInit {
       //console.log("Your search data: ", result);
       this.data = result;
 
-      //console.log(this.data)
+      console.log(this.data)
       if (this.data.success) {
         this.searchlist = this.data.data
         if (this.searchlist.length > 0) {

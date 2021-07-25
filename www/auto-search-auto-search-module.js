@@ -186,7 +186,7 @@ var AutoSearchPage = /** @class */ (function () {
             // }
             //console.log("Your search data: ", result);
             _this.data = result;
-            //console.log(this.data)
+            console.log(_this.data);
             if (_this.data.success) {
                 _this.searchlist = _this.data.data;
                 if (_this.searchlist.length > 0) {

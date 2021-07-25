@@ -5,7 +5,7 @@ import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { Events } from '@ionic/angular';
 import { MenuController } from '@ionic/angular';
-import { Deeplinks } from '@ionic-native/deeplinks/ngx';
+//import { Deeplinks } from '@ionic-native/deeplinks/ngx';
 import { AboutPage } from './about/about.page';
 
 @Component({
@@ -31,7 +31,7 @@ export class AppComponent {
     private splashScreen: SplashScreen,
     private statusBar: StatusBar, public events: Events ,
     public menuCtrl: MenuController,
-    protected deeplinks: Deeplinks,
+    //protected deeplinks: Deeplinks,
   ) {
     this.initializeMenu();
     this.initializeApp();
@@ -109,23 +109,20 @@ export class AppComponent {
 
   listenToDeeplink(){
 
-  console.log("Deeplink Route test", this.deeplinks.route)
+  // console.log("Deeplink Route test", this.deeplinks.route)
  
-   this.deeplinks.route({
-      '/about-us': AboutPage,
-     // '/universal-links-test': AboutPage,
-     // '/products/:productId': ProductCategoryPage
-   }).subscribe(match => {
-     // match.$route - the route we matched, which is the matched entry from the arguments to route()
-     // match.$args - the args passed in the link
-     // match.$link - the full link data
-     alert(JSON.stringify(match))
-     console.log('Successfully matched route', match);
-   }, nomatch => {
-     // nomatch.$link - the full link data
-     alert(JSON.stringify(nomatch));
-     console.error('Got a deeplink that didn\'t match', nomatch);
-   });
+  //  this.deeplinks.route({
+  //     '/about-us': AboutPage,
+  //    // '/universal-links-test': AboutPage,
+  //    // '/products/:productId': ProductCategoryPage
+  //  }).subscribe(match => {
+  //    alert(JSON.stringify(match))
+  //    console.log('Successfully matched route', match);
+  //  }, nomatch => {
+  //    // nomatch.$link - the full link data
+  //    alert(JSON.stringify(nomatch));
+  //    console.error('Got a deeplink that didn\'t match', nomatch);
+  //  });
  
    // console.log("Deeplink Route test end end", this.deeplinks.route)
  

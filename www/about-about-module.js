@@ -53,6 +53,116 @@ var AboutPageModule = /** @class */ (function () {
 
 
 
+/***/ }),
+
+/***/ "./src/app/about/about.page.html":
+/*!***************************************!*\
+  !*** ./src/app/about/about.page.html ***!
+  \***************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<ion-header>\n    <ion-toolbar>\n      <ion-buttons slot=\"start\">\n        <ion-menu-button style=\"color: #FFCC23\"></ion-menu-button>\n      </ion-buttons>\n      <ion-title>\n        About Us\n      </ion-title>\n    </ion-toolbar>\n  </ion-header>\n\n<ion-content>\n  <ion-grid>\n    <ion-row class=\"loginBx\" *ngIf=\"isTerms == true\">\n      <ion-col>\n      <ion-text>  \n        <div [innerHTML]=\"description\"></div>\n      </ion-text>  \n      </ion-col>\n    </ion-row>\n  </ion-grid>\n\n  <!-- <ion-card style=\"text-align:center;margin-top:50% \" *ngIf=\"isTerms == false\">\n    <ion-card-content>\n        No Data Found\n    </ion-card-content>\n  </ion-card> -->\n</ion-content>"
+
+/***/ }),
+
+/***/ "./src/app/about/about.page.scss":
+/*!***************************************!*\
+  !*** ./src/app/about/about.page.scss ***!
+  \***************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".bg {\n  background-image: url(\"/assets/images/bg1.jpg\");\n  height: auto;\n  background-size: cover;\n  -webkit-filter: blur(0px);\n          filter: blur(0px);\n  background-repeat: no-repeat;\n  background-position: center center; }\n\n.loginBx {\n  margin: auto;\n  max-width: 374px;\n  padding: 25px;\n  background: rgba(252, 250, 250, 0.5);\n  border-radius: 10px;\n  text-align: center; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy93ZWF2ZXJzd2ViL0Rlc2t0b3AvU21hcnRLYXJ0SHlicmlkL3NyYy9hcHAvYWJvdXQvYWJvdXQucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksK0NBQStDO0VBQy9DLFlBQVk7RUFDWixzQkFBc0I7RUFDdEIseUJBQWlCO1VBQWpCLGlCQUFpQjtFQUNqQiw0QkFBNEI7RUFDNUIsa0NBQWtDLEVBQUE7O0FBRXRDO0VBQ0ksWUFBWTtFQUNaLGdCQUFnQjtFQUNoQixhQUFhO0VBQ2Isb0NBQW1DO0VBQ25DLG1CQUFtQjtFQUNuQixrQkFBa0IsRUFBQSIsImZpbGUiOiJzcmMvYXBwL2Fib3V0L2Fib3V0LnBhZ2Uuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5iZ3tcclxuICAgIGJhY2tncm91bmQtaW1hZ2U6IHVybCgnL2Fzc2V0cy9pbWFnZXMvYmcxLmpwZycpO1xyXG4gICAgaGVpZ2h0OiBhdXRvO1xyXG4gICAgYmFja2dyb3VuZC1zaXplOiBjb3ZlcjtcclxuICAgIGZpbHRlcjogYmx1cigwcHgpO1xyXG4gICAgYmFja2dyb3VuZC1yZXBlYXQ6IG5vLXJlcGVhdDtcclxuICAgIGJhY2tncm91bmQtcG9zaXRpb246IGNlbnRlciBjZW50ZXI7XHJcbn1cclxuLmxvZ2luQngge1xyXG4gICAgbWFyZ2luOiBhdXRvO1xyXG4gICAgbWF4LXdpZHRoOiAzNzRweDtcclxuICAgIHBhZGRpbmc6IDI1cHg7XHJcbiAgICBiYWNrZ3JvdW5kOnJnYmEoMjUyLCAyNTAsIDI1MCwgMC41KTtcclxuICAgIGJvcmRlci1yYWRpdXM6IDEwcHg7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbn0iXX0= */"
+
+/***/ }),
+
+/***/ "./src/app/about/about.page.ts":
+/*!*************************************!*\
+  !*** ./src/app/about/about.page.ts ***!
+  \*************************************/
+/*! exports provided: AboutPage */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AboutPage", function() { return AboutPage; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _api_utility_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../api/utility.service */ "./src/app/api/utility.service.ts");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/fesm5.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+var AboutPage = /** @class */ (function () {
+    function AboutPage(util, alertController, events, navCtrl, route, modalController, activeroute, menuCtrl) {
+        this.util = util;
+        this.alertController = alertController;
+        this.events = events;
+        this.navCtrl = navCtrl;
+        this.route = route;
+        this.modalController = modalController;
+        this.activeroute = activeroute;
+        this.menuCtrl = menuCtrl;
+        this.description = "";
+        this.isTerms = false;
+        this.myTermsService();
+    }
+    AboutPage.prototype.ngOnInit = function () {
+    };
+    AboutPage.prototype.myTermsService = function () {
+        var _this = this;
+        var myData = JSON.stringify({});
+        console.log("Your myData: ", myData);
+        this.util.presentLoading();
+        this.util.getTypeDetailsWithAuth('sliders/pages.json', myData).subscribe(function (result) {
+            _this.util.dismissLoader();
+            //console.log("Your data: ", result);
+            _this.data = result;
+            if (_this.data.success) {
+                _this.aboutUs = _this.data.data.pages;
+                if (_this.aboutUs.length == 0) {
+                    _this.isTerms = false;
+                }
+                else {
+                    _this.isTerms = true;
+                }
+                _this.description = _this.aboutUs[1].description;
+                //console.log("this.aboutUs",this.aboutUs)
+            }
+            else {
+                _this.util.showToast(_this.data.message);
+            }
+        }, function (error) {
+            _this.util.dismissLoader();
+            _this.util.showToast('Server error occured. Try again.');
+        });
+    };
+    AboutPage = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-about',
+            template: __webpack_require__(/*! ./about.page.html */ "./src/app/about/about.page.html"),
+            styles: [__webpack_require__(/*! ./about.page.scss */ "./src/app/about/about.page.scss")]
+        }),
+        __metadata("design:paramtypes", [_api_utility_service__WEBPACK_IMPORTED_MODULE_1__["UtilityService"], _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["AlertController"],
+            _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["Events"], _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["NavController"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"], _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["ModalController"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"], _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["MenuController"]])
+    ], AboutPage);
+    return AboutPage;
+}());
+
+
+
 /***/ })
 
 }]);

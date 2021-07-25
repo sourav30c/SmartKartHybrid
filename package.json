@@ -21,7 +21,6 @@
     "@angular/platform-browser-dynamic": "^7.2.2",
     "@angular/router": "^7.2.2",
     "@ionic-native/core": "^5.0.0",
-    "@ionic-native/deeplinks": "^5.33.1",
     "@ionic-native/in-app-browser": "^5.27.0",
     "@ionic-native/keyboard": "^5.27.0",
     "@ionic-native/speech-recognition": "^5.29.0",
@@ -87,22 +86,10 @@
       "cordova-plugin-inappbrowser": {},
       "cordova-plugin-speechrecognition": {},
       "ionic-plugin-deeplinks": {
-        "URL_SCHEME": "smartcart",
+        "URL_SCHEME": "com.smartkart",
         "DEEPLINK_SCHEME": "https",
-        "DEEPLINK_HOST": "www.smartkart.online",
-        "ANDROID_PATH_PREFIX": "/",
-        "ANDROID_2_PATH_PREFIX": "/",
-        "ANDROID_3_PATH_PREFIX": "/",
-        "ANDROID_4_PATH_PREFIX": "/",
-        "ANDROID_5_PATH_PREFIX": "/",
-        "DEEPLINK_2_SCHEME": " ",
-        "DEEPLINK_2_HOST": " ",
-        "DEEPLINK_3_SCHEME": " ",
-        "DEEPLINK_3_HOST": " ",
-        "DEEPLINK_4_SCHEME": " ",
-        "DEEPLINK_4_HOST": " ",
-        "DEEPLINK_5_SCHEME": " ",
-        "DEEPLINK_5_HOST": " "
+        "DEEPLINK_HOST": "smartkart.online",
+        "ANDROID_PATH_PREFIX": "/"
       }
     },
     "platforms": [

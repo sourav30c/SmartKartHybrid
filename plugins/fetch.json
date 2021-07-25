@@ -72,9 +72,9 @@
     },
     "is_top_level": true,
     "variables": {
-      "URL_SCHEME": "smartcart",
+      "URL_SCHEME": "com.smartkart",
       "DEEPLINK_SCHEME": "https",
-      "DEEPLINK_HOST": "www.smartkart.online",
+      "DEEPLINK_HOST": "smartkart.online",
       "ANDROID_PATH_PREFIX": "/"
     }
   }
